@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Libota</title>
+  
+  <!-- Favicon élégant - Losange avec palette du site -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient><filter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='2' stdDeviation='3' flood-opacity='0.3'/></filter></defs><g transform='translate(50,50) rotate(45) translate(-50,-50)' filter='url(%23s)'><rect x='15' y='15' width='70' height='70' rx='12' fill='url(%23lg)'/></g><circle cx='50' cy='50' r='18' fill='white' opacity='0.95'/><circle cx='50' cy='50' r='12' fill='url(%23lg)'/></svg>" type="image/svg+xml">
+  
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient></defs><g transform='translate(90,90) rotate(45) translate(-90,-90)'><rect x='35' y='35' width='110' height='110' rx='20' fill='url(%23lg)'/></g><circle cx='90' cy='90' r='30' fill='white' opacity='0.95'/><circle cx='90' cy='90' r='20' fill='url(%23lg)'/></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+  <style>
+    /* ============================================
+       HERO PAGE CONTACT - Style Équipe
+       ============================================ */
+    .contact-hero {
+      width: 100%;
+      height: 430px;
+      position: relative;
+      margin-top: 72px;
+      overflow: hidden;
+    }
+
+    .contact-hero-image {
+      width: 100%;
+      height: 100%;
+      background: url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat;
+      position: relative;
+    }
+
+    .contact-hero-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(31, 122, 99, 0.2) 0%, rgba(31, 122, 99, 0.4) 100%);
+    }
+
+    /* Section Engagement - Chevauche l'image comme sur la page équipe */
+    .engagement-section {
+      width: min(1200px, 92%);
+      margin: -80px auto 0;
+      padding: 48px 40px 100px;
+      background: var(--bg-soft);
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .engagement-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header de section */
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(31, 122, 99, 0.1);
+      color: var(--blue);
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--blue);
+      font-weight: 600;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-family: "Questrial", Arial, sans-serif;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .engagement-card {
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      border: 1px solid rgba(31, 122, 99, 0.06);
+      cursor: pointer;
+    }
+
+    .engagement-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(31, 122, 99, 0.15);
+    }
+
+    .engagement-card.featured {
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(31, 122, 99, 0.12);
+      border: 2px solid var(--blue);
+    }
+
+    .engagement-card.featured:hover {
+      transform: scale(1.02) translateY(-8px);
+      box-shadow: 0 25px 60px rgba(31, 122, 99, 0.2);
+    }
+
+    /* Badge "Recommandé" */
+    .card-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(31, 122, 99, 0.3);
+    }
+
+    /* Partie visuelle de la carte */
+    .card-visual {
+      position: relative;
+      padding: 50px 30px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .benevole-visual {
+      background: linear-gradient(135deg, #e8f5f1 0%, #d4ede6 100%);
+    }
+
+    .partenaire-visual {
+      background: linear-gradient(135deg, #f0f7f4 0%, #e0f0ea 100%);
+    }
+
+    .don-visual {
+      background: linear-gradient(135deg, #f5f0e8 0%, #ede4d4 100%);
+    }
+
+    .engagement-icon {
+      width: 90px;
+      height: 90px;
+      background: var(--white);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      box-shadow: 0 8px 24px rgba(31, 122, 99, 0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    .benevole-visual .engagement-icon {
+      color: #1f7a63;
+    }
+
+    .partenaire-visual .engagement-icon {
+      color: #2d6a4f;
+    }
+
+    .don-visual .engagement-icon {
+      color: #d4a373;
+    }
+
+    /* Numéro de carte */
+    .card-number {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 5rem;
+      font-weight: 700;
+      color: rgba(31, 122, 99, 0.06);
+      line-height: 1;
+      z-index: 1;
+    }
+
+    /* Contenu de la carte */
+    .card-content {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .engagement-card h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.4rem;
+      color: var(--blue);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .engagement-card p {
+      font-family: "Questrial", Arial, sans-serif;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Tags/Features */
+    .card-features {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .feature-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(31, 122, 99, 0.08);
+      color: var(--blue);
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-radius: 50px;
+      border: 1px solid rgba(31, 122, 99, 0.12);
+    }
+
+    .feature-tag.highlight {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+
+    /* Boutons modernes */
+    .engagement-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: transparent;
+      color: var(--blue);
+      text-decoration: none;
+      border-radius: 12px;
+      font-family: "Oswald", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 2px solid var(--blue);
+    }
+
+    .engagement-btn:hover {
+      background: var(--blue);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(31, 122, 99, 0.25);
+    }
+
+    .engagement-btn.primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .engagement-btn.primary:hover {
+      background: var(--blue-deep);
+      border-color: var(--blue-deep);
+    }
+
+    .engagement-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .engagement-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Section Contact Form */
+    .contact-form-section {
+      padding: 80px 5%;
+      background: var(--white);
+    }
+
+    .contact-form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info-side h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 2rem;
+      color: var(--blue);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .contact-info-side > p {
+      font-family: "Questrial", Arial, sans-serif;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .contact-info-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(31, 122, 99, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .contact-info-text h3 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.1rem;
+      color: var(--blue);
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .contact-info-text p {
+      font-family: "Questrial", Arial, sans-serif;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .contact-form-side {
+      background: var(--bg-soft);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-form-side h3 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.5rem;
+      color: var(--blue);
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--blue);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid rgba(31, 122, 99, 0.15);
+      border-radius: 10px;
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(31, 122, 99, 0.1);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(31, 122, 99, 0.3);
+    }
+
+    /* Styles pour les formulaires spécifiques */
+    .form-section {
+      padding: 60px 5%;
+      background: var(--bg-soft);
+      min-height: 80vh;
+    }
+
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid rgba(31, 122, 99, 0.1);
+    }
+
+    .form-header h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 2.2rem;
+      color: var(--blue);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .form-header p {
+      font-family: "Questrial", Arial, sans-serif;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .specific-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(31, 122, 99, 0.1);
+    }
+
+    .btn-secondary {
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--blue);
+      border: 2px solid var(--blue);
+      border-radius: 8px;
+      font-family: "Oswald", Arial, sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-secondary:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* Styles pour les options de montant */
+    .montant-options {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .montant-radio {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 12px 24px;
+      background: var(--bg-soft);
+      border: 2px solid transparent;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-family: "Oswald", Arial, sans-serif;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .montant-radio:hover {
+      border-color: var(--blue);
+    }
+
+    .montant-radio input[type="radio"] {
+      display: none;
+    }
+
+    .montant-radio input[type="radio"]:checked + span,
+    .montant-radio:has(input:checked) {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+
+    .montant-radio span {
+      font-weight: 500;
+    }
+
+    /* Styles pour les checkboxes */
+    .checkbox-group {
+      margin-top: 20px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      font-family: "Questrial", Arial, sans-serif;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--blue);
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      .contact-hero {
+        height: 400px;
+        margin-top: 70px;
+      }
+
+      .engagement-section {
+        margin: -60px auto 0;
+        padding: 40px 30px 60px;
+      }
+
+      .engagement-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .engagement-card.featured {
+        transform: none;
+      }
+
+      .engagement-card.featured:hover {
+        transform: translateY(-8px);
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      /* Section Contact - Responsive Tablet/iPad */
+      .contact-form-section {
+        padding: 50px 5%;
+      }
+
+      .contact-form-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .contact-info-side {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .contact-info-side h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+
+      .contact-info-side > p {
+        max-width: 500px;
+        margin-bottom: 30px;
+        font-size: 1.05rem;
+      }
+
+      .contact-info-item {
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+        gap: 20px;
+      }
+
+      .contact-info-icon {
+        width: 55px;
+        height: 55px;
+        flex-shrink: 0;
+      }
+
+      .contact-info-text {
+        text-align: left;
+      }
+
+      .contact-info-text h3 {
+        font-size: 1.15rem;
+        margin-bottom: 6px;
+      }
+
+      .contact-info-text p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .contact-form-side {
+        width: 100%;
+        padding: 35px;
+        border-radius: 20px;
+      }
+
+      .contact-form-side h3 {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .form-container {
+        padding: 35px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .contact-hero {
+        height: 300px;
+        margin-top: 60px;
+      }
+
+      .engagement-section {
+        width: 92%;
+        padding: 40px 24px 60px;
+        margin: 40px auto;
+        border-radius: 0;
+        background: var(--bg-soft);
+        box-shadow: none;
+      }
+
+      .engagement-section {
+        padding: 60px 5%;
+      }
+
+      .section-header {
+        margin-bottom: 40px;
+      }
+
+      .section-tag {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+
+      .card-visual {
+        padding: 40px 20px 30px;
+      }
+
+      .engagement-icon {
+        width: 70px;
+        height: 70px;
+      }
+
+      .card-number {
+        font-size: 3.5rem;
+        right: 15px;
+        bottom: 5px;
+      }
+
+      .card-content {
+        padding: 25px 20px;
+      }
+
+      .engagement-card h2 {
+        font-size: 1.3rem;
+      }
+
+      .card-features {
+        gap: 6px;
+      }
+
+      .feature-tag {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+      }
+
+      .engagement-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+      }
+
+      /* Section Contact - Responsive Mobile */
+      .contact-form-section {
+        padding: 40px 4%;
+      }
+
+      .contact-form-container {
+        gap: 35px;
+        max-width: 100%;
+      }
+
+      .contact-info-side {
+        width: 100%;
+        padding: 0 10px;
+      }
+
+      .contact-info-side h2 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+      }
+
+      .contact-info-side > p {
+        font-size: 0.95rem;
+        max-width: 100%;
+        margin-bottom: 25px;
+        line-height: 1.5;
+      }
+
+      .contact-info-item {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 15px;
+        width: 100%;
+        margin-bottom: 18px;
+        padding: 0 5px;
+      }
+
+      .contact-info-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+
+      .contact-info-text {
+        flex: 1;
+      }
+
+      .contact-info-text h3 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+      }
+
+      .contact-info-text p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .contact-form-side {
+        padding: 25px 20px;
+        border-radius: 16px;
+        width: 100%;
+      }
+
+      .contact-form-side h3 {
+        font-size: 1.25rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 16px;
+      }
+
+      .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        padding: 12px 14px;
+        font-size: 16px; /* Empêche le zoom sur iOS */
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .submit-btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+      }
+
+      .form-container {
+        padding: 25px 20px;
+      }
+
+      .form-header h2 {
+        font-size: 1.6rem;
+      }
+
+      .form-actions {
+        flex-direction: column;
+      }
+
+      .btn-secondary,
+      .submit-btn {
+        width: 100%;
+      }
+
+      .montant-options {
+        justify-content: center;
+      }
+
+      .montant-radio {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="mainHeader">
+    <a href="../index.html" class="logo">Libota</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="../index.html#accueil">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="projets.html">Projets</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="../index.html#actualites">Actualités</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    
+    <a href="#" class="header-cta" onclick="openDonationModal(); return false;">Faire un don</a>
+  </header>
+
+  <main>
+  <!-- HERO IMAGE - Contact & Engagement -->
+  <section class="contact-hero">
+    <div class="contact-hero-image"></div>
+  </section>
+
+  <!-- Section Engagement - Design Moderne UI/UX -->
+  <section class="engagement-section">
+    <div class="engagement-container">
+      <div class="section-header">
+        <span class="section-tag">IMPLIQUEZ-VOUS</span>
+        <h2 class="section-title">Comment souhaitez-vous contribuer ?</h2>
+        <p class="section-subtitle">Choisissez votre mode d'engagement et rejoignez notre mission</p>
+      </div>
+      
+      <div class="engagement-grid">
+        
+        <!-- Carte Bénévole -->
+        <div class="engagement-card" id="benevole-card" onclick="showForm('benevole')">
+          <div class="card-visual benevole-visual">
+            <div class="engagement-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="card-number">01</div>
+          </div>
+          <div class="card-content">
+            <h2>Devenir Bénévole</h2>
+            <p>Rejoignez notre équipe de bénévoles passionnés et contribuez activement à nos projets éducatifs. Votre temps et vos compétences font la différence.</p>
+            <div class="card-features">
+              <span class="feature-tag">Flexible</span>
+              <span class="feature-tag">Impactant</span>
+            </div>
+            <a href="#section-benevole" class="engagement-btn" onclick="event.stopPropagation(); showForm('benevole')">
+              <span>Rejoindre</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Carte Partenaire -->
+        <div class="engagement-card featured" id="partenaire-card" onclick="showForm('partenaire')">
+          <div class="card-badge"></div>
+          <div class="card-visual partenaire-visual">
+            <div class="engagement-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="card-number">02</div>
+          </div>
+          <div class="card-content">
+            <h2>Devenir Partenaire</h2>
+            <p>Entreprises, associations, institutions : ensemble, multiplions l'impact de nos actions. Construisons des partenariats durables.</p>
+            <div class="card-features">
+              <span class="feature-tag highlight">Impact majeur</span>
+              <span class="feature-tag">Collaboration</span>
+            </div>
+            <a href="#section-partenaire" class="engagement-btn primary" onclick="event.stopPropagation(); showForm('partenaire')">
+              <span>Partenariat</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Carte Contribuer -->
+        <div class="engagement-card" id="don-card" onclick="showForm('don')">
+          <div class="card-visual don-visual">
+            <div class="engagement-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="card-number">03</div>
+          </div>
+          <div class="card-content">
+            <h2>Contribuer</h2>
+            <p>Soutenez financièrement nos projets et aidez-nous à offrir une éducation de qualité à toujours plus d'enfants. Chaque don compte.</p>
+            <div class="card-features">
+              <span class="feature-tag">Déductible</span>
+              <span class="feature-tag">Sécurisé</span>
+            </div>
+            <a href="#section-don" class="engagement-btn" onclick="event.stopPropagation(); showForm('don')">
+              <span>Faire un don</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Formulaire Bénévole -->
+  <section id="section-benevole" class="form-section" style="display: none;">
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Devenir Bénévole</h2>
+        <p>Rejoignez notre équipe et participez activement à nos projets éducatifs.</p>
+      </div>
+      <form id="formBenevole" class="specific-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="benevole-prenom">Prénom *</label>
+            <input type="text" id="benevole-prenom" name="prenom" required placeholder="Votre prénom">
+          </div>
+          <div class="form-group">
+            <label for="benevole-nom">Nom *</label>
+            <input type="text" id="benevole-nom" name="nom" required placeholder="Votre nom">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="benevole-email">Email *</label>
+          <input type="email" id="benevole-email" name="email" required placeholder="votre@email.com">
+        </div>
+        <div class="form-group">
+          <label for="benevole-telephone">Téléphone</label>
+          <input type="tel" id="benevole-telephone" name="telephone" placeholder="+00 0 00 00 00 00">
+        </div>
+        <div class="form-group">
+          <label for="benevole-disponibilite">Disponibilités</label>
+          <select id="benevole-disponibilite" name="disponibilite">
+            <option value="">Sélectionnez vos disponibilités</option>
+            <option value="semaine">En semaine</option>
+            <option value="weekend">Week-end</option>
+            <option value="vacances">Pendant les vacances</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="benevole-competences">Compétences et expérience</label>
+          <textarea id="benevole-competences" name="competences" placeholder="Décrivez vos compétences, votre expérience et ce qui vous motive..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" onclick="showForm('contact')">Retour</button>
+          <button type="submit" class="submit-btn">Envoyer ma candidature</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Section Formulaire Partenaire -->
+  <section id="section-partenaire" class="form-section" style="display: none;">
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Devenir Partenaire</h2>
+        <p>Proposons ensemble des partenariats durables pour l'éducation.</p>
+      </div>
+      <form id="formPartenaire" class="specific-form">
+        <div class="form-group">
+          <label for="partenaire-organisation">Nom de l'organisation *</label>
+          <input type="text" id="partenaire-organisation" name="organisation" required placeholder="Nom de votre entreprise ou association">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="partenaire-contact">Nom du contact *</label>
+            <input type="text" id="partenaire-contact" name="contact" required placeholder="Prénom et nom">
+          </div>
+          <div class="form-group">
+            <label for="partenaire-fonction">Fonction</label>
+            <input type="text" id="partenaire-fonction" name="fonction" placeholder="Votre poste">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="partenaire-email">Email professionnel *</label>
+          <input type="email" id="partenaire-email" name="email" required placeholder="contact@entreprise.com">
+        </div>
+        <div class="form-group">
+          <label for="partenaire-telephone">Téléphone</label>
+          <input type="tel" id="partenaire-telephone" name="telephone" placeholder="+ 0 00 00 00 00">
+        </div>
+        <div class="form-group">
+          <label for="partenaire-type">Type de partenariat souhaité</label>
+          <select id="partenaire-type" name="type">
+            <option value="">Sélectionnez un type</option>
+            <option value="financier">Partenariat financier</option>
+            <option value="materiel">Don matériel</option>
+            <option value="competences">Mise à disposition de compétences</option>
+            <option value="communication">Partenariat communication</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="partenaire-projet">Description du projet</label>
+          <textarea id="partenaire-projet" name="projet" placeholder="Décrivez votre proposition de partenariat..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" onclick="showForm('contact')">Retour</button>
+          <button type="submit" class="submit-btn">Envoyer la proposition</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Section Formulaire Don -->
+  <section id="section-don" class="form-section" style="display: none;">
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Faire un Don</h2>
+        <p>Soutenez nos actions et contribuez à l'éducation pour tous.</p>
+      </div>
+      <form id="formDon" class="specific-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="don-prenom">Prénom *</label>
+            <input type="text" id="don-prenom" name="prenom" required placeholder="Votre prénom">
+          </div>
+          <div class="form-group">
+            <label for="don-nom">Nom *</label>
+            <input type="text" id="don-nom" name="nom" required placeholder="Votre nom">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="don-email">Email *</label>
+          <input type="email" id="don-email" name="email" required placeholder="votre@email.com">
+        </div>
+        <div class="form-group">
+          <label for="don-montant">Montant du don *</label>
+          <div class="montant-options">
+            <label class="montant-radio">
+              <input type="radio" name="montant" value="20" checked>
+              <span>20 €</span>
+            </label>
+            <label class="montant-radio">
+              <input type="radio" name="montant" value="50">
+              <span>50 €</span>
+            </label>
+            <label class="montant-radio">
+              <input type="radio" name="montant" value="100">
+              <span>100 €</span>
+            </label>
+            <label class="montant-radio">
+              <input type="radio" name="montant" value="autre">
+              <span>Autre</span>
+            </label>
+          </div>
+          <input type="number" id="don-montant-autre" name="montant-autre" placeholder="Précisez le montant" style="display: none; margin-top: 10px;">
+        </div>
+        <div class="form-group">
+          <label for="don-message">Message (facultatif)</label>
+          <textarea id="don-message" name="message" placeholder="Laissez-nous un message..."></textarea>
+        </div>
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="recu" checked>
+            <span>Je souhaite recevoir un reçu fiscal</span>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" onclick="showForm('contact')">Retour</button>
+          <button type="submit" class="submit-btn">Procéder au paiement</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Section Formulaire de Contact Général -->
+  <section id="section-contact" class="contact-form-section">
+    <div class="contact-form-container">
+      
+      <!-- Info côté gauche -->
+      <div class="contact-info-side">
+        <h2>Restons en contact</h2>
+        <p>Vous avez des questions ? Vous souhaitez en savoir plus sur nos actions ? N'hésitez pas à nous contacter.</p>
+        
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="contact-info-text">
+            <h3>Siège social</h3>
+            <p>42 Rue de l'Éducation<br>75011 Paris, France<br>SIRET : 751 234 567 00012</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="contact-info-text">
+            <h3>Email</h3>
+            <p>contact@libota.org<br>partenariats@libota.org</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <div class="contact-info-text">
+            <h3>Téléphone</h3>
+            <p>+33 1 23 45 67 89<br>Lun-Ven, 9h-18h</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div class="contact-info-text">
+            <h3>Réseaux sociaux</h3>
+            <p>Suivez-nous sur Facebook, Twitter, LinkedIn et Instagram</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire côté droit -->
+      <div class="contact-form-side">
+        <h3>Envoyez-nous un message</h3>
+        <form id="contactFormPage" action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="sujet">Sujet</label>
+            <select id="sujet" name="sujet" required>
+              <option value="">Choisissez un sujet</option>
+              <option value="benevole">Devenir bénévole</option>
+              <option value="partenaire">Proposition de partenariat</option>
+              <option value="don">Question sur les dons</option>
+              <option value="presse">Presse & Médias</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Envoyer le message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="legal-left">
+      <a href="politique-cookies.html">Politique de cookies</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+    </div>
+    <p>© 2026 Libota - Tous droits réservés</p>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        <h3>Respect de votre vie privée</h3>
+        <p>
+          Nous utilisons des cookies pour améliorer votre expérience et mesurer l'audience de notre site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+      </div>
+      <div class="cookie-banner-buttons">
+        <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">
+          Tout accepter
+        </button>
+        <button class="cookie-btn cookie-btn-secondary" id="rejectAllCookies">
+          Tout refuser
+        </button>
+        <button class="cookie-btn cookie-btn-text" id="customizeCookies">
+          Personnaliser
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div class="cookie-modal-overlay" id="cookieModalOverlay">
+    <div class="cookie-modal" id="cookieModal">
+      <div class="cookie-modal-header">
+        <h2>Préférences des cookies</h2>
+        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">×</button>
+      </div>
+      <div class="cookie-modal-body">
+        <p class="cookie-modal-intro">
+          Gérez vos préférences de cookies. Les cookies nécessaires sont toujours activés pour le bon fonctionnement du site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+        
+        <!-- Necessary Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies nécessaires
+              <span class="cookie-category-badge required">Requis</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" checked disabled id="toggleNecessary">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Ces cookies sont essentiels pour le fonctionnement du site et ne peuvent pas être désactivés.
+          </p>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies analytiques
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleAnalytics">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Nous aident à comprendre comment vous utilisez notre site pour l'améliorer.
+          </p>
+        </div>
+
+        <!-- Marketing Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies marketing
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleMarketing">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Utilisés pour vous proposer des contenus et publicités pertinents.
+          </p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button class="cookie-btn cookie-btn-secondary" id="closeCookieModalFooter">
+          Annuler
+        </button>
+        <button class="cookie-btn cookie-btn-primary" id="saveCookiePreferences">
+          Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Modal -->
+  <div class="donation-modal-overlay" id="donationModalOverlay">
+    <div class="donation-modal" id="donationModal">
+      <div class="donation-modal-header">
+        <h2>Faire un don sécurisé</h2>
+        <button class="donation-modal-close" onclick="closeDonationModal()" aria-label="Fermer">×</button>
+      </div>
+      
+      <div class="donation-modal-body">
+        <div class="security-badges">
+          <span class="badge">SSL 256-bit</span>
+          <span class="badge">PCI DSS</span>
+          <span class="badge">Sécurisé</span>
+        </div>
+        
+        <p class="donation-intro">Votre don est sécurisé et crypté. Aucune donnée bancaire n'est stockée sur nos serveurs.</p>
+        
+        <!-- Amount Selection -->
+        <div class="donation-amounts">
+          <button class="amount-btn" data-amount="10" onclick="selectAmount(10)">10 €</button>
+          <button class="amount-btn" data-amount="25" onclick="selectAmount(25)">25 €</button>
+          <button class="amount-btn" data-amount="50" onclick="selectAmount(50)">50 €</button>
+          <button class="amount-btn" data-amount="100" onclick="selectAmount(100)">100 €</button>
+          <button class="amount-btn" data-amount="custom" onclick="selectAmount('custom')">Autre</button>
+        </div>
+        
+        <!-- Custom Amount Input -->
+        <div class="custom-amount-input" id="customAmountInput" style="display: none;">
+          <input type="number" id="customAmount" placeholder="Montant personnalisé (€)" min="1" max="10000" oninput="handleCustomAmountInput(this.value)">
+        </div>
+        
+        <!-- Selected Amount Display -->
+        <div class="selected-amount-display" id="selectedAmountDisplay" style="display: none;">
+          <span>Montant sélectionné : </span>
+          <strong id="displayAmount">--</strong>
+        </div>
+        
+        <!-- Donor Information -->
+        <form class="donation-form" id="donationForm">
+          <div class="form-row">
+            <input type="text" id="donorFirstName" placeholder="Prénom" required autocomplete="given-name">
+            <input type="text" id="donorLastName" placeholder="Nom" required autocomplete="family-name">
+          </div>
+          <input type="email" id="donorEmail" placeholder="Adresse e-mail" required autocomplete="email">
+          
+          <!-- Apple Pay Button (affiché si disponible) -->
+          <div id="applePayButton" style="display: none; margin-bottom: 16px;">
+            <button type="button" class="apple-pay-btn" onclick="payWithApplePay()">
+              <span></span> Payer avec Apple Pay
+            </button>
+          </div>
+          
+          <!-- Stripe Card Element -->
+          <div class="payment-section">
+            <label class="payment-label">Carte bancaire</label>
+            <div id="cardElement" class="card-element">
+              <!-- Stripe injecte l'input ici -->
+            </div>
+            <div id="cardErrors" class="card-errors" role="alert"></div>
+          </div>
+          
+          <!-- Recurring Donation -->
+          <label class="recurring-option">
+            <input type="checkbox" id="recurringDonation">
+            <span>Faire un don mensuel</span>
+          </label>
+          
+          <!-- Loading State -->
+          <div id="paymentLoading" style="display: none; text-align: center; padding: 20px;">
+            <div class="spinner"></div>
+            <p>Traitement sécurisé en cours...</p>
+          </div>
+          
+          <button type="submit" class="donation-submit-btn" id="donationSubmitBtn" disabled>
+            Procéder au don sécurisé de <span id="submitAmount">--</span>
+          </button>
+        </form>
+        
+        <!-- Security Note -->
+        <p class="security-note">
+          Paiement 100% sécurisé par Stripe. Vos données bancaires ne transitent jamais par nos serveurs.
+        </p>
+        
+        <div class="pci-compliance">
+          <img src="https://cdn.jsdelivr.net/gh/stripe/stripe-js/powered_by_stripe.svg" alt="Powered by Stripe" class="stripe-badge">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Success Message -->
+  <div class="donation-success-overlay" id="donationSuccessOverlay">
+    <div class="donation-success">
+      <div class="success-icon">✓</div>
+      <h3>Merci pour votre don !</h3>
+      <p>Votre générosité nous aide à continuer notre mission.</p>
+      <p class="success-amount">Montant : <strong id="successAmount">--</strong></p>
+      <button onclick="closeDonationSuccess()" class="success-close-btn">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Stripe.js pour paiements sécurisés -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="../assets/js/script.js"></script>
+  <script>
+    // Fonction pour afficher le formulaire approprié
+    function showForm(type) {
+      // Cacher toutes les sections
+      document.getElementById('section-benevole').style.display = 'none';
+      document.getElementById('section-partenaire').style.display = 'none';
+      document.getElementById('section-don').style.display = 'none';
+      document.getElementById('section-contact').style.display = 'none';
+      
+      // Afficher la section demandée
+      if (type === 'benevole') {
+        document.getElementById('section-benevole').style.display = 'block';
+      } else if (type === 'partenaire') {
+        document.getElementById('section-partenaire').style.display = 'block';
+      } else if (type === 'don') {
+        document.getElementById('section-don').style.display = 'block';
+      } else {
+        document.getElementById('section-contact').style.display = 'block';
+      }
+      
+      // Scroll vers le formulaire
+      const section = document.getElementById('section-' + type);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Gestion du montant "Autre" pour les dons
+    document.querySelectorAll('input[name="montant"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const autreInput = document.getElementById('don-montant-autre');
+        if (this.value === 'autre') {
+          autreInput.style.display = 'block';
+          autreInput.required = true;
+        } else {
+          autreInput.style.display = 'none';
+          autreInput.required = false;
+        }
+      });
+    });
+
+    // Gestion des soumissions de formulaires
+    document.getElementById('formBenevole').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Merci pour votre candidature de bénévole ! Nous vous contacterons prochainement.');
+      this.reset();
+      showForm('contact');
+    });
+
+    document.getElementById('formPartenaire').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Merci pour votre proposition de partenariat ! Notre équipe vous répondra dans les plus brefs délais.');
+      this.reset();
+      showForm('contact');
+    });
+
+    document.getElementById('formDon').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Redirection vers le paiement sécurisé...');
+      // Ici vous pouvez rediriger vers Stripe ou votre système de paiement
+      // window.location.href = '../index.html#participer';
+      this.reset();
+      showForm('contact');
+    });
+
+    document.getElementById('contactFormPage').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

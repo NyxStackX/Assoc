@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité - Libota</title>
+  
+  <!-- Favicon élégant - Losange avec palette du site -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient><filter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='2' stdDeviation='3' flood-opacity='0.3'/></filter></defs><g transform='translate(50,50) rotate(45) translate(-50,-50)' filter='url(%23s)'><rect x='15' y='15' width='70' height='70' rx='12' fill='url(%23lg)'/></g><circle cx='50' cy='50' r='18' fill='white' opacity='0.95'/><circle cx='50' cy='50' r='12' fill='url(%23lg)'/></svg>" type="image/svg+xml">
+  
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient></defs><g transform='translate(90,90) rotate(45) translate(-90,-90)'><rect x='35' y='35' width='110' height='110' rx='20' fill='url(%23lg)'/></g><circle cx='90' cy='90' r='30' fill='white' opacity='0.95'/><circle cx='90' cy='90' r='20' fill='url(%23lg)'/></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+  <style>
+    /* Design Pro Minimaliste - Style Grandes Entreprises */
+    .policy-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 5%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(31, 122, 99, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 99;
+    }
+
+    .policy-header .logo {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1f7a63;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .policy-header .back-link {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #1f7a63;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background 0.2s ease;
+    }
+
+    .policy-header .back-link:hover {
+      background: rgba(31, 122, 99, 0.08);
+    }
+
+    .policy-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .policy-nav a {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #1c1c1c;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .policy-nav a:hover {
+      color: #1f7a63;
+    }
+
+    .policy-nav .back-link {
+      color: #1f7a63;
+      padding: 8px 16px;
+      border-radius: 20px;
+    }
+
+    .policy-nav .back-link:hover {
+      background: rgba(31, 122, 99, 0.08);
+    }
+
+    .policy-hero {
+      margin-top: 70px;
+      padding: 60px 5% 80px;
+      background: #f9faf7;
+      text-align: center;
+      border-bottom: 1px solid rgba(31, 122, 99, 0.1);
+    }
+
+    .policy-hero h1 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #1c1c1c;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .policy-hero p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1.1rem;
+      color: #6b7280;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .policy-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 5%;
+    }
+
+    .policy-section {
+      margin-bottom: 48px;
+    }
+
+    .policy-section h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.4rem;
+      color: #1c1c1c;
+      font-weight: 500;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #1f7a63;
+      display: inline-block;
+    }
+
+    .policy-section p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: #4a4a4a;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .policy-section ul {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    .policy-section li {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: #4a4a4a;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .policy-section strong {
+      color: #1c1c1c;
+      font-weight: 600;
+    }
+
+    /* Info box */
+    .info-box {
+      background: #f9fafb;
+      border-left: 3px solid #1f7a63;
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    /* Contact box */
+    .contact-box {
+      background: #f3f4f6;
+      padding: 24px;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+
+    .contact-box h3 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.1rem;
+      color: #1c1c1c;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .contact-box p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+
+    .contact-box a {
+      color: #1f7a63;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .policy-footer {
+      background: #f9faf7;
+      padding: 30px 5%;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      font-family: "Questrial", Arial, sans-serif;
+      color: #6b7280;
+      font-size: 0.75rem;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #1f7a63;
+    }
+
+    .copyright {
+      font-family: "Questrial", Arial, sans-serif;
+      color: #9ca3af;
+      font-size: 0.7rem;
+      margin: 0;
+    }
+
+    .update-date {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      background: #e5e7eb;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .policy-header {
+        padding: 16px 4%;
+      }
+
+      .policy-hero {
+        padding: 40px 4% 60px;
+      }
+
+      .policy-content {
+        padding: 40px 4%;
+      }
+
+      .policy-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="policy-header">
+    <a href="../index.html" class="logo">Libota</a>
+    <a href="#" onclick="event.preventDefault(); history.back();" class="back-link">← Retour</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="policy-hero">
+    <h1>Politique de Confidentialité</h1>
+    <p>Protection de vos données personnelles et respect de votre vie privée.</p>
+  </section>
+
+  <!-- Content -->
+  <main class="policy-content">
+    
+    <!-- Section 1 -->
+    <section class="policy-section">
+      <h2>Introduction</h2>
+      <p>
+        Libota s'engage à protéger la vie privée des utilisateurs de son site web. 
+        Cette politique de confidentialité explique comment nous collectons, utilisons, 
+        stockons et protégeons vos données personnelles conformément au Règlement 
+        Général sur la Protection des Données (RGPD).
+      </p>
+      <p>
+        En utilisant notre site, vous acceptez les pratiques décrites dans cette politique. 
+        Nous vous encourageons à la lire attentivement pour comprendre comment nous 
+        traitons vos informations.
+      </p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="policy-section">
+      <h2>Données collectées</h2>
+      <p>Nous collectons les types de données suivants :</p>
+      <ul>
+        <li><strong>Données d'identification :</strong> nom, prénom, adresse email</li>
+        <li><strong>Données de contact :</strong> numéro de téléphone, adresse postale</li>
+        <li><strong>Données de navigation :</strong> adresse IP, type de navigateur, pages visitées</li>
+        <li><strong>Données de donation :</strong> historique des dons, montants</li>
+        <li><strong>Préférences :</strong> choix de cookies, préférences de communication</li>
+      </ul>
+      
+      <div class="info-box">
+        <p>
+          <strong>Note importante :</strong> Nous ne collectons que les données 
+          nécessaires au fonctionnement de nos services et à la réalisation de notre mission.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="policy-section">
+      <h2>Finalités du traitement</h2>
+      <p>Vos données sont collectées pour les finalités suivantes :</p>
+      <ul>
+        <li>Gestion des dons et des reçus fiscaux</li>
+        <li>Communication sur nos actions et événements</li>
+        <li>Amélioration de l'expérience utilisateur sur notre site</li>
+        <li>Analyse statistique de la fréquentation du site</li>
+        <li>Réponse à vos demandes et questions</li>
+        <li>Respect de nos obligations légales et réglementaires</li>
+      </ul>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="policy-section">
+      <h2>Base légale du traitement</h2>
+      <p>Le traitement de vos données repose sur les bases légales suivantes :</p>
+      <ul>
+        <li><strong>Consentement :</strong> pour l'envoi de newsletters et communications marketing</li>
+        <li><strong>Exécution d'un contrat :</strong> pour la gestion des dons</li>
+        <li><strong>Obligation légale :</strong> pour les obligations comptables et fiscales</li>
+        <li><strong>Intérêt légitime :</strong> pour l'amélioration de nos services et la sécurité</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="policy-section">
+      <h2>Durée de conservation</h2>
+      <p>
+        Vos données sont conservées uniquement pendant la durée nécessaire aux finalités 
+        pour lesquelles elles ont été collectées :
+      </p>
+      <ul>
+        <li><strong>Données de contact :</strong> 3 ans après le dernier contact</li>
+        <li><strong>Données de donation :</strong> 10 ans (obligation comptable)</li>
+        <li><strong>Données de navigation :</strong> 13 mois maximum</li>
+        <li><strong>Cookies :</strong> selon leur type (voir notre politique de cookies)</li>
+      </ul>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="policy-section">
+      <h2>Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès :</strong> obtenir une copie de vos données</li>
+        <li><strong>Droit de rectification :</strong> corriger des données inexactes</li>
+        <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données</li>
+        <li><strong>Droit à la limitation :</strong> restreindre le traitement</li>
+        <li><strong>Droit d'opposition :</strong> vous opposer au traitement</li>
+        <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
+      </ul>
+      
+      <div class="contact-box">
+        <h3>Exercer vos droits</h3>
+        <p>Pour exercer vos droits, contactez-nous :</p>
+        <li><p>Email : <a href="mailto:privacy@libota.org">privacy@libota.org</a></p></li>
+        <li><p>Adresse : Libota - Protection des Données, 00 rue des Bible, 00000 Paris, France</p></li>
+        <li><p>Délai de réponse : sous 30 jours maximum</p></li>
+      </div>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="policy-section">
+      <h2>Sécurité des données</h2>
+      <p>
+        Nous mettons en œuvre des mesures techniques et organisationnelles appropriées 
+        pour protéger vos données contre tout accès non autorisé, modification, 
+        divulgation ou destruction :
+      </p>
+      <ul>
+        <li>Chiffrement des données sensibles</li>
+        <li>Accès restreint aux données (personnel autorisé uniquement)</li>
+        <li>Sauvegardes régulières et sécurisées</li>
+        <li>Formation du personnel à la protection des données</li>
+        <li>Audits de sécurité réguliers</li>
+      </ul>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="policy-section">
+      <h2>Partage des données</h2>
+      <p>
+        Vos données ne sont pas vendues ni louées à des tiers. Elles peuvent être 
+        partagées dans les cas suivants :
+      </p>
+      <ul>
+        <li><strong>Prestataires de services :</strong> hébergement, paiement sécurisé (sous contrat de confidentialité)</li>
+        <li><strong>Autorités :</strong> en cas d'obligation légale</li>
+        <li><strong>Partenaires :</strong> uniquement avec votre consentement explicite</li>
+      </ul>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="policy-section">
+      <h2>Cookies et technologies similaires</h2>
+      <p>
+        Pour plus d'informations sur l'utilisation des cookies, veuillez consulter 
+        notre <a href="politique-cookies.html" style="color: #1f7a63; text-decoration: underline;">Politique de Cookies</a>.
+      </p>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="policy-section">
+      <h2>Modifications de la politique</h2>
+      <p>
+        Nous nous réservons le droit de modifier cette politique de confidentialité 
+        à tout moment. Les modifications seront publiées sur cette page avec la date 
+        de mise à jour. Nous vous encourageons à consulter régulièrement cette page.
+      </p>
+      <p style="text-align: center; margin-top: 24px;">
+        <span class="update-date">Dernière mise à jour : 15 janvier 2026</span>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        <h3>Respect de votre vie privée</h3>
+        <p>
+          Nous utilisons des cookies pour améliorer votre expérience et mesurer l'audience de notre site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+      </div>
+      <div class="cookie-banner-buttons">
+        <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">
+          Tout accepter
+        </button>
+        <button class="cookie-btn cookie-btn-secondary" id="rejectAllCookies">
+          Tout refuser
+        </button>
+        <button class="cookie-btn cookie-btn-text" id="customizeCookies">
+          Personnaliser
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div class="cookie-modal-overlay" id="cookieModalOverlay">
+    <div class="cookie-modal" id="cookieModal">
+      <div class="cookie-modal-header">
+        <h2>Préférences des cookies</h2>
+        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">×</button>
+      </div>
+      <div class="cookie-modal-body">
+        <p class="cookie-modal-intro">
+          Gérez vos préférences de cookies. Les cookies nécessaires sont toujours activés pour le bon fonctionnement du site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+        
+        <!-- Necessary Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies nécessaires
+              <span class="cookie-category-badge required">Requis</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" checked disabled id="toggleNecessary">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Ces cookies sont essentiels pour le fonctionnement du site et ne peuvent pas être désactivés.
+          </p>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies analytiques
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleAnalytics">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Nous aident à comprendre comment vous utilisez notre site pour l'améliorer.
+          </p>
+        </div>
+
+        <!-- Marketing Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies marketing
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleMarketing">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Utilisés pour vous proposer des contenus et publicités pertinents.
+          </p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button class="cookie-btn cookie-btn-secondary" id="closeCookieModalFooter">
+          Annuler
+        </button>
+        <button class="cookie-btn cookie-btn-primary" id="saveCookiePreferences">
+          Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+  <footer class="policy-footer">
+    <div class="footer-links">
+      <a href="politique-cookies.html">Politique de cookies</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+    </div>
+    <p class="copyright">© 2026 Libota - Tous droits réservés</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

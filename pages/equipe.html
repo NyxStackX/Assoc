@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notre Équipe - Libota</title>
+  
+  <!-- Favicon élégant - Losange avec palette du site -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient><filter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='2' stdDeviation='3' flood-opacity='0.3'/></filter></defs><g transform='translate(50,50) rotate(45) translate(-50,-50)' filter='url(%23s)'><rect x='15' y='15' width='70' height='70' rx='12' fill='url(%23lg)'/></g><circle cx='50' cy='50' r='18' fill='white' opacity='0.95'/><circle cx='50' cy='50' r='12' fill='url(%23lg)'/></svg>" type="image/svg+xml">
+  
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient></defs><g transform='translate(90,90) rotate(45) translate(-90,-90)'><rect x='35' y='35' width='110' height='110' rx='20' fill='url(%23lg)'/></g><circle cx='90' cy='90' r='30' fill='white' opacity='0.95'/><circle cx='90' cy='90' r='20' fill='url(%23lg)'/></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Questrial&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+  <style>
+    /* Styles spécifiques pour la page équipe */
+    
+    /* HERO IMAGE - Éducatrice avec enfants */
+    .team-hero {
+      width: 100%;
+      height: 430px;
+      position: relative;
+      margin-top: 72px;
+      overflow: hidden;
+    }
+
+    .team-hero-image {
+      width: 100%;
+      height: 100%;
+      background: url("https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat;
+      position: relative;
+    }
+
+    .team-hero-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(31, 122, 99, 0.2) 0%, rgba(31, 122, 99, 0.4) 100%);
+    }
+
+    /* SECTION ÉQUIPE - Fond uni avec la page */
+    .team-section {
+      width: min(1000px, 92%);
+      margin: -80px auto 0;
+      padding: 48px 40px;
+      background: var(--bg-soft);
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .team-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .team-header h1 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--blue);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .team-header p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      margin: 50px auto 40px;
+      max-width: 950px;
+      padding: 0 20px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(31, 122, 99, 0.06);
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .team-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(31, 122, 99, 0.2);
+      border-color: rgba(31, 122, 99, 0.15);
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+      margin: 0;
+      transition: transform 0.5s ease;
+    }
+
+    .team-card:hover .team-photo {
+      transform: scale(1.08);
+    }
+
+    .team-info {
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .team-name {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 17px;
+      color: var(--blue);
+      margin: -20px auto 12px;
+      padding: 10px 20px 6px;
+      background: var(--white);
+      border: none;
+      border-radius: 0;
+      width: auto;
+      max-width: 75%;
+      min-width: 140px;
+      height: auto;
+      line-height: 1.4;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    /* Bande verte en haut de la banderole du nom */
+    .team-name::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--blue);
+    }
+
+    .team-desc {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+      padding: 10px 16px 20px;
+      height: auto;
+      overflow: visible;
+    }
+
+    /* Section Bénévoles - Design Pro Épuré */
+    .volunteers-section {
+      width: min(1200px, 90%);
+      margin: -20px auto 0;
+      padding: 40px 0 60px;
+      background: var(--bg-soft);
+    }
+
+    .volunteers-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .volunteers-header h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--blue);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Ligne décorative sous le titre */
+    .volunteers-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--yellow);
+    }
+
+    .volunteers-header p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 550px;
+      margin: 20px auto 0;
+      line-height: 1.6;
+    }
+
+    .volunteers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .volunteer-card {
+      background: var(--white);
+      padding: 24px 20px;
+      border-radius: 0;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(31, 122, 99, 0.06);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .volunteer-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(31, 122, 99, 0.12);
+      border-color: rgba(31, 122, 99, 0.15);
+    }
+
+    /* Bande verte en haut de chaque carte */
+    .volunteer-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--blue);
+    }
+
+    .volunteer-name {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.1rem;
+      color: var(--blue);
+      margin-bottom: 10px;
+      letter-spacing: 0.3px;
+    }
+
+    .volunteer-desc {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .volunteer-email {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--red);
+      text-decoration: none;
+      display: inline-block;
+      padding: 6px 14px;
+      background: transparent;
+      border: 1px solid rgba(214, 69, 69, 0.3);
+      border-radius: 0;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .volunteer-email:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+        gap: 30px;
+      }
+      
+      .team-card {
+        max-width: 260px;
+      }
+      
+      .volunteers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      
+      .volunteer-card {
+        padding: 20px 16px;
+      }
+      
+      .team-hero {
+        height: 400px;
+      }
+      
+      .team-section {
+        margin: 40px auto;
+        padding: 50px 40px;
+      }
+      
+      .volunteers-section {
+        margin: -10px auto 0;
+        padding: 30px 0 50px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .team-hero {
+        height: 300px;
+        margin-top: 60px;
+      }
+      
+      .team-section,
+      .volunteers-section {
+        width: 92%;
+        padding: 40px 24px;
+        margin: 30px auto;
+        border-radius: 0;
+        background: var(--bg-soft);
+        box-shadow: none;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        gap: 20px;
+      }
+      
+      .team-card {
+        max-width: 260px;
+        height: auto;
+        border-radius: 0;
+
+      }
+      
+      .team-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--blue);
+        z-index: 10;
+      }
+      .volunteers-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .volunteer-card {
+        padding: 20px 16px;
+      }
+      
+      .volunteer-name {
+        font-size: 1rem;
+      }
+      
+      .volunteer-desc {
+        font-size: 0.8rem;
+      }
+      
+      .volunteer-email {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+      }
+
+      .team-photo {
+        height: 320px;
+        border-radius: 0;
+        margin-top: 5px;
+      }
+
+      .team-header h1,
+      .volunteers-header h2 {
+        font-size: 1.6rem;
+      }
+      
+      .volunteers-section {
+        margin: 0 auto;
+        padding: 30px 0 40px;
+      }
+      
+      .volunteers-header {
+        margin-bottom: 28px;
+      }
+      
+      .team-name {
+        font-size: 16px;
+        margin: -16px auto 10px;
+        padding: 8px 16px 5px;
+        background: var(--white);
+        border: none;
+        width: auto;
+        max-width: 75%;
+        min-width: 120px;
+        height: auto;
+        border-radius: 0;
+        box-sizing: border-box;
+        display: inline-flex;
+        position: relative;
+        overflow: hidden;
+        z-index: 5;
+      }
+      
+      .team-name::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--blue);
+      }
+      
+      .team-info {
+        width: 100%;
+      }
+      
+      .team-desc {
+        font-size: 13px;
+        height: auto;
+        overflow: visible;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="mainHeader">
+    <a href="../index.html" class="logo">Libota</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="../index.html#accueil">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="projets.html">Projets</a>
+      <a href="equipe.html" class="active">Équipe</a>
+      <a href="../index.html#actualites">Actualités</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    
+    <a href="#" class="header-cta" onclick="openDonationModal(); return false;">Faire un don</a>
+  </header>
+
+  <main>
+    <!-- HERO IMAGE - ÉDUcatrice avec enfants -->
+    <section class="team-hero">
+      <div class="team-hero-image"></div>
+    </section>
+
+    <!-- SECTION 1 : NOTRE ÉQUIPE (chevauche l'image) -->
+    <section class="team-section" id="equipe">
+      <div class="team-header">
+        <h1>Notre équipe</h1>
+        <p>Une équipe passionnée et dévouée qui œuvre chaque jour pour faire de l'éducation un droit accessible à tous.</p>
+      </div>
+
+      <div class="team-grid">
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop" alt="Jacques Leroux" class="team-photo" />
+          <div class="team-info">
+            <h3 class="team-name">Jacques Leroux</h3>
+            <p class="team-desc">Fondateur & Président. Visionnaire engagé depuis 2000, il guide la stratégie et les partenariats internationaux de l'association.</p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop" alt="Nathan Chevalier" class="team-photo" />
+          <div class="team-info">
+            <h3 class="team-name">Nathan Chevalier</h3>
+            <p class="team-desc">Directeur des Opérations. Expert en développement international, il coordonne nos programmes sur le terrain dans 24 pays.</p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop" alt="Jeanne Aurore" class="team-photo" />
+          <div class="team-info">
+            <h3 class="team-name">Jeanne Aurore</h3>
+            <p class="team-desc">Responsable Pédagogique. Ancienne enseignante, elle conçoit nos programmes éducatifs adaptés aux réalités locales.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : NOS BÉNÉVOLES -->
+    <section class="volunteers-section">
+      <div class="volunteers-header">
+        <h2>Nos bénévoles</h2>
+        <p>Plus de 12 000 bénévoles engagés sur le terrain qui donnent de leur temps pour transformer des vies à travers l'éducation.</p>
+      </div>
+
+      <div class="volunteers-grid">
+        <article class="volunteer-card">
+          <h3 class="volunteer-name">Alice Jasmin</h3>
+          <p class="volunteer-desc">Coordinatrice régionale Afrique de l'Ouest. Basée au Sénégal, elle supervise 15 écoles partenaires.</p>
+          <a href="mailto:alice@libota.org" class="volunteer-email">alice@libota.org</a>
+        </article>
+
+        <article class="volunteer-card">
+          <h3 class="volunteer-name">Daniel Ducros</h3>
+          <p class="volunteer-desc">Responsable logistique. Expert en supply chain, il coordonne l'acheminement du matériel scolaire.</p>
+          <a href="mailto:daniel@libota.org" class="volunteer-email">daniel@libota.org</a>
+        </article>
+
+        <article class="volunteer-card">
+          <h3 class="volunteer-name">Hervé Chantre</h3>
+          <p class="volunteer-desc">Formateur enseignant. Ancien professeur, il forme les enseignants locaux aux méthodes pédagogiques modernes.</p>
+          <a href="mailto:herve@libota.org" class="volunteer-email">herve@libota.org</a>
+        </article>
+
+        <article class="volunteer-card">
+          <h3 class="volunteer-name">Jean Hulot</h3>
+          <p class="volunteer-desc">Chargé de communication. Il documente nos projets et partage les histoires inspirantes de nos bénéficiaires.</p>
+          <a href="mailto:jean@libota.org" class="volunteer-email">jean@libota.org</a>
+        </article>
+
+        <article class="volunteer-card">
+          <h3 class="volunteer-name">Lucie Gaumont</h3>
+          <p class="volunteer-desc">Responsable partenariats. Elle établit des collaborations avec les entreprises et fondations.</p>
+          <a href="mailto:lucie@libota.org" class="volunteer-email">lucie@libota.org</a>
+        </article>
+
+        <article class="volunteer-card">
+          <h3 class="volunteer-name">Martin Dupont</h3>
+          <p class="volunteer-desc">Coordinateur régional Asie. Basé au Cambodge, il gère nos programmes dans 4 pays d'Asie du Sud-Est.</p>
+          <a href="mailto:martin@libota.org" class="volunteer-email">martin@libota.org</a>
+        </article>
+
+        <article class="volunteer-card">
+          <h3 class="volunteer-name">Richard Bartauld</h3>
+          <p class="volunteer-desc">Responsable informatique. Il déploie nos solutions numériques dans les écoles rurales.</p>
+          <a href="mailto:richard@libota.org" class="volunteer-email">richard@libota.org</a>
+        </article>
+
+        <article class="volunteer-card">
+          <h3 class="volunteer-name">Sonia Rouvier</h3>
+          <p class="volunteer-desc">Chargée de suivi éducatif. Elle évalue l'impact de nos programmes et le progrès des élèves.</p>
+          <a href="mailto:sonia@libota.org" class="volunteer-email">sonia@libota.org</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="legal-left">
+      <a href="politique-cookies.html">Politique de cookies</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+    </div>
+    <p>© 2026 Libota - Tous droits réservés</p>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        <h3>Respect de votre vie privée</h3>
+        <p>
+          Nous utilisons des cookies pour améliorer votre expérience et mesurer l'audience de notre site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+      </div>
+      <div class="cookie-banner-buttons">
+        <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">
+          Tout accepter
+        </button>
+        <button class="cookie-btn cookie-btn-secondary" id="rejectAllCookies">
+          Tout refuser
+        </button>
+        <button class="cookie-btn cookie-btn-text" id="customizeCookies">
+          Personnaliser
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div class="cookie-modal-overlay" id="cookieModalOverlay">
+    <div class="cookie-modal" id="cookieModal">
+      <div class="cookie-modal-header">
+        <h2>Préférences des cookies</h2>
+        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">×</button>
+      </div>
+      <div class="cookie-modal-body">
+        <p class="cookie-modal-intro">
+          Gérez vos préférences de cookies. Les cookies nécessaires sont toujours activés pour le bon fonctionnement du site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+        
+        <!-- Necessary Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies nécessaires
+              <span class="cookie-category-badge required">Requis</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" checked disabled id="toggleNecessary">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Ces cookies sont essentiels pour le fonctionnement du site et ne peuvent pas être désactivés.
+          </p>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies analytiques
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleAnalytics">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Nous aident à comprendre comment vous utilisez notre site pour l'améliorer.
+          </p>
+        </div>
+
+        <!-- Marketing Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies marketing
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleMarketing">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Utilisés pour vous proposer des contenus et publicités pertinents.
+          </p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button class="cookie-btn cookie-btn-secondary" id="closeCookieModalFooter">
+          Annuler
+        </button>
+        <button class="cookie-btn cookie-btn-primary" id="saveCookiePreferences">
+          Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Modal -->
+  <div class="donation-modal-overlay" id="donationModalOverlay">
+    <div class="donation-modal" id="donationModal">
+      <div class="donation-modal-header">
+        <h2>Faire un don sécurisé</h2>
+        <button class="donation-modal-close" onclick="closeDonationModal()" aria-label="Fermer">×</button>
+      </div>
+      
+      <div class="donation-modal-body">
+        <div class="security-badges">
+          <span class="badge">SSL 256-bit</span>
+          <span class="badge">PCI DSS</span>
+          <span class="badge">Sécurisé</span>
+        </div>
+        
+        <p class="donation-intro">Votre don est sécurisé et crypté. Aucune donnée bancaire n'est stockée sur nos serveurs.</p>
+        
+        <!-- Amount Selection -->
+        <div class="donation-amounts">
+          <button class="amount-btn" data-amount="10" onclick="selectAmount(10)">10 €</button>
+          <button class="amount-btn" data-amount="25" onclick="selectAmount(25)">25 €</button>
+          <button class="amount-btn" data-amount="50" onclick="selectAmount(50)">50 €</button>
+          <button class="amount-btn" data-amount="100" onclick="selectAmount(100)">100 €</button>
+          <button class="amount-btn" data-amount="custom" onclick="selectAmount('custom')">Autre</button>
+        </div>
+        
+        <!-- Custom Amount Input -->
+        <div class="custom-amount-input" id="customAmountInput" style="display: none;">
+          <input type="number" id="customAmount" placeholder="Montant personnalisé (€)" min="1" max="10000" oninput="handleCustomAmountInput(this.value)">
+        </div>
+        
+        <!-- Selected Amount Display -->
+        <div class="selected-amount-display" id="selectedAmountDisplay" style="display: none;">
+          <span>Montant sélectionné : </span>
+          <strong id="displayAmount">--</strong>
+        </div>
+        
+        <!-- Donor Information -->
+        <form class="donation-form" id="donationForm">
+          <div class="form-row">
+            <input type="text" id="donorFirstName" placeholder="Prénom" required autocomplete="given-name">
+            <input type="text" id="donorLastName" placeholder="Nom" required autocomplete="family-name">
+          </div>
+          <input type="email" id="donorEmail" placeholder="Adresse e-mail" required autocomplete="email">
+          
+          <!-- Apple Pay Button (affiché si disponible) -->
+          <div id="applePayButton" style="display: none; margin-bottom: 16px;">
+            <button type="button" class="apple-pay-btn" onclick="payWithApplePay()">
+              <span></span> Payer avec Apple Pay
+            </button>
+          </div>
+          
+          <!-- Stripe Card Element -->
+          <div class="payment-section">
+            <label class="payment-label">Carte bancaire</label>
+            <div id="cardElement" class="card-element">
+              <!-- Stripe injecte l'input ici -->
+            </div>
+            <div id="cardErrors" class="card-errors" role="alert"></div>
+          </div>
+          
+          <!-- Recurring Donation -->
+          <label class="recurring-option">
+            <input type="checkbox" id="recurringDonation">
+            <span>Faire un don mensuel</span>
+          </label>
+          
+          <!-- Loading State -->
+          <div id="paymentLoading" style="display: none; text-align: center; padding: 20px;">
+            <div class="spinner"></div>
+            <p>Traitement sécurisé en cours...</p>
+          </div>
+          
+          <button type="submit" class="donation-submit-btn" id="donationSubmitBtn" disabled>
+            Procéder au don sécurisé de <span id="submitAmount">--</span>
+          </button>
+        </form>
+        
+        <!-- Security Note -->
+        <p class="security-note">
+          Paiement 100% sécurisé par Stripe. Vos données bancaires ne transitent jamais par nos serveurs.
+        </p>
+        
+        <div class="pci-compliance">
+          <img src="https://cdn.jsdelivr.net/gh/stripe/stripe-js/powered_by_stripe.svg" alt="Powered by Stripe" class="stripe-badge">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Success Message -->
+  <div class="donation-success-overlay" id="donationSuccessOverlay">
+    <div class="donation-success">
+      <div class="success-icon">✓</div>
+      <h3>Merci pour votre don !</h3>
+      <p>Votre générosité nous aide à continuer notre mission.</p>
+      <p class="success-amount">Montant : <strong id="successAmount">--</strong></p>
+      <button onclick="closeDonationSuccess()" class="success-close-btn">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Stripe.js pour paiements sécurisés -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

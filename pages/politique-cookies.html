@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique des Cookies - Libota</title>
+  
+  <!-- Favicon élégant - Losange avec palette du site -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient><filter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='2' stdDeviation='3' flood-opacity='0.3'/></filter></defs><g transform='translate(50,50) rotate(45) translate(-50,-50)' filter='url(%23s)'><rect x='15' y='15' width='70' height='70' rx='12' fill='url(%23lg)'/></g><circle cx='50' cy='50' r='18' fill='white' opacity='0.95'/><circle cx='50' cy='50' r='12' fill='url(%23lg)'/></svg>" type="image/svg+xml">
+  
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient></defs><g transform='translate(90,90) rotate(45) translate(-90,-90)'><rect x='35' y='35' width='110' height='110' rx='20' fill='url(%23lg)'/></g><circle cx='90' cy='90' r='30' fill='white' opacity='0.95'/><circle cx='90' cy='90' r='20' fill='url(%23lg)'/></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+  <style>
+    /* Design Pro Minimaliste - Style Grandes Entreprises */
+    .policy-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 5%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(31, 122, 99, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 99;
+    }
+
+    .policy-header .logo {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1f7a63;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .policy-header .back-link {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #1f7a63;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background 0.2s ease;
+    }
+
+    .policy-header .back-link:hover {
+      background: rgba(31, 122, 99, 0.08);
+    }
+
+    .policy-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .policy-nav a {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #1c1c1c;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .policy-nav a:hover {
+      color: #1f7a63;
+    }
+
+    .policy-nav .back-link {
+      color: #1f7a63;
+      padding: 8px 16px;
+      border-radius: 20px;
+    }
+
+    .policy-nav .back-link:hover {
+      background: rgba(31, 122, 99, 0.08);
+    }
+
+    .policy-hero {
+      margin-top: 70px;
+      padding: 60px 5% 80px;
+      background: #f9faf7;
+      text-align: center;
+      border-bottom: 1px solid rgba(31, 122, 99, 0.1);
+    }
+
+    .policy-hero h1 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #1c1c1c;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .policy-hero p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1.1rem;
+      color: #6b7280;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .policy-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 5%;
+    }
+
+    .policy-section {
+      margin-bottom: 48px;
+    }
+
+    .policy-section h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.4rem;
+      color: #1c1c1c;
+      font-weight: 500;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #1f7a63;
+      display: inline-block;
+    }
+
+    .policy-section p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: #4a4a4a;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .policy-section ul {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    .policy-section li {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: #4a4a4a;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    /* Tableau minimaliste */
+    .cookie-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+    }
+
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .cookie-table thead {
+      background: #f3f4f6;
+    }
+
+    .cookie-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 600;
+      color: #1c1c1c;
+      border-bottom: 2px solid #1f7a63;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cookie-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e5e7eb;
+      color: #4a4a4a;
+    }
+
+    .cookie-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .cookie-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Liste simple des cookies */
+    .simple-cookie-list {
+      margin: 16px 0;
+      padding-left: 20px;
+    }
+
+    .simple-cookie-list li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .tag-necessary {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .tag-analytics {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .tag-marketing {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    /* Liens navigateurs */
+    .browser-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .browser-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 18px;
+      background: #f3f4f6;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #374151;
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .browser-link:hover {
+      background: #e5e7eb;
+      color: #1f7a63;
+    }
+
+    .text-link {
+      color: #1f7a63;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .text-link:hover {
+      color: #17614f;
+    }
+
+    /* Note box */
+    .info-box {
+      background: #f9fafb;
+      border-left: 3px solid #1f7a63;
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    /* Footer */
+    .policy-footer {
+      background: #f9faf7;
+      padding: 30px 5%;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      font-family: "Questrial", Arial, sans-serif;
+      color: #6b7280;
+      font-size: 0.75rem;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #1f7a63;
+    }
+
+    .copyright {
+      font-family: "Questrial", Arial, sans-serif;
+      color: #9ca3af;
+      font-size: 0.7rem;
+      margin: 0;
+    }
+
+    .update-date {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      background: #e5e7eb;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .policy-header {
+        padding: 16px 4%;
+      }
+
+      .policy-hero {
+        padding: 40px 4% 60px;
+      }
+
+      .policy-content {
+        padding: 40px 4%;
+      }
+
+      .policy-section h2 {
+        font-size: 1.2rem;
+      }
+
+      .cookie-table th,
+      .cookie-table td {
+        padding: 12px;
+        font-size: 0.9rem;
+      }
+
+      .browser-list {
+        flex-direction: column;
+      }
+
+      .browser-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="policy-header">
+    <a href="../index.html" class="logo">Libota</a>
+    <a href="#" onclick="event.preventDefault(); history.back();" class="back-link">← Retour</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="policy-hero">
+    <h1>Politique des Cookies</h1>
+    <p>Transparence sur l'utilisation des cookies et contrôle de vos données personnelles.</p>
+  </section>
+
+  <!-- Content -->
+  <main class="policy-content">
+    
+    <!-- Section 1 -->
+    <section class="policy-section">
+      <h2>Qu'est-ce qu'un cookie ?</h2>
+      <p>
+        Un cookie est un petit fichier texte déposé sur votre appareil lors de votre visite sur un site web. 
+        Il permet de stocker des informations relatives à votre navigation et de personnaliser votre expérience.
+      </p>
+      <p>
+        Les cookies que nous utilisons sont essentiels au bon fonctionnement de nos services et nous permettent 
+        de mémoriser vos préférences et d'optimiser les performances de notre site.
+      </p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="policy-section">
+      <h2>Finalités des cookies</h2>
+      <p>Nous utilisons des cookies pour les raisons suivantes :</p>
+      <ul>
+        <li><strong>Sécurité :</strong> Protection contre la fraude et prévention des cyber-attaques</li>
+        <li><strong>Fonctionnalités essentielles :</strong> Maintien de votre session et mémorisation de vos préférences</li>
+        <li><strong>Analyse :</strong> Comprendre l'utilisation du site pour l'améliorer</li>
+        <li><strong>Expérience utilisateur :</strong> Personnalisation de votre navigation</li>
+      </ul>
+    </section>
+
+    <!-- Section 3: Liste des cookies -->
+    <section class="policy-section">
+      <h2>Liste des cookies utilisés</h2>
+      <p>Les cookies suivants sont utilisés sur notre site :</p>
+      
+      <ul class="simple-cookie-list">
+        <li><strong>Cookies nécessaires :</strong> cookieConsent, session_id</li>
+        <li><strong>Cookies analytiques :</strong> _ga, _gid</li>
+        <li><strong>Cookies marketing :</strong> _fbp</li>
+      </ul>
+    </section>
+
+    <!-- Section 4: Gestion -->
+    <section class="policy-section">
+      <h2>Gérer vos cookies</h2>
+      <p>
+        Vous pouvez contrôler et modifier vos préférences de cookies à tout moment. 
+        Pour en savoir plus sur la gestion des cookies, consultez 
+        <a href="https://aboutcookies.org/" target="_blank" rel="noopener noreferrer" class="text-link">AboutCookies.org</a> 
+        ou 
+        <a href="https://www.allaboutcookies.org/fr/" target="_blank" rel="noopener noreferrer" class="text-link">AllAboutCookies.org</a>.
+      </p>
+      
+      <p><strong>Guides par navigateur :</strong></p>
+      <div class="browser-list">
+        <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" class="browser-link">
+          Google Chrome
+        </a>
+        <a href="https://support.mozilla.org/fr/kb/cookies-informations-sites-enregistrent" target="_blank" rel="noopener noreferrer" class="browser-link">
+          Mozilla Firefox
+        </a>
+        <a href="https://support.microsoft.com/fr-fr/microsoft-edge/supprimer-les-cookies-dans-microsoft-edge-63947406-40ac-c3b8-7b51-cc8e4e0dd394" target="_blank" rel="noopener noreferrer" class="browser-link">
+          Microsoft Edge
+        </a>
+        <a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" class="browser-link">
+          Safari (Mac)
+        </a>
+        <a href="https://support.apple.com/fr-fr/HT201265" target="_blank" rel="noopener noreferrer" class="browser-link">
+          Safari (iOS)
+        </a>
+        <a href="https://help.opera.com/en/latest/web-preferences/#cookies" target="_blank" rel="noopener noreferrer" class="browser-link">
+          Opera
+        </a>
+      </div>
+      
+      <div class="info-box">
+        <p>
+          <strong>Note :</strong> La désactivation des cookies nécessaires peut affecter le fonctionnement du site. 
+          Les cookies analytiques et marketing peuvent être désactivés sans impact sur la navigation.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        <h3>Respect de votre vie privée</h3>
+        <p>
+          Nous utilisons des cookies pour améliorer votre expérience et mesurer l'audience de notre site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+      </div>
+      <div class="cookie-banner-buttons">
+        <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">
+          Tout accepter
+        </button>
+        <button class="cookie-btn cookie-btn-secondary" id="rejectAllCookies">
+          Tout refuser
+        </button>
+        <button class="cookie-btn cookie-btn-text" id="customizeCookies">
+          Personnaliser
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div class="cookie-modal-overlay" id="cookieModalOverlay">
+    <div class="cookie-modal" id="cookieModal">
+      <div class="cookie-modal-header">
+        <h2>Préférences des cookies</h2>
+        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">×</button>
+      </div>
+      <div class="cookie-modal-body">
+        <p class="cookie-modal-intro">
+          Gérez vos préférences de cookies. Les cookies nécessaires sont toujours activés pour le bon fonctionnement du site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+        
+        <!-- Necessary Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies nécessaires
+              <span class="cookie-category-badge required">Requis</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" checked disabled id="toggleNecessary">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Ces cookies sont essentiels pour le fonctionnement du site et ne peuvent pas être désactivés.
+          </p>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies analytiques
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleAnalytics">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Nous aident à comprendre comment vous utilisez notre site pour l'améliorer.
+          </p>
+        </div>
+
+        <!-- Marketing Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies marketing
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleMarketing">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Utilisés pour vous proposer des contenus et publicités pertinents.
+          </p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button class="cookie-btn cookie-btn-secondary" id="closeCookieModalFooter">
+          Annuler
+        </button>
+        <button class="cookie-btn cookie-btn-primary" id="saveCookiePreferences">
+          Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="policy-footer">
+    <div class="footer-links">
+      <a href="politique-cookies.html">Politique de cookies</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+    </div>
+    <p class="copyright">© 2026 Libota - Tous droits réservés</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

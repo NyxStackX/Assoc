@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions Légales - Libota</title>
+  
+  <!-- Favicon élégant - Losange avec palette du site -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient><filter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='2' stdDeviation='3' flood-opacity='0.3'/></filter></defs><g transform='translate(50,50) rotate(45) translate(-50,-50)' filter='url(%23s)'><rect x='15' y='15' width='70' height='70' rx='12' fill='url(%23lg)'/></g><circle cx='50' cy='50' r='18' fill='white' opacity='0.95'/><circle cx='50' cy='50' r='12' fill='url(%23lg)'/></svg>" type="image/svg+xml">
+  
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient></defs><g transform='translate(90,90) rotate(45) translate(-90,-90)'><rect x='35' y='35' width='110' height='110' rx='20' fill='url(%23lg)'/></g><circle cx='90' cy='90' r='30' fill='white' opacity='0.95'/><circle cx='90' cy='90' r='20' fill='url(%23lg)'/></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+  <style>
+    /* Design Pro Minimaliste - Style Grandes Entreprises */
+    .policy-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 5%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(31, 122, 99, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 99;
+    }
+
+    .policy-header .logo {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1f7a63;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .policy-header .back-link {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #1f7a63;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background 0.2s ease;
+    }
+
+    .policy-header .back-link:hover {
+      background: rgba(31, 122, 99, 0.08);
+    }
+
+    .policy-hero {
+      margin-top: 70px;
+      padding: 60px 5% 80px;
+      background: #f9faf7;
+      text-align: center;
+      border-bottom: 1px solid rgba(31, 122, 99, 0.1);
+    }
+
+    .policy-hero h1 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #1c1c1c;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .policy-hero p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1.1rem;
+      color: #6b7280;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .policy-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 5%;
+    }
+
+    .policy-section {
+      margin-bottom: 48px;
+    }
+
+    .policy-section h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.4rem;
+      color: #1c1c1c;
+      font-weight: 500;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #1f7a63;
+      display: inline-block;
+    }
+
+    .policy-section p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: #4a4a4a;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .policy-section ul {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    .policy-section li {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: #4a4a4a;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .policy-section strong {
+      color: #1c1c1c;
+      font-weight: 600;
+    }
+
+    .info-box {
+      background: #f9fafb;
+      border-left: 3px solid #1f7a63;
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .legal-info-card {
+      background: #f3f4f6;
+      padding: 24px;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+
+    .legal-info-card h3 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.1rem;
+      color: #1c1c1c;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .legal-info-card p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+
+    .policy-footer {
+      background: #f9faf7;
+      padding: 30px 5%;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      font-family: "Questrial", Arial, sans-serif;
+      color: #6b7280;
+      font-size: 0.75rem;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #1f7a63;
+    }
+
+    .copyright {
+      font-family: "Questrial", Arial, sans-serif;
+      color: #9ca3af;
+      font-size: 0.7rem;
+      margin: 0;
+    }
+
+    .update-date {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      background: #e5e7eb;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 768px) {
+      .policy-header {
+        padding: 16px 4%;
+      }
+
+      .policy-hero {
+        padding: 40px 4% 60px;
+      }
+
+      .policy-content {
+        padding: 40px 4%;
+      }
+
+      .policy-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="policy-header">
+    <a href="../index.html" class="logo">Libota</a>
+    <a href="#" onclick="event.preventDefault(); history.back();" class="back-link">← Retour</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="policy-hero">
+    <h1>Mentions Légales</h1>
+    <p>Informations légales et administratives concernant l'association Libota.</p>
+  </section>
+
+  <!-- Content -->
+  <main class="policy-content">
+    
+    <!-- Section 1 -->
+    <section class="policy-section">
+      <h2>Éditeur du site</h2>
+      <div class="legal-info-card">
+        <h3>Association Libota</h3>
+        <p><strong>Forme juridique :</strong> Association à but non lucratif (Loi 1901)</p>
+        <p><strong>SIRET :</strong> 751 234 567 00012</p>
+        <p><strong>RNA :</strong> W751234567</p>
+        <p><strong>Siège social :</strong> 42 Rue de l'Éducation, 75011 Paris, France</p>
+        <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+        <p><strong>Email :</strong> contact@libota.org</p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="policy-section">
+      <h2>Directeur de la publication</h2>
+      <p>
+        Le directeur de la publication est <strong>Jacques Leroux</strong>, 
+        Président de l'association Libota, représentant légal de l'association.
+      </p>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="policy-section">
+      <h2>Hébergement du site</h2>
+      <div class="legal-info-card">
+        <h3>Hébergeur</h3>
+        <p><strong>Raison sociale :</strong> OVHcloud</p>
+        <p><strong>Forme juridique :</strong> Société par actions simplifiée</p>
+        <p><strong>Siège social :</strong> 2 rue Kellermann, 59100 Roubaix, France</p>
+        <p><strong>Téléphone :</strong> 1007 (numéro gratuit)</p>
+        <p><strong>Site web :</strong> www.ovhcloud.com</p>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="policy-section">
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble du contenu du site Libota (textes, images, vidéos, logos, 
+        graphismes, icônes, etc.) est la propriété exclusive de l'association Libota 
+        ou de ses partenaires. Ce contenu est protégé par les lois françaises et 
+        internationales relatives à la propriété intellectuelle.
+      </p>
+      <p>
+        Toute reproduction, représentation, modification, publication, adaptation 
+        ou exploitation, totale ou partielle du contenu du site, par quelque procédé 
+        que ce soit, sans l'autorisation préalable et écrite de l'association Libota, 
+        est strictement interdite et constituerait une contrefaçon sanctionnée par 
+        les articles L.335-2 et suivants du Code de la propriété intellectuelle.
+      </p>
+      <p>
+        Les marques et logos figurant sur le site sont des marques déposées par 
+        l'association Libota ou par des tiers. Toute reproduction ou utilisation 
+        de ces marques sans autorisation expresse est interdite.
+      </p>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="policy-section">
+      <h2>Crédits photographiques</h2>
+      <p>
+        Les photographies et illustrations présentes sur ce site proviennent de :
+      </p>
+      <ul>
+        <li>Banques d'images libres de droits (Unsplash, Pexels)</li>
+        <li>Archives de l'association Libota</li>
+        <li>Contributions de bénévoles et partenaires</li>
+      </ul>
+      <p>
+        Tous droits réservés. L'utilisation des images sans autorisation est interdite.
+      </p>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="policy-section">
+      <h2>Liens hypertextes</h2>
+      <p>
+        Le site Libota peut contenir des liens vers d'autres sites internet. 
+        L'association Libota n'exerce aucun contrôle sur ces sites et décline 
+        toute responsabilité quant à leur contenu, leur politique de confidentialité 
+        ou leurs pratiques.
+      </p>
+      <p>
+        La création de liens vers le site Libota est autorisée sous réserve de :
+      </p>
+      <ul>
+        <li>Ne pas utiliser la technique du lien profond (deep linking)</li>
+        <li>Ne pas créer de confusion sur la source du contenu</li>
+        <li>Ne pas porter atteinte à l'image de l'association</li>
+        <li>Obtenir une autorisation préalable pour les liens commerciaux</li>
+      </ul>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="policy-section">
+      <h2>Responsabilité</h2>
+      <p>
+        L'association Libota s'efforce d'assurer l'exactitude et la mise à jour 
+        des informations diffusées sur son site. Toutefois, elle ne peut garantir 
+        l'exactitude, la précision ou l'exhaustivité des informations mises à 
+        disposition sur le site.
+      </p>
+      <p>
+        En conséquence, l'association Libota décline toute responsabilité :
+      </p>
+      <ul>
+        <li>Pour toute imprécision, inexactitude ou omission portant sur des informations disponibles sur le site</li>
+        <li>Pour tous dommages résultant d'une intrusion frauduleuse d'un tiers ayant entraîné une modification des informations mises à disposition sur le site</li>
+        <li>Pour tous dommages directs ou indirects, quelles qu'en soient les causes ou conséquences</li>
+      </ul>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="policy-section">
+      <h2>Droit applicable et juridiction compétente</h2>
+      <p>
+        Les présentes mentions légales sont régies par le droit français. 
+        En cas de litige relatif à l'interprétation, l'exécution ou la violation 
+        des présentes mentions légales, les tribunaux français seront seuls compétents.
+      </p>
+      <p>
+        L'association Libota et l'utilisateur du site s'engagent à tenter de 
+        résoudre à l'amiable tout différend qui viendrait à naître de l'application 
+        des présentes mentions légales avant de saisir les tribunaux compétents.
+      </p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="policy-section">
+      <h2>Contact</h2>
+      <p>
+        Pour toute question concernant les présentes mentions légales, 
+        vous pouvez nous contacter :
+      </p>
+      <div class="info-box">
+        <p>
+          <strong>Email :</strong> <a href="mailto:legal@libota.org" style="color: #1f7a63; text-decoration: none;">legal@libota.org</a><br>
+          <strong>Adresse :</strong> Libota - Service Juridique, 42 Rue de l'Éducation, 75011 Paris, France<br>
+          <strong>Délai de réponse :</strong> sous 15 jours ouvrés
+        </p>
+      </div>
+      <p style="text-align: center; margin-top: 24px;">
+        <span class="update-date">Dernière mise à jour : 15 janvier 2024</span>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="policy-footer">
+    <div class="footer-links">
+      <a href="politique-cookies.html">Politique de cookies</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+    </div>
+    <p class="copyright">© 2026 Libota - Tous droits réservés</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

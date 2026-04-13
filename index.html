@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Protection basique -->
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  
+  <title>Libota</title>
+  
+  <!-- Favicon élégant - Losange avec palette du site -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient><filter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='2' stdDeviation='3' flood-opacity='0.3'/></filter></defs><g transform='translate(50,50) rotate(45) translate(-50,-50)' filter='url(%23s)'><rect x='15' y='15' width='70' height='70' rx='12' fill='url(%23lg)'/></g><circle cx='50' cy='50' r='18' fill='white' opacity='0.95'/><circle cx='50' cy='50' r='12' fill='url(%23lg)'/></svg>" type="image/svg+xml">
+  
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient></defs><g transform='translate(90,90) rotate(45) translate(-90,-90)'><rect x='35' y='35' width='110' height='110' rx='20' fill='url(%23lg)'/></g><circle cx='90' cy='90' r='30' fill='white' opacity='0.95'/><circle cx='90' cy='90' r='20' fill='url(%23lg)'/></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+  <header class="header" id="mainHeader">
+    <a href="#accueil" class="logo">Libota</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="pages/apropos.html">À propos</a>
+      <a href="pages/projets.html">Projets</a>
+      <a href="pages/equipe.html">Équipe</a>
+      <a href="#actualites">Actualités</a>
+      <a href="pages/contact.html">Contact</a>
+    </nav>
+    
+    <a href="#" class="header-cta" onclick="openDonationModal(); return false;">Faire un don</a>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1920&auto=format&fit=crop"
+      >
+        <source
+          src="https://videos.pexels.com/video-files/5198161/5198161-uhd_2560_1440_25fps.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content-wrapper">
+        <div class="hero-kicker">Association à but non lucratif</div>
+        <h1 class="hero-title">
+          Éducation pour Tous
+          <span>Chaque enfant mérite une chance</span>
+        </h1>
+        <p class="hero-subtitle">
+          Depuis 2000, nous œuvrons pour offrir une éducation de qualité aux enfants 
+          défavorisés à travers le monde. Rejoignez notre mission.
+        </p>
+        <div class="hero-cta-group">
+          <button class="hero-btn-primary compact" onclick="openDonationModal()">
+            Faire un don
+          </button>
+          <a href="#initiatives" class="hero-btn-secondary">
+            Nos actions
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stats-grid">
+          <div class="hero-stat">
+            <div class="hero-stat-number">40K+</div>
+            <div class="hero-stat-label">Dons récoltés</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">15K</div>
+            <div class="hero-stat-label">Enfants aidés</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">24</div>
+            <div class="hero-stat-label">Pays présents</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">120</div>
+            <div class="hero-stat-label">Centres actifs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-row section-a" id="initiatives">
+      <div class="row-bg left-bg"></div>
+      <div class="row-bg right-bg"></div>
+
+      <article class="content-card card-left">
+        <h2>Nos initiatives</h2>
+        <p>
+          Nous développons des programmes éducatifs innovants dans 24 pays, 
+          offrant accès à des ressources pédagogiques de qualité, formation des enseignants 
+          et infrastructures scolaires adaptées aux besoins locaux.
+        </p>
+        <a href="pages/apropos.html">Découvrir nos projets</a>
+      </article>
+
+      <article class="content-card card-right" id="mission">
+        <h2>Notre mission</h2>
+        <p>
+          Libota œuvre pour un monde où chaque enfant, quelle que soit son origine 
+          ou sa situation, a accès à une éducation de qualité. Nous croyons que 
+          l'éducation est le fondement de tout développement durable.
+        </p>
+        <a href="pages/apropos.html">En savoir plus</a>
+      </article>
+    </section>
+
+    <section class="feature-row section-b" id="participer">
+      <div class="row-bg left-bg"></div>
+      <div class="row-bg right-bg"></div>
+
+      <article class="content-card card-left">
+        <h2>Nos événements</h2>
+        <p>
+          Participez à nos journées portes ouvertes, collectes de fonds, 
+          et événements communautaires. Chaque événement est une opportunité 
+          de rejoindre notre mouvement pour l'éducation.
+        </p>
+        <a href="pages/contact.html">Voir l'agenda</a>
+      </article>
+
+      <article class="content-card card-right">
+        <h2>Participer</h2>
+        <p>
+          Devenez bénévole, faites un don, ou proposez un partenariat. 
+          Chaque contribution compte et nous rapproche de notre objectif : 
+          100 000 enfants éduqués d'ici 2030.
+        </p>
+        <a href="pages/contact.html">S'engager</a>
+      </article>
+    </section>
+
+    <!-- Section Statistiques/Impact - Professional Design -->
+    <section class="stats-section-new" id="impact">
+      <div class="stats-container-new">
+        <div class="stats-header">
+          <div class="stats-label">Notre Impact</div>
+          <h2 class="stats-title-new">Des résultats concrets depuis 2000</h2>
+          <p class="stats-subtitle">
+            Chaque chiffre représente une vie transformée, un avenir bâti grâce à l'éducation.
+          </p>
+        </div>
+        
+        <div class="stats-grid-new three-stats">
+          <div class="stat-block">
+            <div class="stat-number-new">45K</div>
+            <div class="stat-label-new">Enfants scolarisés</div>
+            <p class="stat-description">À travers 24 pays depuis 2000</p>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-number-new">850</div>
+            <div class="stat-label-new">Écoles équipées</div>
+            <p class="stat-description">Matériel et ressources pédagogiques</p>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-number-new">12K</div>
+            <div class="stat-label-new">Bénévoles actifs</div>
+            <p class="stat-description">Engagés sur le terrain</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Timeline -->
+    <section class="timeline-section" id="parcours">
+      <div class="timeline-container">
+        <h2 class="timeline-title">Notre parcours</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2000</div>
+            <div class="timeline-content">
+              <h3>Création de Libota</h3>
+              <p>Fondation de l'association par un groupe d'éducateurs passionnés avec une vision claire : l'éducation pour tous, partout dans le monde.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2008</div>
+            <div class="timeline-content">
+              <h3>Premier grand projet international</h3>
+              <p>Lancement de notre premier programme d'équipement scolaire en Afrique subsaharienne, marquant le début de notre expansion.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-content">
+              <h3>Expansion mondiale</h3>
+              <p>Passage de 5 à 24 pays d'intervention. Mise en place de programmes de formation des enseignants et de bourses scolaires.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <h3>15 000 enfants accompagnés</h3>
+              <p>Cap symbolique franchi avec 15 000 enfants scolarisés. Lancement de notre programme numérique pour l'éducation à distance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="testimonials-section" id="temoignages">
+      <div class="testimonials-container">
+        <h2 class="testimonials-title">Témoignages</h2>
+        
+        <div class="testimonials-slider">
+          <button class="testimonial-arrow prev" aria-label="Témoignage précédent">
+            <span><</span>
+          </button>
+          
+          <div class="testimonial-content">
+            <div class="testimonial-slide active">
+              <p class="testimonial-quote">« Grâce à Libota, mon fils a pu accéder à une éducation de qualité malgré nos difficultés financières. L'association a changé notre vie. »</p>
+              <p class="testimonial-author">Marie Lefebvre, Parent bénéficiaire</p>
+            </div>
+            <div class="testimonial-slide">
+              <p class="testimonial-quote">« Être bénévole chez Libota est une expérience enrichissante. Voir les enfants grandir et apprendre, c'est la plus belle des récompenses. »</p>
+              <p class="testimonial-author">Thomas Bernard, Bénévole depuis 2018</p>
+            </div>
+            <div class="testimonial-slide">
+              <p class="testimonial-quote">« Le partenariat avec Libota nous a permis d'équiper 12 écoles rurales. Un impact concret et mesurable sur le terrain. »</p>
+              <p class="testimonial-author">Sophie Moreau, Directrice Partenariats Entreprise</p>
+            </div>
+          </div>
+          
+          <button class="testimonial-arrow next" aria-label="Témoignage suivant">
+            <span>></span>
+          </button>
+        </div>
+        
+        <div class="testimonial-dots">
+          <span class="t-dot active" data-slide="0"></span>
+          <span class="t-dot" data-slide="1"></span>
+          <span class="t-dot" data-slide="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Partenaires -->
+    <section class="partners-section" id="partenaires">
+      <div class="partners-container">
+        <h2 class="partners-title">Nos partenaires</h2>
+        <div class="partners-grid">
+          <div class="partner-logo">UNESCO</div>
+          <div class="partner-logo">Fondation Orange</div>
+          <div class="partner-logo">AFD</div>
+          <div class="partner-logo">Fondation TotalEnergies</div>
+          <div class="partner-logo">Enseignons</div>
+          <div class="partner-logo">Educo International</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-newsletter" id="contact">
+      <div class="contact-panel">
+        <h2>Nous contacter</h2>
+        <p class="contact-text">
+          Vous avez une question, un projet ou souhaitez nous rejoindre ? Notre équipe vous répond sous 24h.
+        </p>
+
+        <div class="contact-grid">
+          <p><strong>Organisme caritatif :</strong> W751 234 567</p>
+          <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+          <p><strong>E-mail :</strong> contact@libota.org</p>
+          <p><strong>Adresse :</strong> 42 Avenue de l'Éducation, 75008 Paris, France</p>
+        </div>
+
+        <div class="socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◉</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+        </div>
+      </div>
+
+      <div class="newsletter-panel">
+        <h2>Restez informé</h2>
+        <p>Recevez nos actualités et rapports d'impact directement dans votre boîte mail.</p>
+
+        <form id="contactForm">
+          <input type="email" placeholder="Votre adresse e-mail" required />
+          <button type="submit">S'abonner à la newsletter</button>
+          <p id="formMessage"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="legal-left">
+      <a href="pages/politique-cookies.html">Politique de cookies</a>
+      <a href="pages/mentions-legales.html">Mentions légales</a>
+      <a href="pages/politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="pages/conditions-utilisation.html">Conditions d'utilisation</a>
+    </div>
+    <p>© 2026 Libota - Tous droits réservés</p>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        <h3>Respect de votre vie privée</h3>
+        <p>
+          Nous utilisons des cookies pour améliorer votre expérience et mesurer l'audience de notre site. 
+          <a href="pages/politique-cookies.html">Consulter notre politique</a>
+        </p>
+      </div>
+      <div class="cookie-banner-buttons">
+        <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">
+          Tout accepter
+        </button>
+        <button class="cookie-btn cookie-btn-secondary" id="rejectAllCookies">
+          Tout refuser
+        </button>
+        <button class="cookie-btn cookie-btn-text" id="customizeCookies">
+          Personnaliser
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div class="cookie-modal-overlay" id="cookieModalOverlay">
+    <div class="cookie-modal" id="cookieModal">
+      <div class="cookie-modal-header">
+        <h2>Préférences des cookies</h2>
+        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">×</button>
+      </div>
+      <div class="cookie-modal-body">
+        <p class="cookie-modal-intro">
+          Gérez vos préférences de cookies. Les cookies nécessaires sont toujours activés pour le bon fonctionnement du site. 
+          <a href="pages/politique-cookies.html">Consulter notre politique</a>
+        </p>
+        
+        <!-- Necessary Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies nécessaires
+              <span class="cookie-category-badge required">Requis</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" checked disabled id="toggleNecessary">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Ces cookies sont essentiels pour le fonctionnement du site et ne peuvent pas être désactivés.
+          </p>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies analytiques
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleAnalytics">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Nous aident à comprendre comment vous utilisez notre site pour l'améliorer.
+          </p>
+        </div>
+
+        <!-- Marketing Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies marketing
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleMarketing">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Utilisés pour vous proposer des contenus et publicités pertinents.
+          </p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button class="cookie-btn cookie-btn-secondary" id="closeCookieModalFooter">
+          Annuler
+        </button>
+        <button class="cookie-btn cookie-btn-primary" id="saveCookiePreferences">
+          Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Modal -->
+  <div class="donation-modal-overlay" id="donationModalOverlay">
+    <div class="donation-modal" id="donationModal">
+      <div class="donation-modal-header">
+        <h2>Faire un don sécurisé</h2>
+        <button class="donation-modal-close" onclick="closeDonationModal()" aria-label="Fermer">×</button>
+      </div>
+      
+      <div class="donation-modal-body">
+        <div class="security-badges">
+          <span class="badge">SSL 256-bit</span>
+          <span class="badge">PCI DSS</span>
+          <span class="badge">Sécurisé</span>
+        </div>
+        
+        <p class="donation-intro">Votre don est sécurisé et crypté. Aucune donnée bancaire n'est stockée sur nos serveurs.</p>
+        
+        <!-- Amount Selection -->
+        <div class="donation-amounts">
+          <button class="amount-btn" data-amount="10" onclick="selectAmount(10)">10 €</button>
+          <button class="amount-btn" data-amount="25" onclick="selectAmount(25)">25 €</button>
+          <button class="amount-btn" data-amount="50" onclick="selectAmount(50)">50 €</button>
+          <button class="amount-btn" data-amount="100" onclick="selectAmount(100)">100 €</button>
+          <button class="amount-btn" data-amount="custom" onclick="selectAmount('custom')">Autre</button>
+        </div>
+        
+        <!-- Custom Amount Input -->
+        <div class="custom-amount-input" id="customAmountInput" style="display: none;">
+          <input type="number" id="customAmount" placeholder="Montant personnalisé (€)" min="1" max="10000" oninput="handleCustomAmountInput(this.value)">
+        </div>
+        
+        <!-- Selected Amount Display -->
+        <div class="selected-amount-display" id="selectedAmountDisplay" style="display: none;">
+          <span>Montant sélectionné : </span>
+          <strong id="displayAmount">--</strong>
+        </div>
+        
+        <!-- Donor Information -->
+        <form class="donation-form" id="donationForm">
+          <div class="form-row">
+            <input type="text" id="donorFirstName" placeholder="Prénom" required autocomplete="given-name">
+            <input type="text" id="donorLastName" placeholder="Nom" required autocomplete="family-name">
+          </div>
+          <input type="email" id="donorEmail" placeholder="Adresse e-mail" required autocomplete="email">
+          
+          <!-- Apple Pay Button (affiché si disponible) -->
+          <div id="applePayButton" style="display: none; margin-bottom: 16px;">
+            <button type="button" class="apple-pay-btn" onclick="payWithApplePay()">
+              <span></span> Payer avec Apple Pay
+            </button>
+          </div>
+          
+          <!-- Stripe Card Element -->
+          <div class="payment-section">
+            <label class="payment-label">Carte bancaire</label>
+            <div id="cardElement" class="card-element">
+              <!-- Stripe injecte l'input ici -->
+            </div>
+            <div id="cardErrors" class="card-errors" role="alert"></div>
+          </div>
+          
+          <!-- Recurring Donation -->
+          <label class="recurring-option">
+            <input type="checkbox" id="recurringDonation">
+            <span>Faire un don mensuel</span>
+          </label>
+          
+          <!-- Loading State -->
+          <div id="paymentLoading" style="display: none; text-align: center; padding: 20px;">
+            <div class="spinner"></div>
+            <p>Traitement sécurisé en cours...</p>
+          </div>
+          
+          <button type="submit" class="donation-submit-btn" id="donationSubmitBtn" disabled>
+            Procéder au don sécurisé de <span id="submitAmount">--</span>
+          </button>
+        </form>
+        
+        <!-- Security Note -->
+        <p class="security-note">
+          Paiement 100% sécurisé par Stripe. Vos données bancaires ne transitent jamais par nos serveurs.
+        </p>
+        
+        <div class="pci-compliance">
+          <img src="https://cdn.jsdelivr.net/gh/stripe/stripe-js/powered_by_stripe.svg" alt="Powered by Stripe" class="stripe-badge">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Success Message -->
+  <div class="donation-success-overlay" id="donationSuccessOverlay">
+    <div class="donation-success">
+      <div class="success-icon">✓</div>
+      <h3>Merci pour votre don !</h3>
+      <p>Votre générosité nous aide à continuer notre mission.</p>
+      <p class="success-amount">Montant : <strong id="successAmount">--</strong></p>
+      <button onclick="closeDonationSuccess()" class="success-close-btn">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Stripe.js pour paiements sécurisés -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <!-- Script principal -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

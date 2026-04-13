@@ -1,0 +1,830 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos - Libota</title>
+  
+  <!-- Favicon élégant - Losange avec palette du site -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient><filter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='2' stdDeviation='3' flood-opacity='0.3'/></filter></defs><g transform='translate(50,50) rotate(45) translate(-50,-50)' filter='url(%23s)'><rect x='15' y='15' width='70' height='70' rx='12' fill='url(%23lg)'/></g><circle cx='50' cy='50' r='18' fill='white' opacity='0.95'/><circle cx='50' cy='50' r='12' fill='url(%23lg)'/></svg>" type="image/svg+xml">
+  
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient></defs><g transform='translate(90,90) rotate(45) translate(-90,-90)'><rect x='35' y='35' width='110' height='110' rx='20' fill='url(%23lg)'/></g><circle cx='90' cy='90' r='30' fill='white' opacity='0.95'/><circle cx='90' cy='90' r='20' fill='url(%23lg)'/></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+  <style>
+    /* ============================================
+       HERO PAGE À PROPOS - Style Équipe/Contact
+       ============================================ */
+    .apropos-hero {
+      width: 100%;
+      height: 430px;
+      position: relative;
+      margin-top: 72px;
+      overflow: hidden;
+    }
+
+    .apropos-hero-image {
+      width: 100%;
+      height: 100%;
+      background: url("https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat;
+      position: relative;
+    }
+
+    .apropos-hero-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(31, 122, 99, 0.2) 0%, rgba(31, 122, 99, 0.4) 100%);
+    }
+
+    /* ============================================
+       SECTION PRINCIPALE - Chevauche l'image
+       ============================================ */
+    .apropos-section {
+      width: min(1200px, 92%);
+      margin: -80px auto 0;
+      padding: 48px 40px;
+      background: var(--bg-soft);
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .apropos-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .apropos-header h1 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--blue);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .apropos-header p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       SECTION À PROPOS D'EDUCATOUS - PREMIER
+       ============================================ */
+    .about-educatous-section {
+      padding: 60px 0;
+      margin-bottom: 60px;
+    }
+
+    .about-educatous-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .about-educatous-header h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-educatous-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--yellow);
+    }
+
+    .about-educatous-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-educatous-content p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .about-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 0;
+      font-family: "Oswald", Arial, sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .about-btn:hover {
+      background: var(--blue-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(31, 122, 99, 0.25);
+    }
+
+    .about-btn.secondary {
+      background: transparent;
+      color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+
+    .about-btn.secondary:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* ============================================
+       SECTION NOS OBJECTIFS - DEUXIÈME
+       ============================================ */
+    .objectifs-section {
+      margin-bottom: 60px;
+      padding: 60px 0;
+      background: var(--white);
+      border-radius: 0;
+    }
+
+    .objectifs-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .objectifs-header h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .objectifs-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--yellow);
+    }
+
+    .objectifs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .objectif-card {
+      text-align: center;
+      padding: 40px 30px;
+      background: var(--bg-soft);
+      border-radius: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .objectif-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(31, 122, 99, 0.12);
+    }
+
+    .objectif-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .objectif-icon svg {
+      width: 40px;
+      height: 40px;
+      color: var(--blue);
+    }
+
+    .objectif-card h3 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.1rem;
+      color: var(--blue);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .objectif-card p {
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       GALERIE PHOTOS - EN BAS (DERNIER)
+       ============================================ */
+    .photos-section {
+      margin-bottom: 40px;
+    }
+
+    .photos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 16px;
+    }
+
+    .photo-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Positionnement des photos */
+    .photo-item:nth-child(1) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+
+    .photo-item:nth-child(2) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .photo-item:nth-child(3) {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+
+    .photo-item:nth-child(4) {
+      grid-column: 4 / 5;
+      grid-row: 1 / 2;
+    }
+
+    .photo-item:nth-child(5) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .photo-item:nth-child(6) {
+      grid-column: 4 / 5;
+      grid-row: 2 / 3;
+    }
+
+    /* Overlay sur les photos */
+    .photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+      color: var(--white);
+      font-family: "Questrial", Arial, sans-serif;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .photo-item:hover .photo-overlay {
+      opacity: 1;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .apropos-hero {
+        height: 400px;
+        margin-top: 70px;
+      }
+
+      .apropos-section {
+        margin: -60px auto 0;
+        padding: 40px 30px;
+      }
+
+      .about-educatous-section,
+      .objectifs-section {
+        padding: 40px 0;
+      }
+
+      .objectifs-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+
+      .photos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 180px);
+      }
+
+      .photo-item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+
+      .photo-item:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      .photo-item:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4;
+      }
+
+      .photo-item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+
+      .photo-item:nth-child(5) {
+        display: none;
+      }
+
+      .photo-item:nth-child(6) {
+        display: none;
+      }
+
+      .about-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .apropos-hero {
+        height: 300px;
+        margin-top: 60px;
+      }
+
+      .apropos-section {
+        width: 92%;
+        padding: 40px 24px;
+        margin: 40px auto;
+        border-radius: 0;
+        background: var(--bg-soft);
+        box-shadow: none;
+      }
+
+      .about-educatous-section,
+      .objectifs-section {
+        padding: 30px 0;
+      }
+
+      .photos-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 200px);
+        gap: 12px;
+      }
+
+      .photo-item:nth-child(1),
+      .photo-item:nth-child(2),
+      .photo-item:nth-child(3),
+      .photo-item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: auto;
+      }
+
+      .photo-item:nth-child(3) {
+        grid-row: span 2;
+      }
+
+      .objectif-card {
+        padding: 30px 20px;
+      }
+
+      .apropos-header h1,
+      .objectifs-header h2,
+      .about-educatous-header h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="mainHeader">
+    <a href="../index.html" class="logo">Libota</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="../index.html#accueil">Accueil</a>
+      <a href="apropos.html" class="active">À propos</a>
+      <a href="projets.html">Projets</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="../index.html#actualites">Actualités</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    
+    <a href="#" class="header-cta" onclick="openDonationModal(); return false;">Faire un don</a>
+  </header>
+
+  <main>
+    <!-- HERO IMAGE - Éducation et enfants -->
+    <section class="apropos-hero">
+      <div class="apropos-hero-image"></div>
+    </section>
+
+    <!-- SECTION PRINCIPALE - Chevauche l'image -->
+    <section class="apropos-section" id="apropos">
+
+      <!-- SECTION 1: À PROPOS D'EDUCATOUS (PREMIER) -->
+      <section class="about-educatous-section" id="educatous">
+        <div class="about-educatous-header">
+          <h2>À propos d'EducaTous</h2>
+        </div>
+        <div class="about-educatous-content">
+          <p>
+            EducaTous est une organisation dédiée à l'éducation pour tous. Notre mission est de garantir que chaque enfant, 
+            où qu'il se trouve, ait accès à une éducation de qualité. Nous croyons que l'éducation est la clé pour 
+            transformer des vies et construire un avenir meilleur.
+          </p>
+          <p>
+            Depuis notre création, nous avons accompagné des milliers d'enfants dans leur parcours scolaire, 
+            en leur offrant non seulement un soutien académique, mais aussi un environnement propice à leur 
+            épanouissement personnel et social.
+          </p>
+          <p>
+            Notre approche combine l'innovation pédagogique, l'engagement communautaire et des partenariats 
+            solides pour maximiser notre impact. Chaque jour, nous travaillons avec passion pour faire de 
+            l'éducation un droit accessible à tous, pas un privilège.
+          </p>
+          
+          <div class="about-buttons">
+            <a href="#" class="about-btn">
+              <span>Bilan financier 2023</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#" class="about-btn secondary">
+              <span>Registre de certification</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: NOS OBJECTIFS (DEUXIÈME) -->
+      <section class="objectifs-section" id="objectifs">
+        <div class="objectifs-header">
+          <h2>Nos objectifs</h2>
+        </div>
+        <div class="objectifs-grid">
+          <article class="objectif-card">
+            <div class="objectif-icon">
+              <!-- Icône cœur avec ailes -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                <path d="M2 12h2"></path>
+                <path d="M20 12h2"></path>
+                <path d="M12 2v2"></path>
+                <path d="M12 20v2"></path>
+              </svg>
+            </div>
+            <h3>Propager l'empathie par l'éducation</h3>
+            <p>Développer les valeurs humaines et l'empathie chez les enfants à travers des programmes éducatifs innovants.</p>
+          </article>
+
+          <article class="objectif-card">
+            <div class="objectif-icon">
+              <!-- Icône tirelire -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20"></path>
+                <path d="M2 12h20"></path>
+                <path d="M12 2a10 10 0 0 1 10 10"></path>
+                <path d="M12 2a10 10 0 0 0-10 10"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Augmenter les dons de manière égale dans 24 pays</h3>
+            <p>Étendre notre impact international en répartissant équitablement les ressources dans 24 pays à travers le monde.</p>
+          </article>
+
+          <article class="objectif-card">
+            <div class="objectif-icon">
+              <!-- Icône livre ouvert -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <h3>Aider plus d'enfants à obtenir leur diplôme</h3>
+            <p>Accompagner les enfants et adolescents jusqu'à l'obtention de leur diplôme d'études secondaires.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 3: GALERIE PHOTOS (DERNIER) -->
+      <section class="photos-section">
+        <div class="photos-grid">
+          <div class="photo-item">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop" alt="Enfants africains à l'école" />
+            <div class="photo-overlay">Éducation en classe</div>
+          </div>
+          <div class="photo-item">
+            <img src="https://images.pexels.com/photos/1720186/pexels-photo-1720186.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Jeune noir heureux lisant" />
+            <div class="photo-overlay">Apprentissage de la lecture</div>
+          </div>
+          <div class="photo-item">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ados métisses joyeux étudiant" />
+            <div class="photo-overlay">Travail en groupe</div>
+          </div>
+          <div class="photo-item">
+            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=800&auto=format&fit=crop" alt="Enseignant avec enfants africains" />
+            <div class="photo-overlay">Accompagnement éducatif</div>
+          </div>
+          <div class="photo-item">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop" alt="Enfant africain écrivant" />
+            <div class="photo-overlay">Exercices d'écriture</div>
+          </div>
+          <div class="photo-item">
+            <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=800&auto=format&fit=crop" alt="Enfants africains jouant" />
+            <div class="photo-overlay">Activités récréatives</div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="legal-left">
+      <a href="politique-cookies.html">Politique de cookies</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+    </div>
+    <p>© 2026 Libota - Tous droits réservés</p>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        <h3>Respect de votre vie privée</h3>
+        <p>
+          Nous utilisons des cookies pour améliorer votre expérience et mesurer l'audience de notre site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+      </div>
+      <div class="cookie-banner-buttons">
+        <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">
+          Tout accepter
+        </button>
+        <button class="cookie-btn cookie-btn-secondary" id="rejectAllCookies">
+          Tout refuser
+        </button>
+        <button class="cookie-btn cookie-btn-text" id="customizeCookies">
+          Personnaliser
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div class="cookie-modal-overlay" id="cookieModalOverlay">
+    <div class="cookie-modal" id="cookieModal">
+      <div class="cookie-modal-header">
+        <h2>Préférences des cookies</h2>
+        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">×</button>
+      </div>
+      <div class="cookie-modal-body">
+        <p class="cookie-modal-intro">
+          Gérez vos préférences de cookies. Les cookies nécessaires sont toujours activés pour le bon fonctionnement du site. 
+          <a href="politique-cookies.html">Consulter notre politique</a>
+        </p>
+        
+        <!-- Necessary Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies nécessaires
+              <span class="cookie-category-badge required">Requis</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" checked disabled id="toggleNecessary">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Ces cookies sont essentiels pour le fonctionnement du site et ne peuvent pas être désactivés.
+          </p>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies analytiques
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleAnalytics">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Nous aident à comprendre comment vous utilisez notre site pour l'améliorer.
+          </p>
+        </div>
+
+        <!-- Marketing Cookies -->
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div class="cookie-category-title">
+              Cookies marketing
+              <span class="cookie-category-badge">Optionnel</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="toggleMarketing">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-category-description">
+            Utilisés pour vous proposer des contenus et publicités pertinents.
+          </p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button class="cookie-btn cookie-btn-secondary" id="closeCookieModalFooter">
+          Annuler
+        </button>
+        <button class="cookie-btn cookie-btn-primary" id="saveCookiePreferences">
+          Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Modal -->
+  <div class="donation-modal-overlay" id="donationModalOverlay">
+    <div class="donation-modal" id="donationModal">
+      <div class="donation-modal-header">
+        <h2>Faire un don sécurisé</h2>
+        <button class="donation-modal-close" onclick="closeDonationModal()" aria-label="Fermer">×</button>
+      </div>
+      
+      <div class="donation-modal-body">
+        <div class="security-badges">
+          <span class="badge">SSL 256-bit</span>
+          <span class="badge">PCI DSS</span>
+          <span class="badge">Sécurisé</span>
+        </div>
+        
+        <p class="donation-intro">Votre don est sécurisé et crypté. Aucune donnée bancaire n'est stockée sur nos serveurs.</p>
+        
+        <!-- Amount Selection -->
+        <div class="donation-amounts">
+          <button class="amount-btn" data-amount="10" onclick="selectAmount(10)">10 €</button>
+          <button class="amount-btn" data-amount="25" onclick="selectAmount(25)">25 €</button>
+          <button class="amount-btn" data-amount="50" onclick="selectAmount(50)">50 €</button>
+          <button class="amount-btn" data-amount="100" onclick="selectAmount(100)">100 €</button>
+          <button class="amount-btn" data-amount="custom" onclick="selectAmount('custom')">Autre</button>
+        </div>
+        
+        <!-- Custom Amount Input -->
+        <div class="custom-amount-input" id="customAmountInput" style="display: none;">
+          <input type="number" id="customAmount" placeholder="Montant personnalisé (€)" min="1" max="10000" oninput="handleCustomAmountInput(this.value)">
+        </div>
+        
+        <!-- Selected Amount Display -->
+        <div class="selected-amount-display" id="selectedAmountDisplay" style="display: none;">
+          <span>Montant sélectionné : </span>
+          <strong id="displayAmount">--</strong>
+        </div>
+        
+        <!-- Donor Information -->
+        <form class="donation-form" id="donationForm">
+          <div class="form-row">
+            <input type="text" id="donorFirstName" placeholder="Prénom" required autocomplete="given-name">
+            <input type="text" id="donorLastName" placeholder="Nom" required autocomplete="family-name">
+          </div>
+          <input type="email" id="donorEmail" placeholder="Adresse e-mail" required autocomplete="email">
+          
+          <!-- Apple Pay Button (affiché si disponible) -->
+          <div id="applePayButton" style="display: none; margin-bottom: 16px;">
+            <button type="button" class="apple-pay-btn" onclick="payWithApplePay()">
+              <span></span> Payer avec Apple Pay
+            </button>
+          </div>
+          
+          <!-- Stripe Card Element -->
+          <div class="payment-section">
+            <label class="payment-label">Carte bancaire</label>
+            <div id="cardElement" class="card-element">
+              <!-- Stripe injecte l'input ici -->
+            </div>
+            <div id="cardErrors" class="card-errors" role="alert"></div>
+          </div>
+          
+          <!-- Recurring Donation -->
+          <label class="recurring-option">
+            <input type="checkbox" id="recurringDonation">
+            <span>Faire un don mensuel</span>
+          </label>
+          
+          <!-- Loading State -->
+          <div id="paymentLoading" style="display: none; text-align: center; padding: 20px;">
+            <div class="spinner"></div>
+            <p>Traitement sécurisé en cours...</p>
+          </div>
+          
+          <button type="submit" class="donation-submit-btn" id="donationSubmitBtn" disabled>
+            Procéder au don sécurisé de <span id="submitAmount">--</span>
+          </button>
+        </form>
+        
+        <!-- Security Note -->
+        <p class="security-note">
+          Paiement 100% sécurisé par Stripe. Vos données bancaires ne transitent jamais par nos serveurs.
+        </p>
+        
+        <div class="pci-compliance">
+          <img src="https://cdn.jsdelivr.net/gh/stripe/stripe-js/powered_by_stripe.svg" alt="Powered by Stripe" class="stripe-badge">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Success Message -->
+  <div class="donation-success-overlay" id="donationSuccessOverlay">
+    <div class="donation-success">
+      <div class="success-icon">✓</div>
+      <h3>Merci pour votre don !</h3>
+      <p>Votre générosité nous aide à continuer notre mission.</p>
+      <p class="success-amount">Montant : <strong id="successAmount">--</strong></p>
+      <button onclick="closeDonationSuccess()" class="success-close-btn">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Stripe.js pour paiements sécurisés -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
