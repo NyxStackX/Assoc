@@ -465,46 +465,71 @@
 
     @media (max-width: 768px) {
       .projets-hero {
-        height: 320px;
-        margin-top: 64px;
+        height: 220px;
+        margin-top: 60px;
       }
 
       .projets-section {
         width: 100%;
-        padding: 50px 4% 40px;
+        padding: 32px 0 24px;
         margin: 0 auto;
-        border-radius: 0;
-        background: #f7f9f8;
-        box-shadow: none;
+        background: linear-gradient(180deg, #f0f4f2 0%, #f7f9f8 100%);
+      }
+
+      .projets-header {
+        margin-bottom: 24px;
+        padding: 0 20px;
+      }
+
+      .projets-header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .projets-header p {
+        font-size: 0.95rem;
+        max-width: 100%;
+        margin: 0;
+        line-height: 1.6;
+        color: #5a6b66;
+      }
+
+      .projets-intro {
+        margin-bottom: 28px;
+        padding: 0 20px;
+      }
+
+      .projets-intro h2 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .projets-intro p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        color: #5a6b66;
       }
 
       .poles-grid {
         grid-template-columns: 1fr;
-        max-width: 100%;
-        gap: 40px;
-        padding: 0 10px;
+        gap: 20px;
+        padding: 0 16px;
+        margin-bottom: 16px;
       }
       
       .pole-card {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-        border-radius: 24px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.18), 0 0 0 1px rgba(31,122,99,0.1);
-        margin: 0;
-        transform: scale(1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 16px;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.06);
         background: #fff;
         overflow: hidden;
-      }
-      
-      .pole-card:active {
-        transform: scale(0.98);
-        box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+        border: 1px solid rgba(31,122,99,0.05);
       }
       
       .pole-image {
-        height: 380px;
+        height: 220px;
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -515,19 +540,14 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.4s ease;
-      }
-      
-      .pole-card:hover .pole-image img {
-        transform: scale(1.05);
       }
       
       .pole-icon {
-        width: 85px;
-        height: 85px;
-        bottom: -42px;
-        border: 5px solid #fff;
-        box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+        width: 64px;
+        height: 64px;
+        bottom: -32px;
+        border: 3px solid #fff;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         background: #1f7a63;
         border-radius: 50%;
         display: flex;
@@ -540,93 +560,61 @@
       }
       
       .pole-icon svg {
-        width: 40px;
-        height: 40px;
+        width: 28px;
+        height: 28px;
         color: #fff;
       }
       
       .pole-content {
-        padding: 70px 35px 45px;
+        padding: 48px 24px 28px;
         background: #fff;
-        text-align: center;
+        text-align: left;
       }
       
       .pole-content h3 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        letter-spacing: 0.8px;
-        font-weight: 700;
-        text-transform: uppercase;
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        font-weight: 600;
         color: #1a2e28;
+        letter-spacing: 0.2px;
+        text-transform: none;
       }
       
       .pole-content p {
-        font-size: 18px;
-        line-height: 1.8;
-        margin-bottom: 30px;
-        padding: 0 15px;
-        color: #4a6460;
-        max-width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 18px;
+        padding: 0;
+        color: #6a7b76;
+        max-width: 100%;
       }
-      
+
       .pole-link {
-        font-size: 1.1rem;
-        padding: 16px 32px;
-        border-radius: 10px;
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        border-radius: 8px;
         display: inline-flex;
-        gap: 12px;
-        font-weight: 600;
-        background: rgba(31, 122, 99, 0.1);
+        gap: 8px;
+        font-weight: 500;
+        background: rgba(31, 122, 99, 0.08);
         color: #1f7a63;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
       }
-      
+
       .pole-link:hover {
         background: #1f7a63;
         color: #fff;
-        gap: 16px;
+        gap: 12px;
       }
       
       .pole-modal-stats {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px;
       }
       
       .pole-modal-actions {
         flex-direction: column;
-        gap: 12px;
-      }
-      
-      .projets-header {
-        margin-bottom: 40px;
-      }
-      
-      .projets-header h1 {
-        font-size: clamp(2rem, 7vw, 2.6rem);
-        margin-bottom: 16px;
-      }
-      
-      .projets-header p {
-        font-size: 1rem;
-        line-height: 1.7;
-        max-width: 90%;
-        margin: 0 auto;
-      }
-      
-      .projets-intro {
-        margin-bottom: 50px;
-      }
-      
-      .projets-intro h2 {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
-      }
-      
-      .projets-intro p {
-        font-size: 1.05rem;
-        line-height: 1.8;
+        gap: 10px;
       }
     }
   </style>

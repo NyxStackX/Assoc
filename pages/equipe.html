@@ -330,44 +330,50 @@
 
     @media (max-width: 768px) {
       .team-hero {
-        height: 320px;
-        margin-top: 64px;
+        height: 280px;
+        margin-top: 60px;
       }
       
       .team-section {
         width: 100%;
-        padding: 50px 4% 40px;
+        padding: 40px 0 30px;
         margin: 0 auto;
-        border-radius: 0;
-        background: #f7f9f8;
-        box-shadow: none;
+        background: linear-gradient(180deg, #f0f4f2 0%, #f7f9f8 100%);
+      }
+
+      .team-header {
+        margin-bottom: 32px;
+        padding: 0 20px;
+      }
+
+      .team-header h1 {
+        font-size: 1.9rem;
+        margin-bottom: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      
+      .team-header p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #5a6b66;
+        max-width: 100%;
       }
 
       .team-grid {
         grid-template-columns: 1fr;
-        max-width: 100%;
-        width: 100%;
-        gap: 40px;
-        padding: 0 10px;
-        margin-bottom: 40px;
+        gap: 28px;
+        padding: 0 16px;
+        margin-bottom: 20px;
       }
       
       .team-card {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-        border-radius: 24px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.18), 0 0 0 1px rgba(31,122,99,0.1);
-        margin: 0;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         background: #fff;
         overflow: hidden;
         position: relative;
-      }
-      
-      .team-card:active {
-        transform: scale(0.98);
-        box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+        border: 1px solid rgba(31,122,99,0.06);
       }
       
       .team-card::before {
@@ -376,171 +382,140 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 6px;
-        background: #1f7a63;
+        height: 4px;
+        background: linear-gradient(90deg, #1f7a63 0%, #2d9a7a 100%);
         z-index: 10;
       }
 
       .team-photo {
-        height: 420px;
+        height: 320px;
         width: 100%;
         object-fit: cover;
         display: block;
-        border-radius: 0;
-        margin: 0;
-        transition: transform 0.4s ease;
-      }
-      
-      .team-card:hover .team-photo {
-        transform: scale(1.05);
       }
 
       .team-info {
-        width: 100%;
-        padding: 0;
-        text-align: center;
+        padding: 0 22px 28px;
+        text-align: left;
         background: #fff;
       }
 
       .team-name {
-        font-size: 24px;
-        margin: -28px auto 16px;
-        padding: 14px 28px 10px;
-        background: #fff;
-        border: none;
-        width: auto;
-        max-width: 85%;
-        min-width: 180px;
-        height: auto;
-        border-radius: 0;
-        box-sizing: border-box;
-        display: inline-flex;
-        position: relative;
-        overflow: hidden;
-        z-index: 5;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
+        font-size: 1.4rem;
+        margin: -20px 0 14px 0;
+        padding: 12px 0 8px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-transform: none;
         color: #1a2e28;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-bottom: 2px solid #1f7a63;
+        display: inline-block;
+        position: relative;
+        z-index: 5;
+        background: transparent;
+        box-shadow: none;
+        width: auto;
+        max-width: none;
+        min-width: auto;
       }
       
       .team-name::before {
+        display: none;
+      }
+      
+      .team-desc {
+        font-size: 1rem;
+        line-height: 1.7;
+        padding: 0;
+        color: #5a6b66;
+        margin: 0;
+      }
+
+      /* Section Bénévoles - Design épuré */
+      .volunteers-section {
+        width: 100%;
+        padding: 40px 0 30px;
+        margin: 0 auto;
+        background: #fff;
+      }
+      
+      .volunteers-header {
+        margin-bottom: 28px;
+        padding: 0 20px;
+      }
+      
+      .volunteers-header h2 {
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      
+      .volunteers-header p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #5a6b66;
+        max-width: 100%;
+        margin: 0;
+      }
+      
+      .volunteers-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px;
+      }
+      
+      .volunteer-card {
+        padding: 20px 22px;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        background: #fafbfa;
+        border: 1px solid rgba(31,122,99,0.08);
+        position: relative;
+      }
+      
+      .volunteer-card::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
+        height: 3px;
         background: #1f7a63;
-      }
-      
-      .team-desc {
-        font-size: 17px;
-        line-height: 1.8;
-        padding: 10px 30px 35px;
-        height: auto;
-        overflow: visible;
-        color: #4a6460;
-        max-width: 95%;
-        margin: 0 auto;
-      }
-
-      .team-header {
-        margin-bottom: 40px;
-      }
-
-      .team-header h1 {
-        font-size: clamp(2rem, 7vw, 2.6rem);
-        margin-bottom: 16px;
-      }
-      
-      .team-header p {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        max-width: 90%;
-        margin: 0 auto;
-      }
-
-      /* Section Bénévoles - Aussi agrandie */
-      .volunteers-section {
-        width: 100%;
-        padding: 50px 4% 40px;
-        margin: 0 auto;
-        border-radius: 0;
-        background: #f7f9f8;
-        box-shadow: none;
-      }
-      
-      .volunteers-grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-        width: 100%;
-        gap: 24px;
-        padding: 0 10px;
-      }
-      
-      .volunteer-card {
-        padding: 35px 30px;
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 0 0 1px rgba(31,122,99,0.08);
-        background: #fff;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      
-      .volunteer-card:active {
-        transform: scale(0.98);
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      }
-      
-      .volunteer-card::before {
-        height: 5px;
-        background: #1f7a63;
+        border-radius: 12px 12px 0 0;
       }
       
       .volunteer-name {
-        font-size: 1.4rem;
-        margin-bottom: 14px;
-        font-weight: 700;
-        letter-spacing: 0.3px;
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #1a2e28;
+        letter-spacing: 0.2px;
       }
       
       .volunteer-desc {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        margin-bottom: 20px;
-        color: #4a6460;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        margin-bottom: 14px;
+        color: #6a7b76;
       }
       
       .volunteer-email {
-        font-size: 1rem;
-        padding: 12px 24px;
-        border-radius: 8px;
-        border: 2px solid rgba(214, 69, 69, 0.3);
-        transition: all 0.3s ease;
+        font-size: 0.85rem;
+        padding: 8px 16px;
+        border-radius: 6px;
+        border: 1px solid rgba(31, 122, 99, 0.25);
+        color: #1f7a63;
+        background: rgba(31, 122, 99, 0.04);
         display: inline-block;
+        font-weight: 500;
+        transition: all 0.2s ease;
       }
       
       .volunteer-email:hover {
-        background: #d64545;
+        background: #1f7a63;
         color: #fff;
-        border-color: #d64545;
-      }
-
-      .volunteers-header {
-        margin-bottom: 40px;
-      }
-      
-      .volunteers-header h2 {
-        font-size: clamp(1.8rem, 6vw, 2.4rem);
-        margin-bottom: 16px;
-      }
-      
-      .volunteers-header p {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        max-width: 90%;
-        margin: 0 auto;
+        border-color: #1f7a63;
       }
     }
   </style>
