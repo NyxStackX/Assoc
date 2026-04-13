@@ -1007,54 +1007,304 @@
     border-left: 2px solid #4ecfa8;
   }
 
-  /* ══ FOOTER LÉGAL - LIENS VISIBLES ══ */
+  /* ══ FOOTER LÉGAL - CARRÉ & COMPACT ══ */
 
   .legal-footer {
     width: 100%;
     margin: 0;
-    padding: 32px 5%;
-    flex-direction: column;
+    padding: 12px 4%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    text-align: center;
-    border-radius: 24px 24px 0 0;
+    gap: 8px;
+    text-align: left;
+    border-radius: 0;
     background: #0a2e24;
-    border-top: 3px solid #1f7a63;
+    border-top: 1px solid rgba(78, 207, 168, 0.12);
+    min-height: auto;
   }
 
   .legal-left { 
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 10px 12px; 
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px 8px;
+    flex: 1;
   }
 
   .legal-left a {
-    font-size: 0.85rem;
-    padding: 10px 16px;
-    color: #c4ccc7;
-    background: rgba(31, 122, 99, 0.25);
-    border: 2px solid rgba(78, 207, 168, 0.4);
-    border-radius: 25px;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    color: #8a948f;
+    background: transparent;
+    border: none;
+    border-radius: 0;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s ease;
+    font-weight: 400;
+    transition: color 0.2s ease;
     display: inline-block;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
   }
 
   .legal-left a:hover { 
-    color: #ffffff; 
-    background: #1f7a63;
-    border-color: #4ecfa8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(31, 122, 99, 0.3);
+    color: #c4ccc7; 
+    background: transparent;
+    text-decoration: underline;
   }
   
   .legal-footer .copyright { 
-    font-size: 0.8rem; 
-    color: rgba(255,255,255,0.8);
-    font-weight: 500;
+    font-size: 0.6rem; 
+    color: rgba(255,255,255,0.3);
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /* ══ PAGE CONTACT - RESPONSIVE OPTIMISÉ ══ */
+  
+  .contact-hero {
+    height: 200px;
+    margin-top: 60px;
+  }
+  
+  .engagement-section {
+    width: 94%;
+    margin: -30px auto 0;
+    padding: 30px 16px 40px;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .section-header {
+    margin-bottom: 24px;
+  }
+  
+  .section-tag {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    margin-bottom: 12px;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .engagement-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 100%;
+  }
+  
+  .engagement-card {
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: auto;
+  }
+  
+  .engagement-card.featured {
+    transform: none;
+    order: -1;
+  }
+  
+  .card-visual {
+    width: 100px;
+    min-width: 100px;
+    padding: 20px 10px;
+    border-radius: 12px 0 0 12px;
+  }
+  
+  .engagement-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+  
+  .engagement-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .card-number {
+    display: none;
+  }
+  
+  .card-content {
+    padding: 16px 20px;
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .engagement-card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  
+  .engagement-card p {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .card-features {
+    display: none;
+  }
+  
+  .engagement-btn {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    align-self: flex-start;
+    border-width: 1px;
+  }
+  
+  .card-badge {
+    top: 8px;
+    right: 8px;
+    padding: 3px 8px;
+    font-size: 0.6rem;
+  }
+  
+  /* Formulaire contact compact */
+  .contact-form-section {
+    padding: 30px 4%;
+  }
+  
+  .contact-form-container {
+    gap: 24px;
+  }
+  
+  .contact-info-side {
+    padding: 0;
+  }
+  
+  .contact-info-side h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  
+  .contact-info-side > p {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info-item {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    background: rgba(31, 122, 99, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(31, 122, 99, 0.08);
+  }
+  
+  .contact-info-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+  
+  .contact-info-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .contact-info-text h3 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+  
+  .contact-info-text p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .contact-form-side {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  
+  .contact-form-side h3 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+  
+  .form-group {
+    margin-bottom: 12px;
+  }
+  
+  .form-group label {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border-width: 1px;
+  }
+  
+  .form-group textarea {
+    min-height: 80px;
+  }
+  
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+  
+  /* Formulaires spécifiques compact */
+  .form-section {
+    padding: 20px 4%;
+  }
+  
+  .form-container {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  
+  .form-header {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+  }
+  
+  .form-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .form-header p {
+    font-size: 0.85rem;
+  }
+  
+  .montant-options {
+    gap: 8px;
+  }
+  
+  .montant-radio {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    border-radius: 6px;
   }
 
   /* ══ MODAL DON ══ */
