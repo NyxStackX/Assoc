@@ -465,68 +465,168 @@
 
     @media (max-width: 768px) {
       .projets-hero {
-        height: 300px;
-        margin-top: 60px;
+        height: 320px;
+        margin-top: 64px;
       }
 
       .projets-section {
-        width: 92%;
-        padding: 40px 24px;
-        margin: 40px auto;
+        width: 100%;
+        padding: 50px 4% 40px;
+        margin: 0 auto;
         border-radius: 0;
-        background: var(--bg-soft);
+        background: #f7f9f8;
         box-shadow: none;
       }
 
       .poles-grid {
         grid-template-columns: 1fr;
-        max-width: 280px;
-        gap: 20px;
+        max-width: 100%;
+        gap: 40px;
+        padding: 0 10px;
       }
       
       .pole-card {
-        max-width: 260px;
+        max-width: 100%;
+        width: 100%;
         height: auto;
-        border-radius: 0;
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.18), 0 0 0 1px rgba(31,122,99,0.1);
+        margin: 0;
+        transform: scale(1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: #fff;
+        overflow: hidden;
+      }
+      
+      .pole-card:active {
+        transform: scale(0.98);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.12);
       }
       
       .pole-image {
-        height: 180px;
+        height: 380px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .pole-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      
+      .pole-card:hover .pole-image img {
+        transform: scale(1.05);
       }
       
       .pole-icon {
-        width: 45px;
-        height: 45px;
-        bottom: -22px;
+        width: 85px;
+        height: 85px;
+        bottom: -42px;
+        border: 5px solid #fff;
+        box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+        background: #1f7a63;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
       }
       
       .pole-icon svg {
-        width: 22px;
-        height: 22px;
+        width: 40px;
+        height: 40px;
+        color: #fff;
       }
       
       .pole-content {
-        padding: 35px 16px 25px;
+        padding: 70px 35px 45px;
+        background: #fff;
+        text-align: center;
       }
       
       .pole-content h3 {
-        font-size: 16px;
+        font-size: 28px;
+        margin-bottom: 20px;
+        letter-spacing: 0.8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #1a2e28;
       }
       
       .pole-content p {
-        font-size: 13px;
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        padding: 0 15px;
+        color: #4a6460;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .pole-link {
+        font-size: 1.1rem;
+        padding: 16px 32px;
+        border-radius: 10px;
+        display: inline-flex;
+        gap: 12px;
+        font-weight: 600;
+        background: rgba(31, 122, 99, 0.1);
+        color: #1f7a63;
+        transition: all 0.3s ease;
+      }
+      
+      .pole-link:hover {
+        background: #1f7a63;
+        color: #fff;
+        gap: 16px;
       }
       
       .pole-modal-stats {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
       
       .pole-modal-actions {
         flex-direction: column;
+        gap: 12px;
+      }
+      
+      .projets-header {
+        margin-bottom: 40px;
       }
       
       .projets-header h1 {
-        font-size: 1.6rem;
+        font-size: clamp(2rem, 7vw, 2.6rem);
+        margin-bottom: 16px;
+      }
+      
+      .projets-header p {
+        font-size: 1rem;
+        line-height: 1.7;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+      
+      .projets-intro {
+        margin-bottom: 50px;
+      }
+      
+      .projets-intro h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+      
+      .projets-intro p {
+        font-size: 1.05rem;
+        line-height: 1.8;
       }
     }
   </style>

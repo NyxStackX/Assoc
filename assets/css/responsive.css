@@ -1343,54 +1343,88 @@
   .form-row { grid-template-columns: 1fr; gap: 10px; }
   .donation-submit-btn { padding: 17px 22px; font-size: 1rem; border-radius: 10px; }
 
-  /* ══ PAGE ÉQUIPE ══ */
+  /* ══ PAGE ÉQUIPE - CARTES TRÈS GRANDES ══ */
 
-  .team-hero { height: 280px; margin-top: 64px; }
+  .team-hero { height: 320px; margin-top: 64px; }
 
   .team-section {
     width: 100%;
     margin: 0;
-    padding: 44px 6% 36px;
+    padding: 50px 4% 40px;
     background: #f7f9f8;
     box-shadow: none;
     border-radius: 0;
   }
 
-  .team-header { margin-bottom: 36px; }
-  .team-header h1 { font-size: clamp(1.6rem, 6vw, 2rem); }
-  .team-header p  { font-size: 0.9rem; color: #4a6460; line-height: 1.6; }
+  .team-header { margin-bottom: 40px; }
+  .team-header h1 { font-size: clamp(2rem, 7vw, 2.6rem); }
+  .team-header p  { font-size: 1rem; color: #4a6460; line-height: 1.7; max-width: 90%; margin: 0 auto; }
 
-  .team-grid { grid-template-columns: 1fr; max-width: 290px; gap: 28px; padding: 0; margin: 0 auto 36px; }
+  .team-grid { 
+    grid-template-columns: 1fr; 
+    max-width: 100%; 
+    gap: 40px; 
+    padding: 0 10px; 
+    margin: 0 auto 40px; 
+  }
 
   .team-card {
     max-width: 100%;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(31,122,99,0.06);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15), 0 0 0 1px rgba(31,122,99,0.08);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
+    background: #fff;
   }
 
   .team-card:active { transform: scale(0.98); }
 
-  .team-photo { height: 300px; border-radius: 0; object-fit: cover; filter: saturate(0.9); transition: filter 0.28s; }
-  .team-card:hover .team-photo { filter: saturate(1.1); }
+  .team-photo { 
+    height: 450px; 
+    border-radius: 0; 
+    object-fit: cover; 
+    filter: saturate(0.95); 
+    transition: filter 0.28s, transform 0.3s; 
+    width: 100%;
+    display: block;
+  }
+  .team-card:hover .team-photo { 
+    filter: saturate(1.1); 
+    transform: scale(1.02);
+  }
+
+  .team-info {
+    padding: 30px 25px 25px;
+    background: #fff;
+  }
 
   .team-name {
-    font-size: 15px;
-    margin: -20px auto 10px;
-    padding: 10px 20px 7px;
-    max-width: 80%;
-    min-width: 140px;
-    border-radius: 4px;
+    font-size: 20px;
+    margin: -28px auto 15px;
+    padding: 14px 28px;
+    max-width: 90%;
+    min-width: 180px;
+    border-radius: 8px;
     background: linear-gradient(135deg, #1f7a63, #0f4d3c);
     color: #fff;
-    box-shadow: 0 4px 16px rgba(31,122,99,0.3);
-    letter-spacing: 0.3px;
+    box-shadow: 0 6px 20px rgba(31,122,99,0.35);
+    letter-spacing: 0.5px;
     text-align: center;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
   }
 
   .team-name::before { display: none; }
-  .team-desc { font-size: 13px; padding: 8px 16px 20px; color: #4a6460; line-height: 1.55; }
+  .team-desc { 
+    font-size: 16px; 
+    padding: 10px 5px 15px; 
+    color: #3d5550; 
+    line-height: 1.7; 
+    text-align: center;
+    max-width: 95%;
+    margin: 0 auto;
+  }
 
   .volunteers-section { width: 100%; margin: 0; padding: 36px 6% 52px; background: #fff; }
   .volunteers-header { margin-bottom: 28px; }

@@ -330,31 +330,44 @@
 
     @media (max-width: 768px) {
       .team-hero {
-        height: 300px;
-        margin-top: 60px;
+        height: 320px;
+        margin-top: 64px;
       }
       
-      .team-section,
-      .volunteers-section {
-        width: 92%;
-        padding: 40px 24px;
-        margin: 30px auto;
+      .team-section {
+        width: 100%;
+        padding: 50px 4% 40px;
+        margin: 0 auto;
         border-radius: 0;
-        background: var(--bg-soft);
+        background: #f7f9f8;
         box-shadow: none;
       }
 
       .team-grid {
         grid-template-columns: 1fr;
-        max-width: 280px;
-        gap: 20px;
+        max-width: 100%;
+        width: 100%;
+        gap: 40px;
+        padding: 0 10px;
+        margin-bottom: 40px;
       }
       
       .team-card {
-        max-width: 260px;
+        max-width: 100%;
+        width: 100%;
         height: auto;
-        border-radius: 0;
-
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.18), 0 0 0 1px rgba(31,122,99,0.1);
+        margin: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: #fff;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .team-card:active {
+        transform: scale(0.98);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.12);
       }
       
       .team-card::before {
@@ -363,61 +376,41 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 5px;
-        background: var(--blue);
+        height: 6px;
+        background: #1f7a63;
         z-index: 10;
-      }
-      .volunteers-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      
-      .volunteer-card {
-        padding: 20px 16px;
-      }
-      
-      .volunteer-name {
-        font-size: 1rem;
-      }
-      
-      .volunteer-desc {
-        font-size: 0.8rem;
-      }
-      
-      .volunteer-email {
-        font-size: 0.75rem;
-        padding: 5px 12px;
       }
 
       .team-photo {
-        height: 320px;
+        height: 420px;
+        width: 100%;
+        object-fit: cover;
+        display: block;
         border-radius: 0;
-        margin-top: 5px;
+        margin: 0;
+        transition: transform 0.4s ease;
+      }
+      
+      .team-card:hover .team-photo {
+        transform: scale(1.05);
       }
 
-      .team-header h1,
-      .volunteers-header h2 {
-        font-size: 1.6rem;
+      .team-info {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        background: #fff;
       }
-      
-      .volunteers-section {
-        margin: 0 auto;
-        padding: 30px 0 40px;
-      }
-      
-      .volunteers-header {
-        margin-bottom: 28px;
-      }
-      
+
       .team-name {
-        font-size: 16px;
-        margin: -16px auto 10px;
-        padding: 8px 16px 5px;
-        background: var(--white);
+        font-size: 24px;
+        margin: -28px auto 16px;
+        padding: 14px 28px 10px;
+        background: #fff;
         border: none;
         width: auto;
-        max-width: 75%;
-        min-width: 120px;
+        max-width: 85%;
+        min-width: 180px;
         height: auto;
         border-radius: 0;
         box-sizing: border-box;
@@ -425,6 +418,11 @@
         position: relative;
         overflow: hidden;
         z-index: 5;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: #1a2e28;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       }
       
       .team-name::before {
@@ -433,18 +431,116 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 3px;
-        background: var(--blue);
-      }
-      
-      .team-info {
-        width: 100%;
+        height: 4px;
+        background: #1f7a63;
       }
       
       .team-desc {
-        font-size: 13px;
+        font-size: 17px;
+        line-height: 1.8;
+        padding: 10px 30px 35px;
         height: auto;
         overflow: visible;
+        color: #4a6460;
+        max-width: 95%;
+        margin: 0 auto;
+      }
+
+      .team-header {
+        margin-bottom: 40px;
+      }
+
+      .team-header h1 {
+        font-size: clamp(2rem, 7vw, 2.6rem);
+        margin-bottom: 16px;
+      }
+      
+      .team-header p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
+      /* Section Bénévoles - Aussi agrandie */
+      .volunteers-section {
+        width: 100%;
+        padding: 50px 4% 40px;
+        margin: 0 auto;
+        border-radius: 0;
+        background: #f7f9f8;
+        box-shadow: none;
+      }
+      
+      .volunteers-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        width: 100%;
+        gap: 24px;
+        padding: 0 10px;
+      }
+      
+      .volunteer-card {
+        padding: 35px 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 0 0 1px rgba(31,122,99,0.08);
+        background: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .volunteer-card:active {
+        transform: scale(0.98);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+      
+      .volunteer-card::before {
+        height: 5px;
+        background: #1f7a63;
+      }
+      
+      .volunteer-name {
+        font-size: 1.4rem;
+        margin-bottom: 14px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      
+      .volunteer-desc {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        color: #4a6460;
+      }
+      
+      .volunteer-email {
+        font-size: 1rem;
+        padding: 12px 24px;
+        border-radius: 8px;
+        border: 2px solid rgba(214, 69, 69, 0.3);
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+      
+      .volunteer-email:hover {
+        background: #d64545;
+        color: #fff;
+        border-color: #d64545;
+      }
+
+      .volunteers-header {
+        margin-bottom: 40px;
+      }
+      
+      .volunteers-header h2 {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+        margin-bottom: 16px;
+      }
+      
+      .volunteers-header p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 90%;
+        margin: 0 auto;
       }
     }
   </style>
