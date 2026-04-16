@@ -476,7 +476,7 @@
       <a href="apropos.html" class="active">À propos</a>
       <a href="projets.html">Projets</a>
       <a href="equipe.html">Équipe</a>
-      <a href="../index.html#actualites">Presse</a>
+      <a href="presse.html">Presse</a>
       <a href="contact.html">Contact</a>
     </nav>
     
@@ -652,7 +652,12 @@
     <div class="cookie-modal" id="cookieModal">
       <div class="cookie-modal-header">
         <h2>Préférences des cookies</h2>
-        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">×</button>
+        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
       <div class="cookie-modal-body">
         <p class="cookie-modal-intro">
@@ -727,7 +732,12 @@
     <div class="donation-modal" id="donationModal">
       <div class="donation-modal-header">
         <h2>Faire un don sécurisé</h2>
-        <button class="donation-modal-close" onclick="closeDonationModal()" aria-label="Fermer">×</button>
+        <button class="donation-modal-close" onclick="closeDonationModal()" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
       
       <div class="donation-modal-body">
@@ -815,7 +825,11 @@
   <!-- Donation Success Message -->
   <div class="donation-success-overlay" id="donationSuccessOverlay">
     <div class="donation-success">
-      <div class="success-icon">✓</div>
+      <div class="success-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
       <h3>Merci pour votre don !</h3>
       <p>Votre générosité nous aide à continuer notre mission.</p>
       <p class="success-amount">Montant : <strong id="successAmount">--</strong></p>
