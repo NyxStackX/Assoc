@@ -1,0 +1,213 @@
+/* ============================================================
+   LIBOTA — presse.css
+   Styles propres à la page « Presse ».
+   ============================================================ */
+
+/* Article à la une (deux colonnes) */
+.une {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--ivoire-carte);
+    border: 1px solid rgba(23, 61, 45, 0.1);
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.une:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--ombre-carte);
+}
+
+.une-image {
+    position: relative;
+    min-height: 340px;
+    overflow: hidden;
+}
+
+.une-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.une:hover .une-image img {
+    transform: scale(1.05);
+}
+
+.une-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 6px 14px;
+    background: var(--ambre);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 999px;
+}
+
+.une-corps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(28px, 3vw, 48px);
+}
+
+.une-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 0.8rem;
+    color: var(--gris-doux);
+}
+
+.une-meta .cat {
+    color: var(--vert-moyen);
+    font-weight: 600;
+}
+
+.une-corps h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+    line-height: 1.2;
+    color: var(--encre-titre);
+}
+
+.une-corps p {
+    margin-top: 14px;
+    color: var(--gris-texte);
+    font-size: 1.02rem;
+    line-height: 1.7;
+}
+
+
+/* Revue de presse + espace presse */
+.presse-grille {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: clamp(40px, 5vw, 72px);
+}
+
+.presse-revue {
+    display: flex;
+    flex-direction: column;
+}
+
+.presse-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 0;
+    text-decoration: none;
+    border-top: 1px solid rgba(23, 61, 45, 0.16);
+    transition: padding-left 0.3s ease, background 0.3s ease;
+}
+
+.presse-ligne:last-child {
+    border-bottom: 1px solid rgba(23, 61, 45, 0.16);
+}
+
+.presse-ligne:hover {
+    padding-left: 10px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.presse-ligne .titre {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--encre-titre);
+}
+
+.presse-ligne .source {
+    margin-top: 5px;
+    font-size: 0.84rem;
+    color: var(--gris-doux);
+}
+
+.presse-ligne .fleche {
+    flex: none;
+    color: var(--ambre);
+}
+
+.presse-kit {
+    align-self: start;
+    padding: clamp(32px, 4vw, 44px);
+    background: var(--vert-profond);
+    color: var(--ivoire);
+    border-radius: 8px;
+}
+
+.presse-kit h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.presse-kit p {
+    margin-top: 12px;
+    color: rgba(244, 241, 233, 0.78);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.presse-kit-liens {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.presse-kit-liens a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.94rem;
+    border-radius: 8px;
+}
+
+.presse-kit-liens .principal {
+    background: var(--ambre);
+    color: #fff;
+}
+
+.presse-kit-liens .secondaire {
+    border: 1px solid rgba(244, 241, 233, 0.3);
+    color: var(--ivoire);
+}
+
+.presse-contact {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(244, 241, 233, 0.16);
+}
+
+.presse-contact .label {
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: rgba(244, 241, 233, 0.6);
+}
+
+.presse-contact .mail {
+    color: var(--ambre-clair);
+    font-weight: 600;
+}
+
+.presse-contact .tel {
+    margin-top: 2px;
+    color: rgba(244, 241, 233, 0.78);
+    font-size: 0.92rem;
+}

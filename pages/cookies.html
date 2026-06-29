@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Politique de cookies — Libota</title>
+    <meta name="description" content="Politique de cookies du site Libota : types de cookies, finalités et gestion du consentement." />
+
+    <link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/legal.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
+
+<body data-base="../" data-page="">
+
+    <main class="legal">
+
+        <p class="legal-maj">Dernière mise à jour : janvier 2026</p>
+        <h1>Politique de cookies</h1>
+        <p class="legal-chapeau">
+            Cette page explique ce que sont les cookies, ceux que nous utilisons et
+            comment gérer votre consentement à tout moment.
+        </p>
+
+        <section class="legal-section">
+            <h2><span class="num">01</span> Qu'est-ce qu'un cookie ?</h2>
+            <p>
+                Un cookie est un petit fichier déposé sur votre appareil lors de la
+                visite d'un site. Il permet de mémoriser des informations relatives à
+                votre navigation (préférences, statistiques de visite).
+            </p>
+        </section>
+
+        <section class="legal-section">
+            <h2><span class="num">02</span> Cookies utilisés</h2>
+            <table class="legal-table">
+                <thead>
+                    <tr>
+                        <th>Cookie</th>
+                        <th>Finalité</th>
+                        <th>Durée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Essentiels</td>
+                        <td>Fonctionnement du site et mémorisation de votre choix de consentement.</td>
+                        <td>12 mois</td>
+                    </tr>
+                    <tr>
+                        <td>Mesure d'audience</td>
+                        <td>Statistiques de fréquentation anonymisées pour améliorer le site.</td>
+                        <td>13 mois</td>
+                    </tr>
+                    <tr>
+                        <td>Réseaux sociaux</td>
+                        <td>Partage de contenus, activés uniquement si vous y consentez.</td>
+                        <td>13 mois</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="legal-section">
+            <h2><span class="num">03</span> Votre consentement</h2>
+            <p>
+                Lors de votre première visite, une bannière vous permet d'accepter ou de
+                refuser les cookies non essentiels. Les cookies de mesure d'audience et
+                de réseaux sociaux ne sont déposés qu'après votre accord explicite.
+            </p>
+            <div class="legal-encart">
+                <p>
+                    <strong>Modifier votre choix.</strong> Vous pouvez réinitialiser
+                    votre consentement à tout moment en cliquant sur le bouton ci-dessous ;
+                    la bannière réapparaîtra à la prochaine page.
+                </p>
+            </div>
+            <p>
+                <button class="btn btn-vert btn-sm" data-reset-cookies
+                        style="margin-top:6px;padding:12px 22px;cursor:pointer">
+                    Réinitialiser mes préférences cookies
+                </button>
+            </p>
+        </section>
+
+        <section class="legal-section">
+            <h2><span class="num">04</span> Gérer les cookies depuis votre navigateur</h2>
+            <p>
+                Vous pouvez aussi configurer votre navigateur pour bloquer ou supprimer
+                les cookies. Le blocage de certains cookies peut toutefois dégrader votre
+                expérience de navigation.
+            </p>
+        </section>
+
+    </main>
+
+    <script src="../assets/js/chrome.js"></script>
+    <script src="../assets/js/nav.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+    <script src="../assets/js/cookies.js"></script>
+    <script src="../assets/js/don.js"></script>
+
+    <!-- Réinitialisation du consentement (propre à cette page) -->
+    <script>
+        (function () {
+            var bouton = document.querySelector('[data-reset-cookies]');
+            if (bouton) {
+                bouton.addEventListener('click', function () {
+                    localStorage.removeItem('libota_cookies');
+                    bouton.textContent = 'Préférences réinitialisées — rechargez la page';
+                });
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+/* ============================================================
+   LIBOTA — equipe.css
+   Styles propres à la page « Équipe ».
+   ============================================================ */
+
+/* Fiche d'un membre de la direction */
+.membre img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.6s ease;
+}
+
+.membre-photo {
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.membre:hover img {
+    transform: scale(1.06);
+}
+
+.membre h3 {
+    margin-top: 16px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--encre-titre);
+}
+
+.membre-role {
+    margin-top: 2px;
+    color: var(--ambre);
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.membre p {
+    margin-top: 8px;
+    color: var(--gris-texte);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+
+/* Bande « bénévoles » (fond vert, deux colonnes) */
+.benevoles {
+    background: var(--vert-profond);
+    color: var(--ivoire);
+}
+
+.benevoles-grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+}
+
+.benevoles .etiquette,
+.benevoles .etiquette .trait {
+    color: var(--ambre-clair);
+}
+
+.benevoles .etiquette .trait {
+    background: var(--ambre-clair);
+}
+
+.benevoles h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    line-height: 1.14;
+    letter-spacing: -0.015em;
+    color: var(--ivoire);
+}
+
+.benevoles-texte {
+    margin-top: 20px;
+    color: rgba(244, 241, 233, 0.78);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.benevoles-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 36px;
+    border-top: 1px solid rgba(244, 241, 233, 0.18);
+}
+
+.benevoles-stat {
+    padding: 26px 20px 0;
+}
+
+.benevoles-stat:first-child {
+    padding-left: 0;
+}
+
+.benevoles-stat:not(:first-child) {
+    border-left: 1px solid rgba(244, 241, 233, 0.18);
+}
+
+.benevoles-stat .chiffre {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    line-height: 1;
+    color: #fdfbf4;
+}
+
+.benevoles-stat .label {
+    margin-top: 6px;
+    color: rgba(244, 241, 233, 0.7);
+    font-size: 0.84rem;
+}
+
+.benevoles-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.benevoles-photos img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.benevoles-photos img:first-child {
+    margin-top: 30px;
+}
+
+
+/* Encart « rejoindre l'équipe » */
+.rejoindre {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 72px);
+    background: var(--ivoire-fonce);
+    border-radius: 10px;
+}
+
+.rejoindre h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--encre-titre);
+}
+
+.rejoindre p {
+    max-width: 52ch;
+    margin-top: 16px;
+    color: var(--gris-texte);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.rejoindre-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rejoindre-actions .btn {
+    justify-content: center;
+    padding: 15px;
+}

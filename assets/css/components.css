@@ -1,0 +1,480 @@
+/* ============================================================
+   LIBOTA — components.css
+   Éléments d'interface partagés et injectés par JavaScript :
+   menu mobile, bannière cookies, fenêtre de don.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. Menu mobile (bouton burger + panneau plein écran)
+   ------------------------------------------------------------ */
+.burger {
+    display: none;              /* affiché en responsive.css */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 12px;
+    padding: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--nav-ink);
+}
+
+.menu-mobile {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--vert-fonce);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.menu-mobile.ouvert {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu-mobile a {
+    padding: 9px 0;
+    color: var(--ivoire);
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.menu-mobile .fermer {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    background: none;
+    border: none;
+    color: var(--ivoire);
+    font-size: 2.4rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+/* ------------------------------------------------------------
+   2. Bannière cookies
+   ------------------------------------------------------------ */
+.cookies {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 150;
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 26px;
+    background: var(--vert-profond);
+    color: var(--ivoire);
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(13, 37, 27, 0.35);
+    transform: translateY(140%);
+    transition: transform 0.5s var(--ease-doux);
+}
+
+.cookies.visible {
+    transform: translateY(0);
+}
+
+.cookies-texte {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: rgba(244, 241, 233, 0.85);
+}
+
+.cookies-texte a {
+    color: var(--ambre-clair);
+    text-decoration: underline;
+}
+
+.cookies-actions {
+    flex: none;
+    display: flex;
+    gap: 10px;
+}
+
+.cookies-actions button {
+    cursor: pointer;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.86rem;
+    padding: 11px 20px;
+    border-radius: 999px;
+    border: none;
+    white-space: nowrap;
+}
+
+.cookies-refuser {
+    background: transparent;
+    color: var(--ivoire);
+    border: 1px solid rgba(244, 241, 233, 0.35) !important;
+}
+
+.cookies-accepter {
+    background: var(--ambre);
+    color: #fff;
+}
+
+
+/* ------------------------------------------------------------
+   3. Fenêtre de don (parcours en 3 étapes)
+   ------------------------------------------------------------ */
+.don-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(13, 37, 27, 0.62);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    font-family: var(--sans);
+}
+
+.don-overlay.affiche {
+    display: flex;
+}
+
+.don-overlay.visible {
+    opacity: 1;
+}
+
+.don-modal {
+    width: 100%;
+    max-width: 520px;
+    max-height: 94vh;
+    overflow-y: auto;
+    background: var(--ivoire-carte);
+    border-radius: 12px;
+    box-shadow: 0 40px 100px rgba(13, 37, 27, 0.4);
+    transform: translateY(16px) scale(0.98);
+    transition: transform 0.4s var(--ease-doux);
+}
+
+.don-overlay.visible .don-modal {
+    transform: none;
+}
+
+.don-entete {
+    padding: 24px 28px 0;
+}
+
+.don-entete-haut {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.don-entete-haut h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--encre-titre);
+}
+
+.don-fermer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    color: var(--gris-texte);
+    transition: background 0.3s ease;
+}
+
+.don-fermer:hover {
+    background: rgba(23, 61, 45, 0.08);
+}
+
+/* Indicateur d'étapes */
+.don-etapes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.don-etape-barre {
+    flex: 1;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(23, 61, 45, 0.15);
+    transition: background 0.4s ease;
+}
+
+.don-etape-barre.active {
+    background: var(--vert-profond);
+}
+
+.don-etapes-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--gris-doux);
+}
+
+.don-etapes-labels .active {
+    color: var(--vert-profond);
+    font-weight: 600;
+}
+
+.don-corps {
+    position: relative;
+    overflow: hidden;
+    padding: 24px 28px 28px;
+}
+
+.don-panneau {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Sélecteur de fréquence (ponctuel / mensuel) */
+.don-freq {
+    display: inline-flex;
+    margin-bottom: 18px;
+    padding: 4px;
+    background: var(--ivoire-fonce);
+    border-radius: 999px;
+}
+
+.don-freq button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--gris-texte);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 8px 20px;
+    border-radius: 999px;
+}
+
+.don-freq button.actif {
+    background: var(--ivoire-carte);
+    color: var(--vert-profond);
+    box-shadow: 0 1px 4px rgba(13, 37, 27, 0.1);
+}
+
+/* Grille des montants */
+.don-montants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.don-montant {
+    cursor: pointer;
+    padding: 15px 0;
+    background: #fff;
+    color: var(--encre-titre);
+    border: 1.5px solid rgba(23, 61, 45, 0.18);
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+}
+
+.don-montant.actif {
+    background: var(--vert-profond);
+    border-color: var(--vert-profond);
+    color: var(--ivoire);
+}
+
+.don-champ {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid rgba(23, 61, 45, 0.18);
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 0.96rem;
+    outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.don-champ:focus {
+    border-color: var(--vert-profond);
+}
+
+.don-perso {
+    display: none;
+    margin-top: 12px;
+}
+
+.don-impact {
+    display: none;
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: #eef3ee;
+    border-left: 3px solid var(--vert-moyen);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #1c4534;
+}
+
+.don-grille-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.don-suite {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background: var(--vert-profond);
+    color: var(--ivoire);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 16px;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.don-suite.inactif {
+    opacity: 0.5;
+}
+
+.don-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.don-retour {
+    cursor: pointer;
+    background: #fff;
+    color: var(--vert-profond);
+    border: 1.5px solid rgba(23, 61, 45, 0.2);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 15px 22px;
+    border-radius: 8px;
+}
+
+/* Badges de sécurité */
+.don-securite {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.don-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    background: rgba(47, 107, 82, 0.1);
+    color: var(--vert-moyen);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 999px;
+}
+
+.don-recap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding: 18px 20px;
+    background: var(--vert-profond);
+    color: var(--ivoire);
+    border-radius: 10px;
+}
+
+.don-recap-montant {
+    margin-top: 2px;
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    color: var(--ambre-clair);
+}
+
+.don-note {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--gris-doux);
+}
+
+/* Écran de confirmation */
+.don-succes {
+    position: fixed;
+    inset: 0;
+    z-index: 210;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(13, 37, 27, 0.62);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    font-family: var(--sans);
+}
+
+.don-succes.affiche {
+    display: flex;
+}
+
+.don-succes.visible {
+    opacity: 1;
+}
+
+.don-succes-carte {
+    width: 100%;
+    max-width: 400px;
+    padding: 44px 36px;
+    text-align: center;
+    background: var(--ivoire-carte);
+    border-radius: 12px;
+    box-shadow: 0 40px 100px rgba(13, 37, 27, 0.4);
+}
+
+.don-succes-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    background: var(--vert-profond);
+    color: var(--ambre-clair);
+    border-radius: 50%;
+}

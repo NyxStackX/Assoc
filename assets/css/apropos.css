@@ -1,0 +1,119 @@
+/* ============================================================
+   LIBOTA — apropos.css
+   Styles propres à la page « À propos ».
+   ============================================================ */
+
+/* Intro en deux colonnes (titre / texte) */
+.apropos-intro {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(40px, 6vw, 90px);
+    align-items: start;
+}
+
+.apropos-intro h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--encre-titre);
+}
+
+.apropos-intro p {
+    color: #3f4641;
+    font-size: 1.08rem;
+    line-height: 1.85;
+}
+
+.apropos-intro p + p {
+    margin-top: 20px;
+}
+
+.apropos-docs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+
+/* Bande « objectifs » (fond vert) */
+.objectifs {
+    background: var(--vert-profond);
+    color: var(--ivoire);
+}
+
+.objectifs .etiquette,
+.objectifs .etiquette .trait {
+    color: var(--ambre-clair);
+}
+
+.objectifs .etiquette .trait {
+    background: var(--ambre-clair);
+}
+
+.objectifs h2 {
+    color: var(--ivoire);
+}
+
+.objectif-carte {
+    padding: 40px 32px;
+    background: rgba(244, 241, 233, 0.05);
+    border: 1px solid rgba(244, 241, 233, 0.14);
+    border-radius: 6px;
+}
+
+.objectif-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(221, 184, 120, 0.14);
+    color: var(--ambre-clair);
+}
+
+.objectif-carte h3 {
+    margin-top: 22px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.objectif-carte p {
+    margin-top: 12px;
+    color: rgba(244, 241, 233, 0.72);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+
+/* Galerie en mosaïque */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 16px;
+}
+
+.galerie .case {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.galerie .haute {
+    grid-row: span 2;
+}
+
+.galerie .case img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.galerie .case:hover img {
+    transform: scale(1.07);
+}

@@ -1,0 +1,195 @@
+/* ============================================================
+   LIBOTA — contact.css
+   Styles propres à la page « Contact ».
+   ============================================================ */
+
+/* Les trois façons de s'engager */
+.engagement {
+    display: flex;
+    flex-direction: column;
+    padding: 38px 32px;
+    background: var(--ivoire-carte);
+    border: 1px solid rgba(23, 61, 45, 0.1);
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.engagement:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--ombre-carte);
+}
+
+.engagement.sombre {
+    background: var(--vert-profond);
+    border-color: var(--vert-profond);
+    color: var(--ivoire);
+}
+
+.engagement-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(47, 107, 82, 0.12);
+    color: var(--vert-moyen);
+}
+
+.engagement.sombre .engagement-icone {
+    background: rgba(221, 184, 120, 0.15);
+    color: var(--ambre-clair);
+}
+
+.engagement h3 {
+    margin-top: 22px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--encre-titre);
+}
+
+.engagement.sombre h3 {
+    color: var(--ivoire);
+}
+
+.engagement p {
+    flex: 1;
+    margin-top: 12px;
+    color: var(--gris-texte);
+    font-size: 0.97rem;
+    line-height: 1.7;
+}
+
+.engagement.sombre p {
+    color: rgba(244, 241, 233, 0.78);
+}
+
+.engagement-action {
+    margin-top: 20px;
+    align-self: flex-start;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--vert-profond);
+}
+
+
+/* Formulaire + coordonnées */
+.contact-bloc {
+    background: var(--ivoire-fonce);
+}
+
+.contact-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-form .ligne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.champ {
+    width: 100%;
+    padding: 15px 16px;
+    background: #fff;
+    border: 1.5px solid rgba(23, 61, 45, 0.18);
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 0.96rem;
+    color: var(--encre);
+    outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.champ:focus {
+    border-color: var(--vert-profond);
+}
+
+textarea.champ {
+    resize: vertical;
+}
+
+.contact-message {
+    min-height: 20px;
+    color: var(--vert-moyen);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Carte coordonnées */
+.coordonnees {
+    padding: clamp(30px, 4vw, 44px);
+    background: var(--vert-profond);
+    color: var(--ivoire);
+    border-radius: 8px;
+}
+
+.coordonnees h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.coordonnees-liste {
+    margin-top: 24px;
+    display: grid;
+    gap: 18px;
+}
+
+.coordonnee {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.coordonnee .icone {
+    flex: none;
+    margin-top: 2px;
+    color: var(--ambre-clair);
+}
+
+.coordonnee .label {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: rgba(244, 241, 233, 0.6);
+}
+
+.coordonnee .valeur {
+    margin-top: 2px;
+    color: var(--ivoire);
+    font-weight: 500;
+}
+
+.coordonnees-reseaux {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(244, 241, 233, 0.16);
+}
+
+.coordonnees-reseaux a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(244, 241, 233, 0.28);
+    border-radius: 50%;
+    color: var(--ivoire);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.coordonnees-reseaux a:hover {
+    background: var(--ambre-clair);
+    color: var(--vert-profond);
+}

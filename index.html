@@ -1,841 +1,789 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Protection basique -->
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  
-  <title>Libota</title>
-  
-  <!-- Favicon élégant - Losange avec palette du site -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient><filter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='2' stdDeviation='3' flood-opacity='0.3'/></filter></defs><g transform='translate(50,50) rotate(45) translate(-50,-50)' filter='url(%23s)'><rect x='15' y='15' width='70' height='70' rx='12' fill='url(%23lg)'/></g><circle cx='50' cy='50' r='18' fill='white' opacity='0.95'/><circle cx='50' cy='50' r='12' fill='url(%23lg)'/></svg>" type="image/svg+xml">
-  
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><linearGradient id='lg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231f7a63'/><stop offset='100%25' style='stop-color:%232d6a4f'/></linearGradient></defs><g transform='translate(90,90) rotate(45) translate(-90,-90)'><rect x='35' y='35' width='110' height='110' rx='20' fill='url(%23lg)'/></g><circle cx='90' cy='90' r='30' fill='white' opacity='0.95'/><circle cx='90' cy='90' r='20' fill='url(%23lg)'/></svg>">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/responsive.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libota — L'éducation, un droit pour chaque enfant</title>
+    <meta name="description" content="Depuis 2000, l'association Libota œuvre pour offrir une éducation de qualité aux enfants défavorisés à travers le monde." />
+
+    <link rel="icon" type="image/svg+xml" href="assets/media/favicon.svg" />
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Styles : commun -> composants -> page -> responsive -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
-<body>
-  <header class="header" id="mainHeader">
-    <a href="#accueil" class="logo">Libota</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<body data-base="">
 
-    <nav id="mainNav">
-      <a href="#accueil" class="active">Accueil</a>
-      <a href="pages/apropos.html">À propos</a>
-      <a href="pages/projets.html">Projets</a>
-      <a href="pages/equipe.html">Équipe</a>
-      <a href="pages/presse.html">Presse</a>
-      <a href="pages/contact.html">Contact</a>
-    </nav>
-    
-    <a href="#" class="header-cta" onclick="openDonationModal(); return false;">Faire un don</a>
-  </header>
+    <!-- Barre de progression de lecture -->
+    <div class="progress-track">
+        <div class="progress-bar"></div>
+    </div>
 
-  <main>
-    <section class="hero" id="accueil">
-      <video
-        class="hero-video parallax-slow"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        poster="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1920&auto=format&fit=crop"
-      >
-        <source
-          src="https://videos.pexels.com/video-files/5198161/5198161-uhd_2560_1440_25fps.mp4"
-          type="video/mp4"
-        />
-      </video>
+    <!-- Bandeau d'annonce -->
+    <div class="annonce">
+        <span class="annonce-point"></span>
+        <span>Campagne&nbsp;2026&nbsp;·&nbsp;Objectif&nbsp;100&nbsp;000&nbsp;enfants scolarisés d'ici 2030</span>
+    </div>
 
-      <div class="hero-overlay"></div>
 
-      <div class="hero-content-wrapper">
-        <div class="hero-kicker reveal-enhanced">Association à but non lucratif</div>
-        <h1 class="hero-title reveal-enhanced">
-          Éducation pour Tous
-          <span>Chaque enfant mérite une chance</span>
-        </h1>
-        <p class="hero-subtitle reveal-enhanced">
-          Depuis 2000, nous œuvrons pour offrir une éducation de qualité aux enfants 
-          défavorisés à travers le monde. Rejoignez notre mission.
-        </p>
-        <div class="hero-cta-group">
-          <button class="hero-btn-primary compact magnetic-btn" onclick="openDonationModal()">
+    <!-- ====================================================
+         EN-TÊTE
+         ==================================================== -->
+    <header class="entete">
+        <a class="logo" href="index.html">
+            <span class="logo-marque"><span></span></span>
+            <span class="logo-nom">Libota</span>
+        </a>
+
+        <nav class="nav">
+            <a class="lien-souligne actif" href="index.html">Accueil</a>
+            <a class="lien-souligne" href="pages/a-propos.html">À propos</a>
+            <a class="lien-souligne" href="pages/projets.html">Projets</a>
+            <a class="lien-souligne" href="pages/equipe.html">Équipe</a>
+            <a class="lien-souligne" href="pages/presse.html">Presse</a>
+            <a class="lien-souligne" href="pages/contact.html">Contact</a>
+        </nav>
+
+        <button class="btn btn-ambre btn-sm shine btn-don-header" data-don>
             Faire un don
-          </button>
-          <a href="#initiatives" class="hero-btn-secondary magnetic-btn">
-            Nos actions
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-stats">
-        <div class="hero-stats-grid">
-          <div class="hero-stat reveal-enhanced">
-            <div class="hero-stat-number">40K+</div>
-            <div class="hero-stat-label">Dons récoltés</div>
-          </div>
-          <div class="hero-stat reveal-enhanced">
-            <div class="hero-stat-number">15K</div>
-            <div class="hero-stat-label">Enfants aidés</div>
-          </div>
-          <div class="hero-stat reveal-enhanced">
-            <div class="hero-stat-number">24</div>
-            <div class="hero-stat-label">Pays présents</div>
-          </div>
-          <div class="hero-stat reveal-enhanced">
-            <div class="hero-stat-number">120</div>
-            <div class="hero-stat-label">Centres actifs</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="feature-row section-a" id="initiatives">
-      <div class="row-bg left-bg"></div>
-      <div class="row-bg right-bg"></div>
-
-      <article class="content-card card-left hover-lift reveal-enhanced">
-        <h2>Nos initiatives</h2>
-        <p>
-          Nous développons des programmes éducatifs innovants dans 24 pays, 
-          offrant accès à des ressources pédagogiques de qualité, formation des enseignants 
-          et infrastructures scolaires adaptées aux besoins locaux.
-        </p>
-        <a href="pages/apropos.html" class="magnetic-btn">Découvrir nos projets</a>
-      </article>
-
-      <article class="content-card card-right hover-lift reveal-enhanced" id="mission">
-        <h2>Notre mission</h2>
-        <p>
-          Libota œuvre pour un monde où chaque enfant, quelle que soit son origine 
-          ou sa situation, a accès à une éducation de qualité. Nous croyons que 
-          l'éducation est le fondement de tout développement durable.
-        </p>
-        <a href="pages/apropos.html" class="magnetic-btn">En savoir plus</a>
-      </article>
-    </section>
-
-    <section class="feature-row section-b" id="participer">
-      <div class="row-bg left-bg"></div>
-      <div class="row-bg right-bg"></div>
-
-      <article class="content-card card-left hover-lift reveal-enhanced">
-        <h2>Nos événements</h2>
-        <p>
-          Participez à nos journées portes ouvertes, collectes de fonds, 
-          et événements communautaires. Chaque événement est une opportunité 
-          de rejoindre notre mouvement pour l'éducation.
-        </p>
-        <a href="pages/contact.html" class="magnetic-btn">Voir l'agenda</a>
-      </article>
-
-      <article class="content-card card-right hover-lift reveal-enhanced">
-        <h2>Participer</h2>
-        <p>
-          Devenez bénévole, faites un don, ou proposez un partenariat. 
-          Chaque contribution compte et nous rapproche de notre objectif : 
-          100 000 enfants éduqués d'ici 2030.
-        </p>
-        <a href="pages/contact.html" class="magnetic-btn">S'engager</a>
-      </article>
-    </section>
-
-    <!-- Section Statistiques/Impact - Professional Design -->
-    <section class="stats-section-new" id="impact">
-      <div class="stats-container-new">
-        <div class="stats-header reveal-enhanced">
-          <div class="stats-label">Notre Impact</div>
-          <h2 class="stats-title-new">Des résultats concrets depuis 2000</h2>
-          <p class="stats-subtitle">
-            Chaque chiffre représente une vie transformée, un avenir bâti grâce à l'éducation.
-          </p>
-        </div>
-        
-        <div class="stats-grid-new three-stats">
-          <div class="stat-block hover-lift reveal-enhanced">
-            <div class="stat-number-new">45K</div>
-            <div class="stat-label-new">Enfants scolarisés</div>
-            <p class="stat-description">À travers 24 pays depuis 2000</p>
-          </div>
-
-          <div class="stat-block hover-lift reveal-enhanced">
-            <div class="stat-number-new">850</div>
-            <div class="stat-label-new">Écoles équipées</div>
-            <p class="stat-description">Matériel et ressources pédagogiques</p>
-          </div>
-
-          <div class="stat-block hover-lift reveal-enhanced">
-            <div class="stat-number-new">12K</div>
-            <div class="stat-label-new">Bénévoles actifs</div>
-            <p class="stat-description">Engagés sur le terrain</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Timeline -->
-    <section class="timeline-section" id="parcours">
-      <div class="timeline-container">
-        <h2 class="timeline-title reveal-enhanced">Notre parcours</h2>
-        <div class="timeline">
-          <div class="timeline-item reveal-enhanced">
-            <div class="timeline-year">2000</div>
-            <div class="timeline-content hover-lift">
-              <h3>Création de Libota</h3>
-              <p>Fondation de l'association par un groupe d'éducateurs passionnés avec une vision claire : l'éducation pour tous, partout dans le monde.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal-enhanced">
-            <div class="timeline-year">2008</div>
-            <div class="timeline-content hover-lift">
-              <h3>Premier grand projet international</h3>
-              <p>Lancement de notre premier programme d'équipement scolaire en Afrique subsaharienne, marquant le début de notre expansion.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal-enhanced">
-            <div class="timeline-year">2015</div>
-            <div class="timeline-content hover-lift">
-              <h3>Expansion mondiale</h3>
-              <p>Passage de 5 à 24 pays d'intervention. Mise en place de programmes de formation des enseignants et de bourses scolaires.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal-enhanced">
-            <div class="timeline-year">2024</div>
-            <div class="timeline-content hover-lift">
-              <h3>15 000 enfants accompagnés</h3>
-              <p>Cap symbolique franchi avec 15 000 enfants scolarisés. Lancement de notre programme numérique pour l'éducation à distance.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Actualités -->
-    <section class="actualites-home-section" id="actualites">
-      <div class="actualites-home-container">
-        <div class="actualites-home-header reveal-enhanced">
-          <div class="stats-label">À la une</div>
-          <h2 class="actualites-home-title">Nos dernières actualités</h2>
-          <p class="actualites-home-subtitle">
-            Découvrez nos projets, partenariats et réussites récents.
-          </p>
-        </div>
-        
-        <div class="actualites-home-grid">
-          <article class="actualite-home-card reveal-enhanced hover-lift">
-            <div class="actualite-home-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=800&auto=format&fit=crop" alt="Programme ÉducaNum" class="actualite-home-image" />
-              <span class="actualite-home-badge">Nouveau</span>
-            </div>
-            <div class="actualite-home-content">
-              <div class="actualite-home-meta">
-                <span class="actualite-home-date">15 janvier 2026</span>
-                <span class="actualite-home-category">Projet</span>
-              </div>
-              <h3>Lancement du programme ÉducaNum 2026</h3>
-              <p>Nouveau programme d'éducation numérique dans 12 écoles rurales avec distribution de 5 000 tablettes.</p>
-              <a href="pages/presse.html" class="actualite-home-link magnetic-btn">Lire la suite →</a>
-            </div>
-          </article>
-
-          <article class="actualite-home-card reveal-enhanced hover-lift">
-            <div class="actualite-home-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=800&auto=format&fit=crop" alt="Diplômés 2025" class="actualite-home-image" />
-            </div>
-            <div class="actualite-home-content">
-              <div class="actualite-home-meta">
-                <span class="actualite-home-date">8 janvier 2026</span>
-                <span class="actualite-home-category">Résultats</span>
-              </div>
-              <h3>Record historique : 2 500 diplômés en 2025</h3>
-              <p>Année record pour Libota avec 2 500 jeunes ayant obtenu leur diplôme grâce à nos programmes.</p>
-              <a href="pages/presse.html" class="actualite-home-link magnetic-btn">Lire la suite →</a>
-            </div>
-          </article>
-
-          <article class="actualite-home-card reveal-enhanced hover-lift">
-            <div class="actualite-home-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=800&auto=format&fit=crop" alt="Partenariat UNESCO" class="actualite-home-image" />
-            </div>
-            <div class="actualite-home-content">
-              <div class="actualite-home-meta">
-                <span class="actualite-home-date">20 décembre 2025</span>
-                <span class="actualite-home-category">Partenariat</span>
-              </div>
-              <h3>Nouveau partenariat avec l'UNESCO</h3>
-              <p>Accord triennal pour l'éducation inclusive dans 5 pays d'Afrique subsaharienne.</p>
-              <a href="pages/presse.html" class="actualite-home-link magnetic-btn">Lire la suite →</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="actualites-home-footer">
-          <a href="pages/presse.html" class="actualites-home-btn">Voir toutes les actualités</a>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .actualites-home-section {
-        width: 100%;
-        padding: var(--space-4xl) 5%;
-        background: var(--bg-secondary);
-        position: relative;
-      }
-
-      .actualites-home-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 5%;
-        right: 5%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--light-gray), transparent);
-      }
-
-      .actualites-home-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .actualites-home-header {
-        text-align: center;
-        margin-bottom: var(--space-3xl);
-      }
-
-      .actualites-home-title {
-        font-family: "Oswald", Georgia, serif;
-        font-size: clamp(2rem, 4vw, 3rem);
-        color: var(--text-primary);
-        font-weight: 700;
-        margin-bottom: var(--space-md);
-        letter-spacing: -0.5px;
-        line-height: 1.15;
-      }
-
-      .actualites-home-subtitle {
-        font-family: "Questrial", sans-serif;
-        font-size: 1.05rem;
-        color: var(--text-secondary);
-        max-width: 560px;
-        margin: 0 auto;
-        line-height: 1.7;
-      }
-
-      .actualites-home-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        margin-bottom: var(--space-3xl);
-      }
-
-      .actualite-home-card {
-        background: var(--white);
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: var(--shadow-md);
-        transition: all var(--t-base);
-        border: 1px solid var(--border-subtle);
-      }
-
-      .actualite-home-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-xl);
-      }
-
-      .actualite-home-image-wrapper {
-        position: relative;
-        overflow: hidden;
-        height: 200px;
-      }
-
-      .actualite-home-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform var(--t-slow);
-      }
-
-      .actualite-home-card:hover .actualite-home-image {
-        transform: scale(1.05);
-      }
-
-      .actualite-home-badge {
-        position: absolute;
-        top: 16px;
-        left: 16px;
-        padding: 6px 14px;
-        background: var(--secondary-gradient);
-        color: var(--white);
-        font-family: "Oswald", sans-serif;
-        font-size: 0.7rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        border-radius: var(--radius-pill);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .actualite-home-content {
-        padding: 28px;
-      }
-
-      .actualite-home-meta {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .actualite-home-date {
-        font-family: "Questrial", sans-serif;
-        font-size: 0.8rem;
-        color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .actualite-home-category {
-        padding: 4px 12px;
-        background: var(--accent-pale);
-        color: var(--accent);
-        font-family: "Oswald", sans-serif;
-        font-size: 0.7rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        border-radius: var(--radius-pill);
-      }
-
-      .actualite-home-card h3 {
-        font-family: "Oswald", Georgia, serif;
-        font-size: 1.25rem;
-        color: var(--text-primary);
-        margin-bottom: 12px;
-        line-height: 1.3;
-        font-weight: 600;
-      }
-
-      .actualite-home-card p {
-        font-family: "Questrial", sans-serif;
-        font-size: 0.95rem;
-        color: var(--text-secondary);
-        line-height: 1.7;
-        margin-bottom: 20px;
-      }
-
-      .actualite-home-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--primary);
-        font-family: "Oswald", sans-serif;
-        font-size: 0.85rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        text-decoration: none;
-        transition: gap var(--t-base);
-      }
-
-      .actualite-home-link:hover {
-        gap: 12px;
-        color: var(--primary-dark);
-      }
-
-      .actualites-home-footer {
-        text-align: center;
-      }
-
-      .actualites-home-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 16px 32px;
-        background: var(--primary-gradient);
-        color: var(--white);
-        font-family: "Oswald", sans-serif;
-        font-size: 0.95rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        text-decoration: none;
-        border-radius: var(--radius-md);
-        transition: all var(--t-base);
-        box-shadow: 0 4px 14px var(--primary-glow);
-      }
-
-      .actualites-home-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 28px var(--primary-glow);
-      }
-
-      @media (max-width: 1024px) {
-        .actualites-home-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .actualites-home-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-
-    <!-- Section Témoignages -->
-    <section class="testimonials-section" id="temoignages">
-      <div class="testimonials-container">
-        <h2 class="testimonials-title reveal-enhanced">Témoignages</h2>
-        
-        <div class="testimonials-slider">
-        <button class="testimonial-arrow prev" aria-label="Témoignage précédent">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-          
-          <div class="testimonial-content">
-            <div class="testimonial-slide active">
-              <p class="testimonial-quote">« Grâce à Libota, mon fils a pu accéder à une éducation de qualité malgré nos difficultés financières. L'association a changé notre vie. »</p>
-              <p class="testimonial-author">Marie Lefebvre, Parent bénéficiaire</p>
-            </div>
-            <div class="testimonial-slide">
-              <p class="testimonial-quote">« Être bénévole chez Libota est une expérience enrichissante. Voir les enfants grandir et apprendre, c'est la plus belle des récompenses. »</p>
-              <p class="testimonial-author">Thomas Bernard, Bénévole depuis 2018</p>
-            </div>
-            <div class="testimonial-slide">
-              <p class="testimonial-quote">« Le partenariat avec Libota nous a permis d'équiper 12 écoles rurales. Un impact concret et mesurable sur le terrain. »</p>
-              <p class="testimonial-author">Sophie Moreau, Directrice Partenariats Entreprise</p>
-            </div>
-          </div>
-          
-          <button class="testimonial-arrow next" aria-label="Témoignage suivant">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
-        </div>
-        
-        <div class="testimonial-dots">
-          <span class="t-dot active" data-slide="0"></span>
-          <span class="t-dot" data-slide="1"></span>
-          <span class="t-dot" data-slide="2"></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Partenaires -->
-    <section class="partners-section" id="partenaires">
-      <div class="partners-container">
-        <h2 class="partners-title reveal-enhanced">Nos partenaires</h2>
-        <div class="partners-grid">
-          <div class="partner-logo hover-scale reveal-enhanced">UNESCO</div>
-          <div class="partner-logo hover-scale reveal-enhanced">Fondation Orange</div>
-          <div class="partner-logo hover-scale reveal-enhanced">AFD</div>
-          <div class="partner-logo hover-scale reveal-enhanced">Fondation TotalEnergies</div>
-          <div class="partner-logo hover-scale reveal-enhanced">Enseignons</div>
-          <div class="partner-logo hover-scale reveal-enhanced">Educo International</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-newsletter" id="contact">
-      <div class="contact-panel reveal-enhanced">
-        <h2>Nous contacter</h2>
-        <p class="contact-text">
-          Vous avez une question, un projet ou souhaitez nous rejoindre ? Notre équipe vous répond sous 24h.
-        </p>
-
-        <div class="contact-grid">
-          <p><strong>Organisme caritatif :</strong> W751 234 567</p>
-          <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
-          <p><strong>E-mail :</strong> contact@libota.org</p>
-          <p><strong>Adresse :</strong> 42 Avenue de l'Éducation, 75008 Paris, France</p>
-        </div>
-
-        <div class="socials">
-          <a href="#" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-          </a>
-          <a href="#" aria-label="Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="newsletter-panel reveal-enhanced">
-        <h2>Restez informé</h2>
-        <p>Recevez nos actualités et rapports d'impact directement dans votre boîte mail.</p>
-
-        <form id="contactForm">
-          <input type="email" placeholder="Votre adresse e-mail" required />
-          <button type="submit">S'abonner à la newsletter</button>
-          <p id="formMessage"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="legal-footer">
-    <div class="legal-left">
-      <a href="pages/politique-cookies.html">Politique de cookies</a>
-      <a href="pages/mentions-legales.html">Mentions légales</a>
-      <a href="pages/politique-confidentialite.html">Politique de confidentialité</a>
-      <a href="pages/conditions-utilisation.html">Conditions d'utilisation</a>
-    </div>
-    <p>© 2026 Libota - Tous droits réservés</p>
-  </footer>
-
-  <!-- Cookie Consent Banner -->
-  <div class="cookie-banner" id="cookieBanner">
-    <div class="cookie-banner-container">
-      <div class="cookie-banner-text">
-        <h3>Respect de votre vie privée</h3>
-        <p>
-          Nous utilisons des cookies pour améliorer votre expérience et mesurer l'audience de notre site. 
-          <a href="pages/politique-cookies.html">Consulter notre politique</a>
-        </p>
-      </div>
-      <div class="cookie-banner-buttons">
-        <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">
-          Tout accepter
         </button>
-        <button class="cookie-btn cookie-btn-secondary" id="rejectAllCookies">
-          Tout refuser
-        </button>
-        <button class="cookie-btn cookie-btn-text" id="customizeCookies">
-          Personnaliser
-        </button>
-      </div>
-    </div>
-  </div>
+    </header>
 
-  <!-- Cookie Preferences Modal -->
-  <div class="cookie-modal-overlay" id="cookieModalOverlay">
-    <div class="cookie-modal" id="cookieModal">
-      <div class="cookie-modal-header">
-        <h2>Préférences des cookies</h2>
-        <button class="cookie-modal-close" id="closeCookieModal" aria-label="Fermer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <div class="cookie-modal-body">
-        <p class="cookie-modal-intro">
-          Gérez vos préférences de cookies. Les cookies nécessaires sont toujours activés pour le bon fonctionnement du site. 
-          <a href="pages/politique-cookies.html">Consulter notre politique</a>
-        </p>
-        
-        <!-- Necessary Cookies -->
-        <div class="cookie-category">
-          <div class="cookie-category-header">
-            <div class="cookie-category-title">
-              Cookies nécessaires
-              <span class="cookie-category-badge required">Requis</span>
+
+    <!-- ====================================================
+         HERO
+         ==================================================== -->
+    <section class="hero" id="accueil">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto"
+               poster="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1920&auto=format&fit=crop">
+            <source src="https://videos.pexels.com/video-files/5198161/5198161-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero-voile"></div>
+        <div class="hero-grain"></div>
+        <div class="hero-halo ambre"></div>
+        <div class="hero-halo vert"></div>
+
+        <div class="hero-scroll">
+            <span>Défiler</span>
+            <span class="hero-scroll-souris"><span></span></span>
+        </div>
+
+        <div class="hero-contenu">
+            <div class="hero-pastille reveal">
+                <span></span>Association à but non lucratif · depuis 2000
             </div>
-            <label class="cookie-toggle">
-              <input type="checkbox" checked disabled id="toggleNecessary">
-              <span class="cookie-toggle-slider"></span>
-            </label>
-          </div>
-          <p class="cookie-category-description">
-            Ces cookies sont essentiels pour le fonctionnement du site et ne peuvent pas être désactivés.
-          </p>
-        </div>
 
-        <!-- Analytics Cookies -->
-        <div class="cookie-category">
-          <div class="cookie-category-header">
-            <div class="cookie-category-title">
-              Cookies analytiques
-              <span class="cookie-category-badge">Optionnel</span>
+            <h1 class="reveal">
+                L'éducation,<br />
+                <em>un droit</em> pour chaque enfant.
+            </h1>
+
+            <p class="hero-intro reveal">
+                Depuis 2000, Libota œuvre pour offrir une éducation de qualité
+                aux enfants défavorisés à travers le monde. Rejoignez notre mission.
+            </p>
+
+            <div class="hero-boutons reveal">
+                <button class="btn btn-ambre btn-md shine" data-don data-magnetic>
+                    Faire un don
+                </button>
+                <a class="btn btn-contour btn-md" href="#programmes" data-magnetic>
+                    Découvrir nos actions →
+                </a>
             </div>
-            <label class="cookie-toggle">
-              <input type="checkbox" id="toggleAnalytics">
-              <span class="cookie-toggle-slider"></span>
-            </label>
-          </div>
-          <p class="cookie-category-description">
-            Nous aident à comprendre comment vous utilisez notre site pour l'améliorer.
-          </p>
         </div>
 
-        <!-- Marketing Cookies -->
-        <div class="cookie-category">
-          <div class="cookie-category-header">
-            <div class="cookie-category-title">
-              Cookies marketing
-              <span class="cookie-category-badge">Optionnel</span>
+        <!-- Statistiques -->
+        <div class="stats-bande reveal">
+            <div class="stat">
+                <div class="stat-chiffre compteur" data-cible="40" data-suffixe="K+">0</div>
+                <div class="stat-label">Dons récoltés</div>
             </div>
-            <label class="cookie-toggle">
-              <input type="checkbox" id="toggleMarketing">
-              <span class="cookie-toggle-slider"></span>
-            </label>
-          </div>
-          <p class="cookie-category-description">
-            Utilisés pour vous proposer des contenus et publicités pertinents.
-          </p>
+            <div class="stat">
+                <div class="stat-chiffre compteur" data-cible="15" data-suffixe="K">0</div>
+                <div class="stat-label">Enfants aidés</div>
+            </div>
+            <div class="stat">
+                <div class="stat-chiffre compteur" data-cible="24" data-suffixe="">0</div>
+                <div class="stat-label">Pays présents</div>
+            </div>
+            <div class="stat">
+                <div class="stat-chiffre compteur" data-cible="120" data-suffixe="">0</div>
+                <div class="stat-label">Centres actifs</div>
+            </div>
         </div>
-      </div>
-      <div class="cookie-modal-footer">
-        <button class="cookie-btn cookie-btn-secondary" id="closeCookieModalFooter">
-          Annuler
-        </button>
-        <button class="cookie-btn cookie-btn-primary" id="saveCookiePreferences">
-          Sauvegarder les préférences
-        </button>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Donation Modal -->
-  <div class="donation-modal-overlay" id="donationModalOverlay">
-    <div class="donation-modal" id="donationModal">
-      <div class="donation-modal-header">
-        <h2>Faire un don sécurisé</h2>
-        <button class="donation-modal-close" onclick="closeDonationModal()" aria-label="Fermer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      
-      <div class="donation-modal-body">
-        <div class="security-badges">
-          <span class="badge">SSL 256-bit</span>
-          <span class="badge">PCI DSS</span>
-          <span class="badge">Sécurisé</span>
+
+    <!-- ====================================================
+         MISSION
+         ==================================================== -->
+    <section class="section" id="mission">
+        <div class="conteneur grille-mission">
+
+            <div>
+                <div class="etiquette reveal">
+                    <span class="trait"></span>Notre mission
+                </div>
+
+                <p class="mission-texte reveal">
+                    Libota œuvre pour un monde où chaque enfant, quelle que soit
+                    son origine, a accès à une éducation de qualité. Nous croyons
+                    que <em>l'éducation est le fondement</em> de tout développement
+                    durable.
+                </p>
+
+                <a class="carte-lien lien-souligne reveal" href="pages/a-propos.html"
+                   style="display:inline-flex;margin-top:34px">
+                    En savoir plus sur l'association →
+                </a>
+            </div>
+
+            <div class="mission-visuel reveal">
+                <div class="mission-image clip-reveal">
+                    <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=900&auto=format&fit=crop"
+                         alt="Élèves en classe" />
+                </div>
+                <div class="mission-carte">
+                    <div class="mission-carte-annee">2030</div>
+                    <p>L'année où nous visons 100 000 enfants scolarisés.</p>
+                </div>
+            </div>
+
         </div>
-        
-        <p class="donation-intro">Votre don est sécurisé et crypté. Aucune donnée bancaire n'est stockée sur nos serveurs.</p>
-        
-        <!-- Amount Selection -->
-        <div class="donation-amounts">
-          <button class="amount-btn" data-amount="10" onclick="selectAmount(10)">10 €</button>
-          <button class="amount-btn" data-amount="25" onclick="selectAmount(25)">25 €</button>
-          <button class="amount-btn" data-amount="50" onclick="selectAmount(50)">50 €</button>
-          <button class="amount-btn" data-amount="100" onclick="selectAmount(100)">100 €</button>
-          <button class="amount-btn" data-amount="custom" onclick="selectAmount('custom')">Autre</button>
+    </section>
+
+
+    <!-- ====================================================
+         IMPACT
+         ==================================================== -->
+    <section class="section impact" id="impact">
+        <div class="conteneur">
+
+            <div class="impact-intro reveal">
+                <div class="etiquette">
+                    <span class="trait"></span>Notre impact
+                </div>
+                <h2 class="titre-section">Des résultats concrets depuis 2000.</h2>
+                <p>
+                    Chaque chiffre représente une vie transformée, un avenir bâti
+                    grâce à l'éducation.
+                </p>
+            </div>
+
+            <div class="impact-grille">
+                <div class="impact-bloc reveal">
+                    <div class="impact-chiffre compteur" data-cible="45" data-suffixe="K">0</div>
+                    <div class="impact-titre">Enfants scolarisés</div>
+                    <p>À travers 24 pays depuis 2000.</p>
+                </div>
+                <div class="impact-bloc reveal">
+                    <div class="impact-chiffre compteur" data-cible="850" data-suffixe="">0</div>
+                    <div class="impact-titre">Écoles équipées</div>
+                    <p>Matériel et ressources pédagogiques.</p>
+                </div>
+                <div class="impact-bloc reveal">
+                    <div class="impact-chiffre compteur" data-cible="12" data-suffixe="K">0</div>
+                    <div class="impact-titre">Bénévoles actifs</div>
+                    <p>Engagés sur le terrain.</p>
+                </div>
+            </div>
+
         </div>
-        
-        <!-- Custom Amount Input -->
-        <div class="custom-amount-input" id="customAmountInput" style="display: none;">
-          <input type="number" id="customAmount" placeholder="Montant personnalisé (€)" min="1" max="10000" oninput="handleCustomAmountInput(this.value)">
+    </section>
+
+
+    <!-- ====================================================
+         PROGRAMMES
+         ==================================================== -->
+    <section class="section" id="programmes">
+        <div class="conteneur">
+
+            <div class="entete-double reveal">
+                <div>
+                    <div class="etiquette">
+                        <span class="trait"></span>S'engager
+                    </div>
+                    <h2 class="titre-section" style="max-width:14ch">
+                        Nos initiatives &amp; comment participer
+                    </h2>
+                </div>
+                <p>
+                    Des programmes éducatifs innovants dans 24 pays, et de multiples
+                    façons de nous rejoindre.
+                </p>
+            </div>
+
+            <div class="grille-3">
+                <article class="carte reveal">
+                    <div class="carte-num">01</div>
+                    <h3>Nos initiatives</h3>
+                    <p>
+                        Ressources pédagogiques de qualité, formation des enseignants
+                        et infrastructures scolaires adaptées aux besoins locaux.
+                    </p>
+                    <a class="carte-lien lien-souligne" href="pages/projets.html">
+                        Découvrir nos projets →
+                    </a>
+                </article>
+
+                <article class="carte reveal">
+                    <div class="carte-num">02</div>
+                    <h3>Nos événements</h3>
+                    <p>
+                        Journées portes ouvertes, collectes de fonds et événements
+                        communautaires : autant d'occasions de rejoindre notre mouvement.
+                    </p>
+                    <a class="carte-lien lien-souligne" href="pages/presse.html">
+                        Voir l'agenda →
+                    </a>
+                </article>
+
+                <article class="carte sombre reveal">
+                    <div class="carte-num">03</div>
+                    <h3>Participer</h3>
+                    <p>
+                        Devenez bénévole, faites un don ou proposez un partenariat.
+                        Chaque contribution nous rapproche de notre objectif.
+                    </p>
+                    <a class="btn btn-ambre btn-sm" href="pages/contact.html"
+                       style="margin-top:24px;align-self:flex-start">
+                        S'engager
+                    </a>
+                </article>
+            </div>
+
         </div>
-        
-        <!-- Selected Amount Display -->
-        <div class="selected-amount-display" id="selectedAmountDisplay" style="display: none;">
-          <span>Montant sélectionné : </span>
-          <strong id="displayAmount">--</strong>
+    </section>
+
+
+    <!-- ====================================================
+         NOS DOMAINES D'ACTION
+         ==================================================== -->
+    <section class="section" id="domaines">
+        <div class="conteneur">
+
+            <div class="bloc-titre centre reveal">
+                <div class="etiquette">
+                    <span class="trait"></span>Nos domaines d'action<span class="trait"></span>
+                </div>
+                <h2 class="titre-section">Six leviers pour une éducation complète</h2>
+            </div>
+
+            <div class="domaines">
+
+                <a class="domaine reveal" href="pages/projets.html">
+                    <span class="domaine-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span>
+                    <h3>Éducation</h3>
+                    <p>Écoles équipées, manuels et soutien scolaire pour les enfants défavorisés.</p>
+                    <span class="domaine-fleche">Découvrir →</span>
+                </a>
+
+                <a class="domaine reveal" href="pages/projets.html">
+                    <span class="domaine-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span>
+                    <h3>Santé &amp; bien-être</h3>
+                    <p>Suivi médical, vaccination et nutrition pour apprendre en bonne santé.</p>
+                    <span class="domaine-fleche">Découvrir →</span>
+                </a>
+
+                <a class="domaine reveal" href="pages/projets.html">
+                    <span class="domaine-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg></span>
+                    <h3>Numérique éducatif</h3>
+                    <p>Tablettes, salles informatiques et apprentissage à distance en zone rurale.</p>
+                    <span class="domaine-fleche">Découvrir →</span>
+                </a>
+
+                <a class="domaine reveal" href="pages/projets.html">
+                    <span class="domaine-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></span>
+                    <h3>Formation</h3>
+                    <p>Enseignants locaux formés aux méthodes pédagogiques modernes et inclusives.</p>
+                    <span class="domaine-fleche">Découvrir →</span>
+                </a>
+
+                <a class="domaine reveal" href="pages/projets.html">
+                    <span class="domaine-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+                    <h3>Bourses scolaires</h3>
+                    <p>Scolarité, fournitures et transport financés pour les familles vulnérables.</p>
+                    <span class="domaine-fleche">Découvrir →</span>
+                </a>
+
+                <a class="domaine reveal" href="pages/projets.html">
+                    <span class="domaine-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"></path></svg></span>
+                    <h3>Infrastructures</h3>
+                    <p>Salles de classe, eau potable et sanitaires pour des écoles sûres et durables.</p>
+                    <span class="domaine-fleche">Découvrir →</span>
+                </a>
+
+            </div>
         </div>
-        
-        <!-- Donor Information -->
-        <form class="donation-form" id="donationForm">
-          <div class="form-row">
-            <input type="text" id="donorFirstName" placeholder="Prénom" required autocomplete="given-name">
-            <input type="text" id="donorLastName" placeholder="Nom" required autocomplete="family-name">
-          </div>
-          <input type="email" id="donorEmail" placeholder="Adresse e-mail" required autocomplete="email">
-          
-          <!-- Apple Pay Button (affiché si disponible) -->
-          <div id="applePayButton" style="display: none; margin-bottom: 16px;">
-            <button type="button" class="apple-pay-btn" onclick="payWithApplePay()">
-              <span></span> Payer avec Apple Pay
+    </section>
+
+
+    <!-- ====================================================
+         PARCOURS (frise)
+         ==================================================== -->
+    <section class="section parcours" id="parcours">
+        <div class="conteneur">
+
+            <div class="parcours-entete reveal">
+                <div class="etiquette">
+                    <span class="trait"></span>Notre parcours<span class="trait"></span>
+                </div>
+                <h2 class="titre-section">Vingt-cinq ans d'engagement</h2>
+            </div>
+
+            <div class="frise">
+                <div class="frise-ligne"></div>
+
+                <div class="frise-etape reveal">
+                    <span class="frise-point"></span>
+                    <div class="frise-annee">2000</div>
+                    <h3>Création de Libota</h3>
+                    <p>
+                        Fondation de l'association par un groupe d'éducateurs passionnés
+                        avec une vision claire : l'éducation pour tous, partout dans le monde.
+                    </p>
+                </div>
+
+                <div class="frise-etape reveal">
+                    <span class="frise-point"></span>
+                    <div class="frise-annee">2008</div>
+                    <h3>Premier grand projet international</h3>
+                    <p>
+                        Lancement de notre premier programme d'équipement scolaire en
+                        Afrique subsaharienne, marquant le début de notre expansion.
+                    </p>
+                </div>
+
+                <div class="frise-etape reveal">
+                    <span class="frise-point"></span>
+                    <div class="frise-annee">2015</div>
+                    <h3>Expansion mondiale</h3>
+                    <p>
+                        Passage de 5 à 24 pays d'intervention. Mise en place de programmes
+                        de formation des enseignants et de bourses scolaires.
+                    </p>
+                </div>
+
+                <div class="frise-etape reveal">
+                    <span class="frise-point"></span>
+                    <div class="frise-annee">2024</div>
+                    <h3>15 000 enfants accompagnés</h3>
+                    <p>
+                        Cap symbolique franchi avec 15 000 enfants scolarisés. Lancement
+                        de notre programme numérique pour l'éducation à distance.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         OÙ VA VOTRE DON ? (transparence)
+         ==================================================== -->
+    <section class="section transparence" id="transparence">
+        <div class="conteneur transparence-grille">
+
+            <div class="reveal">
+                <div class="etiquette">
+                    <span class="trait"></span>Transparence
+                </div>
+                <h2 class="titre-section">Où va votre don ?</h2>
+                <p style="max-width:42ch;margin-top:16px;color:var(--gris-texte);font-size:1.05rem;line-height:1.7">
+                    Nous publions chaque année la répartition de nos dépenses. Votre
+                    générosité va là où elle compte vraiment : sur le terrain, auprès des enfants.
+                </p>
+                <div class="transparence-chiffre">
+                    <span class="grand compteur" data-cible="85" data-suffixe="%">0</span>
+                    <span class="legende">des fonds sont consacrés directement à nos programmes.</span>
+                </div>
+            </div>
+
+            <div class="repartition reveal">
+
+                <div class="repartition-ligne">
+                    <div class="haut">
+                        <span class="nom">Programmes éducatifs</span>
+                        <span class="pct">72%</span>
+                    </div>
+                    <div class="repartition-piste"><div class="repartition-jauge" data-pct="72"></div></div>
+                    <p class="desc">Écoles, matériel, bourses et formation des enseignants.</p>
+                </div>
+
+                <div class="repartition-ligne">
+                    <div class="haut">
+                        <span class="nom">Aide sur le terrain</span>
+                        <span class="pct">13%</span>
+                    </div>
+                    <div class="repartition-piste"><div class="repartition-jauge" data-pct="13"></div></div>
+                    <p class="desc">Santé, nutrition et logistique au plus près des communautés.</p>
+                </div>
+
+                <div class="repartition-ligne">
+                    <div class="haut">
+                        <span class="nom">Frais de fonctionnement</span>
+                        <span class="pct">9%</span>
+                    </div>
+                    <div class="repartition-piste"><div class="repartition-jauge" data-pct="9"></div></div>
+                    <p class="desc">Coordination, suivi des projets et évaluation d'impact.</p>
+                </div>
+
+                <div class="repartition-ligne">
+                    <div class="haut">
+                        <span class="nom">Collecte de dons</span>
+                        <span class="pct">6%</span>
+                    </div>
+                    <div class="repartition-piste"><div class="repartition-jauge" data-pct="6"></div></div>
+                    <p class="desc">Sensibilisation et recherche de nouveaux soutiens.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         ACTUALITÉS
+         ==================================================== -->
+    <section class="section" id="actualites">
+        <div class="conteneur">
+
+            <div class="entete-double reveal">
+                <div>
+                    <div class="etiquette">
+                        <span class="trait"></span>À la une
+                    </div>
+                    <h2 class="titre-section">Nos dernières actualités</h2>
+                </div>
+                <a class="carte-lien lien-souligne" href="pages/presse.html">
+                    Toutes les actualités →
+                </a>
+            </div>
+
+            <div class="grille-3">
+                <article class="carte-actu reveal">
+                    <div class="carte-actu-image">
+                        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=800&auto=format&fit=crop" alt="Programme ÉducaNum" />
+                        <span class="carte-actu-badge">Nouveau</span>
+                    </div>
+                    <div class="carte-actu-corps">
+                        <div class="carte-actu-meta">
+                            <span>15 janvier 2026</span>
+                            <span class="cat">· Projet</span>
+                        </div>
+                        <h3>Lancement du programme ÉducaNum 2026</h3>
+                        <p>Éducation numérique dans 12 écoles rurales avec distribution de 5 000 tablettes.</p>
+                        <a class="carte-lien lien-souligne" href="pages/presse.html" style="display:inline-block;margin-top:18px">Lire la suite →</a>
+                    </div>
+                </article>
+
+                <article class="carte-actu reveal">
+                    <div class="carte-actu-image">
+                        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=800&auto=format&fit=crop" alt="Diplômés 2025" />
+                    </div>
+                    <div class="carte-actu-corps">
+                        <div class="carte-actu-meta">
+                            <span>8 janvier 2026</span>
+                            <span class="cat">· Résultats</span>
+                        </div>
+                        <h3>Record historique : 2 500 diplômés en 2025</h3>
+                        <p>Année record avec 2 500 jeunes diplômés grâce à nos programmes.</p>
+                        <a class="carte-lien lien-souligne" href="pages/presse.html" style="display:inline-block;margin-top:18px">Lire la suite →</a>
+                    </div>
+                </article>
+
+                <article class="carte-actu reveal">
+                    <div class="carte-actu-image">
+                        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=800&auto=format&fit=crop" alt="Partenariat UNESCO" />
+                    </div>
+                    <div class="carte-actu-corps">
+                        <div class="carte-actu-meta">
+                            <span>20 décembre 2025</span>
+                            <span class="cat">· Partenariat</span>
+                        </div>
+                        <h3>Nouveau partenariat avec l'UNESCO</h3>
+                        <p>Accord triennal pour l'éducation inclusive dans 5 pays d'Afrique subsaharienne.</p>
+                        <a class="carte-lien lien-souligne" href="pages/presse.html" style="display:inline-block;margin-top:18px">Lire la suite →</a>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         TÉMOIGNAGES
+         ==================================================== -->
+    <section class="section temoignages" id="temoignages">
+        <div class="temoignages-inner reveal">
+
+            <div class="temoignage-guillemet">“</div>
+
+            <div class="temoignage-piste">
+                <div class="temoignage actif">
+                    <p class="citation">
+                        Grâce à Libota, mon fils a pu accéder à une éducation de qualité
+                        malgré nos difficultés financières. L'association a changé notre vie.
+                    </p>
+                    <p class="auteur">Marie Lefebvre - Parent bénéficiaire</p>
+                </div>
+
+                <div class="temoignage">
+                    <p class="citation">
+                        Être bénévole chez Libota est une expérience enrichissante. Voir
+                        les enfants grandir et apprendre, c'est la plus belle des récompenses.
+                    </p>
+                    <p class="auteur">Thomas Bernard - Bénévole depuis 2018</p>
+                </div>
+
+                <div class="temoignage">
+                    <p class="citation">
+                        Le partenariat avec Libota nous a permis d'équiper 12 écoles rurales.
+                        Un impact concret et mesurable sur le terrain.
+                    </p>
+                    <p class="auteur">Sophie Moreau - Directrice Partenariats</p>
+                </div>
+            </div>
+
+            <div class="temoignage-puces">
+                <span class="puce actif" data-puce="0"></span>
+                <span class="puce" data-puce="1"></span>
+                <span class="puce" data-puce="2"></span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         PARTENAIRES
+         ==================================================== -->
+    <section class="partenaires">
+        <p class="partenaires-titre reveal">Ils nous font confiance</p>
+
+        <div class="marquee">
+            <div class="marquee-piste">
+                <span>UNESCO</span>
+                <span>Fondation Orange</span>
+                <span>AFD</span>
+                <span>TotalEnergies</span>
+                <span>Enseignons</span>
+                <span>Educo</span>
+                <span>UNESCO</span>
+                <span>Fondation Orange</span>
+                <span>AFD</span>
+                <span>TotalEnergies</span>
+                <span>Enseignons</span>
+                <span>Educo</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         QUESTIONS FRÉQUENTES
+         ==================================================== -->
+    <section class="section" id="faq">
+        <div class="conteneur">
+
+            <div class="bloc-titre centre reveal">
+                <div class="etiquette">
+                    <span class="trait"></span>Bon à savoir<span class="trait"></span>
+                </div>
+                <h2 class="titre-section">Questions fréquentes</h2>
+            </div>
+
+            <div class="faq reveal">
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Mon don est-il déductible des impôts ?
+                        <span class="faq-signe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </button>
+                    <div class="faq-reponse">
+                        <p>Oui. Votre don ouvre droit à une réduction d'impôt de 66 % de son montant, dans la limite prévue par la loi. Un reçu fiscal vous est envoyé automatiquement par e-mail.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Comment savoir où va mon argent ?
+                        <span class="faq-signe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </button>
+                    <div class="faq-reponse">
+                        <p>Nous publions chaque année un rapport d'impact et notre bilan financier détaillé. 85 % des fonds sont consacrés directement à nos programmes sur le terrain.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Puis-je faire un don mensuel ?
+                        <span class="faq-signe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </button>
+                    <div class="faq-reponse">
+                        <p>Bien sûr. Lors de votre don, choisissez l'option « Mensuel ». Le don régulier nous permet d'inscrire nos actions dans la durée. Vous pouvez l'arrêter à tout moment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Comment devenir bénévole ?
+                        <span class="faq-signe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </button>
+                    <div class="faq-reponse">
+                        <p>Rendez-vous sur notre page <a class="lien-souligne" href="pages/contact.html" style="color:var(--vert-profond);font-weight:600;text-decoration:none">Contact</a> et choisissez « Devenir bénévole ». Notre équipe vous recontacte sous 24 h pour trouver la mission qui vous correspond.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         BANDE DE DON
+         ==================================================== -->
+    <section class="section don-cta">
+        <div class="don-cta-halo"></div>
+        <div class="don-cta-inner reveal">
+            <h2>Votre don change une vie.</h2>
+            <p>
+                25&nbsp;€ financent le matériel scolaire d'un enfant pour une année
+                entière. Rejoignez les 12 000 donateurs qui soutiennent Libota.
+            </p>
+            <button class="btn btn-ambre btn-md shine" data-don data-magnetic
+                    style="margin-top:36px;padding:18px 44px">
+                Faire un don sécurisé
             </button>
-          </div>
-          
-          <!-- Stripe Card Element -->
-          <div class="payment-section">
-            <label class="payment-label">Carte bancaire</label>
-            <div id="cardElement" class="card-element">
-              <!-- Stripe injecte l'input ici -->
-            </div>
-            <div id="cardErrors" class="card-errors" role="alert"></div>
-          </div>
-          
-          <!-- Recurring Donation -->
-          <label class="recurring-option">
-            <input type="checkbox" id="recurringDonation">
-            <span>Faire un don mensuel</span>
-          </label>
-          
-          <!-- Loading State -->
-          <div id="paymentLoading" style="display: none; text-align: center; padding: 20px;">
-            <div class="spinner"></div>
-            <p>Traitement sécurisé en cours...</p>
-          </div>
-          
-          <button type="submit" class="donation-submit-btn" id="donationSubmitBtn" disabled>
-            Procéder au don sécurisé de <span id="submitAmount">--</span>
-          </button>
-        </form>
-        
-        <!-- Security Note -->
-        <p class="security-note">
-          Paiement 100% sécurisé par Stripe. Vos données bancaires ne transitent jamais par nos serveurs.
-        </p>
-        
-        <div class="pci-compliance">
-          <img src="https://cdn.jsdelivr.net/gh/stripe/stripe-js/powered_by_stripe.svg" alt="Powered by Stripe" class="stripe-badge">
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Donation Success Message -->
-  <div class="donation-success-overlay" id="donationSuccessOverlay">
-    <div class="donation-success">
-      <div class="success-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </div>
-      <h3>Merci pour votre don !</h3>
-      <p>Votre générosité nous aide à continuer notre mission.</p>
-      <p class="success-amount">Montant : <strong id="successAmount">--</strong></p>
-      <button onclick="closeDonationSuccess()" class="success-close-btn">Fermer</button>
-    </div>
-  </div>
 
-  <!-- Stripe.js pour paiements sécurisés -->
-  <script src="https://js.stripe.com/v3/"></script>
-  <!-- Script principal -->
-  <script src="assets/js/script.js"></script>
+    <!-- ====================================================
+         CONTACT + NEWSLETTER
+         ==================================================== -->
+    <section class="section contact" id="contact">
+        <div class="conteneur grille-contact">
+
+            <div class="reveal">
+                <div class="etiquette">
+                    <span class="trait"></span>Contact
+                </div>
+                <h2>Une question, un projet ?</h2>
+                <p class="contact-intro">
+                    Notre équipe vous répond sous 24&nbsp;h. Retrouvez aussi toutes nos
+                    façons de nous rejoindre sur la page
+                    <a class="lien-souligne" href="pages/contact.html"
+                       style="color:var(--vert-profond);font-weight:600;text-decoration:none">Contact</a>.
+                </p>
+
+                <div class="contact-infos">
+                    <div class="contact-ligne">
+                        <span class="cle">Téléphone</span>
+                        <span class="valeur">+33 1 23 45 67 89</span>
+                    </div>
+                    <div class="contact-ligne">
+                        <span class="cle">E-mail</span>
+                        <span class="valeur">contact@libota.org</span>
+                    </div>
+                    <div class="contact-ligne">
+                        <span class="cle">Adresse</span>
+                        <span class="valeur">42 Avenue de l'Éducation, 75008 Paris</span>
+                    </div>
+                    <div class="contact-ligne">
+                        <span class="cle">Organisme caritatif</span>
+                        <span class="valeur">W751 234 567</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter reveal">
+                <h3>Restez informé</h3>
+                <p>Recevez nos actualités et rapports d'impact directement dans votre boîte mail.</p>
+
+                <form class="newsletter-form">
+                    <input type="email" required placeholder="Votre adresse e-mail" />
+                    <button type="submit">S'abonner à la newsletter</button>
+                    <p class="newsletter-message"></p>
+                </form>
+
+                <div class="reseaux">
+                    <a href="#" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         PIED DE PAGE
+         ==================================================== -->
+    <footer class="pied">
+        <div class="pied-grille">
+
+            <div>
+                <a class="logo" href="index.html" style="color:var(--ivoire)">
+                    <span class="logo-marque"><span></span></span>
+                    <span class="logo-nom">Libota</span>
+                </a>
+                <p class="intro">
+                    Pour un monde où chaque enfant a accès à une éducation de qualité.
+                    Association à but non lucratif depuis 2000.
+                </p>
+            </div>
+
+            <div>
+                <p class="pied-titre">Navigation</p>
+                <div class="pied-liens">
+                    <a href="pages/a-propos.html">À propos</a>
+                    <a href="pages/projets.html">Projets</a>
+                    <a href="pages/equipe.html">Équipe</a>
+                    <a href="pages/presse.html">Presse</a>
+                    <a href="pages/contact.html">Contact</a>
+                </div>
+            </div>
+
+            <div>
+                <p class="pied-titre">Informations légales</p>
+                <div class="pied-liens">
+                    <a href="pages/cookies.html">Politique de cookies</a>
+                    <a href="pages/mentions-legales.html">Mentions légales</a>
+                    <a href="pages/confidentialite.html">Confidentialité</a>
+                    <a href="pages/conditions.html">Conditions d'utilisation</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="pied-bas">© 2026 Libota - Tous droits réservés.</p>
+    </footer>
+
+
+    <!-- ====================================================
+         SCRIPTS (un fichier = une responsabilité)
+         ==================================================== -->
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/reveal.js"></script>
+    <script src="assets/js/cookies.js"></script>
+    <script src="assets/js/don.js"></script>
+    <script src="assets/js/home.js"></script>
+
 </body>
+
 </html>

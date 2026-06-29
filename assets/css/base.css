@@ -1,0 +1,448 @@
+/* ============================================================
+   LIBOTA — base.css
+   Styles communs à toutes les pages :
+   variables, reset, typographie, header, footer,
+   boutons et utilitaires partagés.
+   Le responsive est isolé dans responsive.css.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. Variables de design (palette, polices, ombres)
+   ------------------------------------------------------------ */
+:root {
+    /* Couleurs de marque */
+    --vert-fonce:    #0d251b;
+    --vert-profond:  #163a2b;
+    --vert-moyen:    #2f6b52;
+    --ambre:         #bd7a2e;
+    --ambre-clair:   #ddb878;
+
+    /* Couleurs neutres */
+    --ivoire:        #f4f1e9;
+    --ivoire-carte:  #fbfaf5;
+    --ivoire-fonce:  #ece7da;
+    --encre:         #20211d;
+    --encre-titre:   #1c2b22;
+    --gris-texte:    #585952;
+    --gris-doux:     #8a8c83;
+
+    /* Typographie */
+    --serif: 'Newsreader', Georgia, serif;
+    --sans:  'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Transitions */
+    --ease-doux: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Ombres */
+    --ombre-carte:  0 24px 50px rgba(13, 37, 27, 0.14);
+    --ombre-bouton: 0 6px 18px rgba(189, 122, 46, 0.28);
+}
+
+
+/* ------------------------------------------------------------
+   2. Reset
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--ivoire);
+    color: var(--encre);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background: rgba(189, 122, 46, 0.22);
+    color: var(--vert-profond);
+}
+
+
+/* ------------------------------------------------------------
+   3. Animations partagées (keyframes)
+   ------------------------------------------------------------ */
+@keyframes kenburns {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.12); }
+}
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-18px); }
+}
+
+@keyframes floatY2 {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(18px); }
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes shine {
+    0%        { transform: translateX(-130%) skewX(-20deg); }
+    60%, 100% { transform: translateX(260%) skewX(-20deg); }
+}
+
+
+/* ------------------------------------------------------------
+   4. Barre de progression de lecture (haut de page)
+   ------------------------------------------------------------ */
+.progress-track {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 80;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--ambre), var(--ambre-clair));
+    transition: width 0.1s linear;
+}
+
+
+/* ------------------------------------------------------------
+   5. Bandeau d'annonce
+   ------------------------------------------------------------ */
+.annonce {
+    position: relative;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 9px 20px;
+    background: var(--vert-fonce);
+    color: #e9e4d6;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.annonce-point {
+    flex: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ambre-clair);
+}
+
+
+/* ------------------------------------------------------------
+   6. En-tête / navigation
+   ------------------------------------------------------------ */
+.entete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px clamp(20px, 5vw, 64px);
+    --nav-ink: var(--ivoire);
+    transition: background 0.45s ease,
+                box-shadow 0.45s ease,
+                padding 0.45s ease;
+}
+
+/* État « défilé » : fond clair, ajouté en JS */
+.entete.defile {
+    background: rgba(244, 241, 233, 0.94);
+    box-shadow: 0 1px 0 rgba(23, 61, 45, 0.1),
+                0 8px 30px rgba(13, 37, 27, 0.06);
+    padding: 12px clamp(20px, 5vw, 64px);
+    --nav-ink: var(--encre);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+    color: var(--nav-ink);
+}
+
+.logo-marque {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.logo-marque span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--ambre);
+}
+
+.logo-nom {
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav a {
+    color: var(--nav-ink);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.nav a.actif {
+    color: var(--ambre);
+    font-weight: 600;
+    opacity: 1;
+}
+
+
+/* Lien avec soulignement animé */
+.lien-souligne {
+    position: relative;
+}
+
+.lien-souligne::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1.5px;
+    width: 0;
+    background: currentColor;
+    transition: width 0.4s var(--ease-doux);
+}
+
+.lien-souligne:hover::after {
+    width: 100%;
+}
+
+
+/* ------------------------------------------------------------
+   7. Boutons
+   ------------------------------------------------------------ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    font-family: var(--sans);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-ambre {
+    background: var(--ambre);
+    color: #fff;
+    box-shadow: var(--ombre-bouton);
+}
+
+.btn-ambre:hover {
+    transform: translateY(-2px);
+}
+
+.btn-vert {
+    background: var(--vert-profond);
+    color: var(--ivoire);
+}
+
+.btn-contour {
+    background: transparent;
+    color: var(--ivoire);
+    border: 1px solid rgba(244, 241, 233, 0.4);
+}
+
+.btn-sm {
+    font-size: 0.86rem;
+    padding: 11px 22px;
+}
+
+.btn-md {
+    font-size: 1rem;
+    padding: 16px 34px;
+}
+
+
+/* Effet de brillance au survol */
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.45),
+                transparent);
+    transform: translateX(-130%) skewX(-20deg);
+}
+
+.shine:hover::after {
+    animation: shine 1s ease;
+}
+
+
+/* ------------------------------------------------------------
+   8. Apparition au défilement (révélée en JS)
+   ------------------------------------------------------------ */
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.8s var(--ease-doux),
+                transform 0.8s var(--ease-doux);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ------------------------------------------------------------
+   9. Sections : titres et étiquettes communes
+   ------------------------------------------------------------ */
+.section {
+    padding: clamp(72px, 10vw, 128px) clamp(20px, 5vw, 64px);
+}
+
+.conteneur {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.etiquette {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: var(--vert-moyen);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.etiquette .trait {
+    width: 30px;
+    height: 1px;
+    background: var(--ambre);
+}
+
+.titre-section {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    color: var(--encre-titre);
+}
+
+
+/* ------------------------------------------------------------
+   10. Pied de page
+   ------------------------------------------------------------ */
+.pied {
+    padding: clamp(56px, 7vw, 84px) clamp(20px, 5vw, 64px) 36px;
+    background: var(--vert-fonce);
+    color: rgba(244, 241, 233, 0.7);
+    border-top: 1px solid rgba(244, 241, 233, 0.1);
+}
+
+.pied-grille {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(244, 241, 233, 0.14);
+}
+
+.pied p.intro {
+    margin-top: 18px;
+    max-width: 36ch;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.pied-titre {
+    margin-bottom: 18px;
+    color: var(--ivoire);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.pied-liens {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.pied-liens a {
+    color: rgba(244, 241, 233, 0.7);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.pied-liens a:hover {
+    color: var(--ambre-clair);
+}
+
+.pied-bas {
+    max-width: 1320px;
+    margin: 24px auto 0;
+    font-size: 0.85rem;
+    color: rgba(244, 241, 233, 0.5);
+}
