@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — projets.css
+   LIBOTA - projets.css
    Styles propres à la page « Projets » : cartes de pôles et
    fenêtre de détail d'un pôle.
    ============================================================ */
@@ -10,6 +10,8 @@
     flex-direction: column;
     overflow: hidden;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
     background: var(--ivoire-carte);
     border: 1px solid rgba(23, 61, 45, 0.1);
     border-radius: 6px;

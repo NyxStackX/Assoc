@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — home.css
+   LIBOTA - home.css
    Styles propres à la page d'accueil (index.html).
    ============================================================ */
 
@@ -176,10 +176,14 @@
 }
 
 .mission-texte {
+    position: relative;
+    max-width: 30ch;
+    padding-left: 26px;
+    border-left: 2px solid var(--ambre);
     font-family: var(--serif);
     font-weight: 400;
-    font-size: clamp(1.7rem, 3.1vw, 2.7rem);
-    line-height: 1.28;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    line-height: 1.32;
     letter-spacing: -0.01em;
     color: var(--encre-titre);
 }
@@ -411,10 +415,67 @@
     justify-content: center;
 }
 
+.parcours-grille {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(40px, 6vw, 84px);
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .frise {
     position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
+}
+
+/* Collage d'images, côté droit */
+.parcours-photos {
+    position: sticky;
+    top: 110px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
+    gap: 16px;
+}
+
+.parcours-photo {
+    border-radius: 6px;
+    box-shadow: 0 18px 40px rgba(13, 37, 27, 0.16);
+}
+
+.parcours-photo.grande {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.parcours-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.parcours-badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 18px 20px;
+    background: var(--vert-profond);
+    color: var(--ivoire);
+    border-radius: 6px;
+}
+
+.parcours-badge-chiffre {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--ambre-clair);
+}
+
+.parcours-badge-texte {
+    font-size: 0.84rem;
+    line-height: 1.4;
+    color: rgba(244, 241, 233, 0.85);
 }
 
 .frise-ligne {

@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — base.css
+   LIBOTA - base.css
    Styles communs à toutes les pages :
    variables, reset, typographie, header, footer,
    boutons et utilitaires partagés.
@@ -160,7 +160,7 @@ a {
    ------------------------------------------------------------ */
 .entete {
     position: fixed;
-    top: 0;
+    top: 38px;
     left: 0;
     right: 0;
     z-index: 50;
@@ -169,13 +169,15 @@ a {
     justify-content: space-between;
     padding: 18px clamp(20px, 5vw, 64px);
     --nav-ink: var(--ivoire);
-    transition: background 0.45s ease,
+    transition: top 0.45s ease,
+                background 0.45s ease,
                 box-shadow 0.45s ease,
                 padding 0.45s ease;
 }
 
-/* État « défilé » : fond clair, ajouté en JS */
+/* État « défilé » : fond clair, calé tout en haut, ajouté en JS */
 .entete.defile {
+    top: 0;
     background: rgba(244, 241, 233, 0.94);
     box-shadow: 0 1px 0 rgba(23, 61, 45, 0.1),
                 0 8px 30px rgba(13, 37, 27, 0.06);

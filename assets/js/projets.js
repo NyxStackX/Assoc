@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — projets.js
+   LIBOTA - projets.js
    Responsabilité : fenêtre de détail d'un pôle d'action.
    Au clic sur une carte « .pole », on remplit puis on ouvre
    la fenêtre avec les données du pôle correspondant.

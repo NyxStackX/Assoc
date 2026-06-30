@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — home.js
+   LIBOTA - home.js
    Responsabilité : interactions propres à la page d'accueil.
      - parallaxe légère du hero
      - apparition de la ligne de frise

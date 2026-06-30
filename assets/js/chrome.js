@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — chrome.js
+   LIBOTA - chrome.js
    Responsabilité : injecter l'en-tête et le pied de page
    communs sur les pages intérieures, afin de ne pas répéter
    ce markup dans chaque fichier HTML.

@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — cookies.js
+   LIBOTA - cookies.js
    Responsabilité : bannière de consentement aux cookies.
      - injecte la bannière en bas de page
      - mémorise le choix dans localStorage

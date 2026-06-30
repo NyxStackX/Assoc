@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projets — Libota</title>
+    <title>Projets - Libota</title>
     <meta name="description" content="Les six pôles d'action de Libota : éducation, santé, numérique, formation, bourses et infrastructures." />
 
     <link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
@@ -42,7 +42,7 @@
         <div class="conteneur">
             <div class="grille-3">
 
-                <article class="pole reveal" data-pole="education">
+                <a class="pole reveal" href="projets/education.html">
                     <div class="pole-image"><img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=800&auto=format&fit=crop" alt="Éducation" /></div>
                     <div class="pole-corps">
                         <div class="pole-num">01</div>
@@ -50,9 +50,9 @@
                         <p>Construction et équipement d'écoles, fourniture de matériel pédagogique et soutien scolaire pour les enfants défavorisés.</p>
                         <span class="pole-lien lien-souligne">En savoir plus →</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="pole reveal" data-pole="sante">
+                <a class="pole reveal" href="projets/sante.html">
                     <div class="pole-image"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Santé" /></div>
                     <div class="pole-corps">
                         <div class="pole-num">02</div>
@@ -60,9 +60,9 @@
                         <p>Suivi médical, campagnes de vaccination et programmes nutritionnels pour que chaque enfant apprenne dans de bonnes conditions.</p>
                         <span class="pole-lien lien-souligne">En savoir plus →</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="pole reveal" data-pole="numerique">
+                <a class="pole reveal" href="projets/numerique.html">
                     <div class="pole-image"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop" alt="Numérique" /></div>
                     <div class="pole-corps">
                         <div class="pole-num">03</div>
@@ -70,29 +70,29 @@
                         <p>Distribution de tablettes, salles informatiques et plateformes d'apprentissage à distance pour les zones rurales isolées.</p>
                         <span class="pole-lien lien-souligne">En savoir plus →</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="pole reveal" data-pole="formation">
-                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop" alt="Formation" /></div>
+                <a class="pole reveal" href="projets/formation.html">
+                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop" alt="Formation" /></div>
                     <div class="pole-corps">
                         <div class="pole-num">04</div>
                         <h3>Formation des enseignants</h3>
                         <p>Programmes de formation continue pour les enseignants locaux, aux méthodes pédagogiques modernes et inclusives.</p>
                         <span class="pole-lien lien-souligne">En savoir plus →</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="pole reveal" data-pole="bourses">
-                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop" alt="Bourses" /></div>
+                <a class="pole reveal" href="projets/bourses-scolaires.html">
+                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop" alt="Bourses" /></div>
                     <div class="pole-corps">
                         <div class="pole-num">05</div>
                         <h3>Bourses scolaires</h3>
                         <p>Financement de la scolarité, des fournitures et du transport pour les familles les plus vulnérables, jusqu'au diplôme.</p>
                         <span class="pole-lien lien-souligne">En savoir plus →</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="pole reveal" data-pole="infrastructure">
+                <a class="pole reveal" href="projets/infrastructures.html">
                     <div class="pole-image"><img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=800&auto=format&fit=crop" alt="Infrastructure" /></div>
                     <div class="pole-corps">
                         <div class="pole-num">06</div>
@@ -100,7 +100,7 @@
                         <p>Construction de classes, accès à l'eau potable et installations sanitaires pour des écoles sûres et durables.</p>
                         <span class="pole-lien lien-souligne">En savoir plus →</span>
                     </div>
-                </article>
+                </a>
 
             </div>
         </div>
@@ -120,35 +120,11 @@
     </section>
 
 
-    <!-- FENÊTRE DE DÉTAIL D'UN PÔLE -->
-    <div class="pole-overlay">
-        <div class="pole-modal">
-            <div class="pole-modal-image">
-                <img data-modal-image src="" alt="" />
-                <div class="pole-modal-voile"></div>
-                <button class="pole-modal-fermer" data-modal-fermer aria-label="Fermer">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-                <h2 class="pole-modal-titre" data-modal-titre></h2>
-            </div>
-            <div class="pole-modal-corps">
-                <p data-modal-texte></p>
-                <div class="pole-modal-stats" data-modal-stats></div>
-                <div class="pole-modal-projets" data-modal-projets></div>
-                <button class="btn btn-ambre shine" data-don-pole style="width:100%;margin-top:26px;padding:16px;justify-content:center">
-                    Soutenir ce pôle
-                </button>
-            </div>
-        </div>
-    </div>
-
-
     <script src="../assets/js/chrome.js"></script>
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/reveal.js"></script>
     <script src="../assets/js/cookies.js"></script>
     <script src="../assets/js/don.js"></script>
-    <script src="../assets/js/projets.js"></script>
 
 </body>
 

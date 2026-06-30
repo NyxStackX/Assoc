@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — don.js
+   LIBOTA - don.js
    Responsabilité : parcours de don sécurisé en 3 étapes.
      Étape 1 : montant + fréquence (+ message d'impact)
      Étape 2 : coordonnées (reçu fiscal)
@@ -103,7 +103,7 @@
             '<div class="don-recap">' +
               '<div>' +
                 '<div style="font-size:.76rem;color:rgba(244,241,233,.7);letter-spacing:.04em">Votre don</div>' +
-                '<div class="don-recap-montant" data-recap>—</div>' +
+                '<div class="don-recap-montant" data-recap>-</div>' +
               '</div>' +
               '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ddb878" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>' +
             '</div>' +
@@ -115,7 +115,7 @@
             '</div>' +
             '<div class="don-actions">' +
               '<button class="don-retour" data-retour>Retour</button>' +
-              '<button class="don-suite shine" data-payer style="margin-top:0">Faire un don de <span data-montant-texte>—</span></button>' +
+              '<button class="don-suite shine" data-payer style="margin-top:0">Faire un don de <span data-montant-texte>-</span></button>' +
             '</div>' +
             '<p class="don-note">Paiement 100 % sécurisé. Vos données bancaires ne transitent jamais par nos serveurs.</p>' +
           '</div>' +
@@ -132,7 +132,7 @@
         '</div>' +
         '<h3 style="font-family:var(--serif);font-weight:500;font-size:1.7rem;color:#1c2b22;margin-top:22px">Merci pour votre don !</h3>' +
         '<p style="color:#585952;font-size:1rem;line-height:1.6;margin-top:10px">Votre générosité nous aide à poursuivre notre mission. Un reçu vous a été envoyé par e-mail.</p>' +
-        '<p style="color:#1c2b22;font-weight:600;margin-top:14px">Montant : <span data-succes-montant>—</span></p>' +
+        '<p style="color:#1c2b22;font-weight:600;margin-top:14px">Montant : <span data-succes-montant>-</span></p>' +
         '<button class="btn btn-vert" data-fermer-succes style="margin-top:26px;padding:13px 32px">Fermer</button>' +
       '</div>' +
     '</div>';
@@ -164,7 +164,7 @@
        -------------------------------------------------------- */
     function formater(valeur) {
         if (!valeur) {
-            return '—';
+            return '-';
         }
         return valeur + ' €' + (frequence === 'monthly' ? ' /mois' : '');
     }
@@ -180,7 +180,7 @@
         if (montant) {
             var message = IMPACTS[montant];
             impact.style.display = 'block';
-            impact.innerHTML = '<strong>' + formater(montant) + '</strong> — ' +
+            impact.innerHTML = '<strong>' + formater(montant) + '</strong> - ' +
                 (message || 'Merci, votre générosité a un impact direct sur le terrain.');
         } else {
             impact.style.display = 'none';

@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — contact.js
+   LIBOTA - contact.js
    Responsabilité : interactions de la page Contact.
      - boutons « s'engager » qui préremplissent le sujet
        et défilent vers le formulaire

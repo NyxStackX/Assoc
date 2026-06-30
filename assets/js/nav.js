@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — nav.js
+   LIBOTA - nav.js
    Responsabilité : comportement de l'en-tête.
      - état « défilé » (fond clair au scroll)
      - barre de progression de lecture

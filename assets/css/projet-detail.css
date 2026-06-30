@@ -1,0 +1,277 @@
+/* ============================================================
+   LIBOTA - projet-detail.css
+   Mise en page d'une page projet dédiée (pages/projets/*.html).
+   ============================================================ */
+
+/* Hero du projet */
+.projet-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 66vh;
+    overflow: hidden;
+    background: var(--vert-fonce);
+}
+
+.projet-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: kenburns 18s ease-out forwards;
+}
+
+.projet-hero-voile {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+                rgba(13, 37, 27, 0.35),
+                rgba(13, 37, 27, 0.85));
+}
+
+.projet-hero-contenu {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 64px) clamp(44px, 7vh, 72px);
+}
+
+.projet-retour {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 8px 16px;
+    background: rgba(244, 241, 233, 0.12);
+    border: 1px solid rgba(244, 241, 233, 0.3);
+    border-radius: 999px;
+    color: var(--ivoire);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.projet-retour:hover {
+    background: rgba(244, 241, 233, 0.22);
+}
+
+.projet-numero {
+    font-family: var(--serif);
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--ambre-clair);
+}
+
+.projet-hero h1 {
+    margin-top: 8px;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    color: #fdfbf4;
+}
+
+.projet-hero-accroche {
+    max-width: 56ch;
+    margin-top: 18px;
+    color: rgba(244, 241, 233, 0.86);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.7;
+}
+
+
+/* Bande de statistiques clés */
+.projet-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 64px);
+}
+
+.projet-stat {
+    padding: 38px 30px;
+    border-right: 1px solid rgba(23, 61, 45, 0.12);
+}
+
+.projet-stat:first-child {
+    padding-left: 0;
+}
+
+.projet-stat:last-child {
+    border-right: none;
+}
+
+.projet-stat-num {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    line-height: 1;
+    color: var(--vert-profond);
+}
+
+.projet-stat-label {
+    margin-top: 8px;
+    color: var(--gris-texte);
+    font-size: 0.92rem;
+}
+
+
+/* Corps : texte principal + barre latérale */
+.projet-corps {
+    display: grid;
+    grid-template-columns: 1.5fr 0.9fr;
+    gap: clamp(40px, 6vw, 80px);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projet-bloc + .projet-bloc {
+    margin-top: 44px;
+}
+
+.projet-bloc h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    color: var(--encre-titre);
+}
+
+.projet-bloc p {
+    margin-top: 14px;
+    color: #3f4641;
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
+
+.projet-liste {
+    margin-top: 18px;
+    list-style: none;
+}
+
+.projet-liste li {
+    position: relative;
+    padding: 10px 0 10px 30px;
+    color: #3f4641;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    border-top: 1px solid rgba(23, 61, 45, 0.1);
+}
+
+.projet-liste li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--ambre);
+}
+
+
+/* Barre latérale : bénéficiaires + don */
+.projet-aside {
+    align-self: start;
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projet-carte {
+    padding: 28px 26px;
+    border-radius: 10px;
+    border: 1px solid rgba(23, 61, 45, 0.12);
+    background: var(--ivoire-carte);
+}
+
+.projet-carte h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--encre-titre);
+}
+
+.projet-carte h3 svg {
+    color: var(--vert-moyen);
+}
+
+.projet-carte p {
+    margin-top: 12px;
+    color: var(--gris-texte);
+    font-size: 0.96rem;
+    line-height: 1.65;
+}
+
+.projet-carte.sombre {
+    background: var(--vert-profond);
+    border-color: var(--vert-profond);
+    color: var(--ivoire);
+    text-align: center;
+}
+
+.projet-carte.sombre h3 {
+    justify-content: center;
+    color: var(--ivoire);
+}
+
+.projet-carte.sombre p {
+    color: rgba(244, 241, 233, 0.8);
+}
+
+.projet-carte.sombre .btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 18px;
+    padding: 15px;
+}
+
+
+/* Galerie de photos du projet */
+.projet-galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projet-galerie .case {
+    overflow: hidden;
+    border-radius: 6px;
+    aspect-ratio: 4 / 3;
+}
+
+.projet-galerie .case img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.projet-galerie .case:hover img {
+    transform: scale(1.07);
+}
+
+
+/* Pied de page projet : retour + projet suivant */
+.projet-pied-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid rgba(23, 61, 45, 0.14);
+}

@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — responsive.css
+   LIBOTA - responsive.css
    Tout le responsive du site est regroupé ici.
    À charger APRÈS base.css, components.css et le CSS de page.
    Points de rupture :
@@ -28,9 +28,16 @@
     .grille-2-deseq,
     .grille-mission,
     .grille-contact,
-    .transparence-grille {
+    .transparence-grille,
+    .parcours-grille {
         grid-template-columns: 1fr;
         gap: 48px;
+    }
+
+    /* Collage du parcours : on désactive le sticky une fois empilé */
+    .parcours-photos {
+        position: static;
+        top: auto;
     }
 
     /* Domaines d'action : 3 -> 2 colonnes */

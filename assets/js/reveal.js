@@ -1,5 +1,5 @@
 /* ============================================================
-   LIBOTA — reveal.js
+   LIBOTA - reveal.js
    Responsabilité : animations déclenchées au défilement.
      - apparition des éléments « .reveal »
      - compteurs chiffrés animés « .compteur »
