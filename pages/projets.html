@@ -1,131 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projets - Libota</title>
-    <meta name="description" content="Les six pôles d'action de Libota : éducation, santé, numérique, formation, bourses et infrastructures." />
-
-    <link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="../assets/css/base.css" />
-    <link rel="stylesheet" href="../assets/css/components.css" />
-    <link rel="stylesheet" href="../assets/css/pages.css" />
-    <link rel="stylesheet" href="../assets/css/projets.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projets - Libota</title>
+<meta name="description" content="Les six pôles d'action de Libota : éducation, santé, numérique, formation, bourses et infrastructures." />
+<link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
+<link rel="stylesheet" href="../styles.css" />
 </head>
+<body data-base="../" data-page="projets.html">
 
-<body data-base="../" data-page="projets">
+<section class="tetepage">
+<div class="enveloppe">
+<p class="etiq" data-t="projets.etiquette">Nos pôles d'action</p>
+<h1 data-t="projets.titre">Nos projets sur le terrain</h1>
+<p class="intro" data-t="projets.intro">Six pôles d'action complémentaires pour accompagner chaque enfant, de la salle de classe jusqu'au diplôme.</p>
+</div>
+</section>
 
-    <!-- HERO -->
-    <section class="page-hero">
-        <img class="page-hero-image" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1920&auto=format&fit=crop" alt="Salle de classe" />
-        <div class="page-hero-voile"></div>
-        <div class="page-hero-contenu">
-            <div class="page-hero-pastille reveal"><span></span>Nos pôles d'action</div>
-            <h1 class="reveal">Nos projets sur le terrain</h1>
-            <p class="page-hero-intro reveal">
-                Six pôles d'action complémentaires pour accompagner chaque enfant, de la
-                salle de classe jusqu'au diplôme.
-            </p>
-        </div>
-    </section>
+<section class="section">
+<div class="enveloppe">
+<div class="poles" id="poles"></div>
+</div>
+</section>
 
+<section class="appel">
+<div class="enveloppe">
+<h2 data-t="projets.appel_titre">Financez un projet.</h2>
+<p data-t="projets.appel_texte">Votre don soutient directement l'un de nos six pôles d'action sur le terrain.</p>
+<a class="bouton" href="contact.html" data-t="projets.appel_bouton">Faire un don</a>
+</div>
+</section>
 
-    <!-- GRILLE DES PÔLES -->
-    <section class="section">
-        <div class="conteneur">
-            <div class="grille-3">
-
-                <a class="pole reveal" href="projets/education.html">
-                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=800&auto=format&fit=crop" alt="Éducation" /></div>
-                    <div class="pole-corps">
-                        <div class="pole-num">01</div>
-                        <h3>Éducation</h3>
-                        <p>Construction et équipement d'écoles, fourniture de matériel pédagogique et soutien scolaire pour les enfants défavorisés.</p>
-                        <span class="pole-lien lien-souligne">En savoir plus →</span>
-                    </div>
-                </a>
-
-                <a class="pole reveal" href="projets/sante.html">
-                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Santé" /></div>
-                    <div class="pole-corps">
-                        <div class="pole-num">02</div>
-                        <h3>Santé & bien-être</h3>
-                        <p>Suivi médical, campagnes de vaccination et programmes nutritionnels pour que chaque enfant apprenne dans de bonnes conditions.</p>
-                        <span class="pole-lien lien-souligne">En savoir plus →</span>
-                    </div>
-                </a>
-
-                <a class="pole reveal" href="projets/numerique.html">
-                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop" alt="Numérique" /></div>
-                    <div class="pole-corps">
-                        <div class="pole-num">03</div>
-                        <h3>Numérique éducatif</h3>
-                        <p>Distribution de tablettes, salles informatiques et plateformes d'apprentissage à distance pour les zones rurales isolées.</p>
-                        <span class="pole-lien lien-souligne">En savoir plus →</span>
-                    </div>
-                </a>
-
-                <a class="pole reveal" href="projets/formation.html">
-                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop" alt="Formation" /></div>
-                    <div class="pole-corps">
-                        <div class="pole-num">04</div>
-                        <h3>Formation des enseignants</h3>
-                        <p>Programmes de formation continue pour les enseignants locaux, aux méthodes pédagogiques modernes et inclusives.</p>
-                        <span class="pole-lien lien-souligne">En savoir plus →</span>
-                    </div>
-                </a>
-
-                <a class="pole reveal" href="projets/bourses-scolaires.html">
-                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop" alt="Bourses" /></div>
-                    <div class="pole-corps">
-                        <div class="pole-num">05</div>
-                        <h3>Bourses scolaires</h3>
-                        <p>Financement de la scolarité, des fournitures et du transport pour les familles les plus vulnérables, jusqu'au diplôme.</p>
-                        <span class="pole-lien lien-souligne">En savoir plus →</span>
-                    </div>
-                </a>
-
-                <a class="pole reveal" href="projets/infrastructures.html">
-                    <div class="pole-image"><img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=800&auto=format&fit=crop" alt="Infrastructure" /></div>
-                    <div class="pole-corps">
-                        <div class="pole-num">06</div>
-                        <h3>Infrastructures</h3>
-                        <p>Construction de classes, accès à l'eau potable et installations sanitaires pour des écoles sûres et durables.</p>
-                        <span class="pole-lien lien-souligne">En savoir plus →</span>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- BANDE DE DON -->
-    <section class="section bande-don">
-        <div class="bande-don-halo"></div>
-        <div class="bande-don-inner reveal">
-            <h2>Financez un projet.</h2>
-            <p>Votre don soutient directement l'un de nos six pôles d'action sur le terrain.</p>
-            <button class="btn btn-ambre btn-md shine" data-don style="margin-top:30px;padding:16px 38px">
-                Faire un don
-            </button>
-        </div>
-    </section>
-
-
-    <script src="../assets/js/chrome.js"></script>
-    <script src="../assets/js/nav.js"></script>
-    <script src="../assets/js/reveal.js"></script>
-    <script src="../assets/js/cookies.js"></script>
-    <script src="../assets/js/don.js"></script>
-
+<script src="../contenu.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+(function(){
+var S=window.SITE,g=S.get,e=S.esc;
+S.set('poles',(g('poles')||[]).map(function(p){
+return '<a class="pole" href="projet.html?p='+e(p.cle)+'">'+
+(p.image?'<img src="'+e(p.image)+'" alt="" />':'')+
+'<div class="n">PÔLE '+e(p.numero)+'</div><h3>'+e(p.titre)+'</h3><p>'+e(p.resume)+'</p><span class="f">En savoir plus</span></a>';
+}).join(''));
+})();
+</script>
+<script src="../assets/js/animations.js"></script>
 </body>
-
 </html>
