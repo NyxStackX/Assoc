@@ -1,0 +1,96 @@
+/* ============================================================
+   LIBOTA - animations
+   Apparitions au défilement, compteurs, zoom des images.
+   Tout est désactivé si le visiteur a demandé « moins
+   d'animations » dans les réglages de son système.
+   ============================================================ */
+
+/* --- apparition au défilement ----------------------------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.22,.7,.2,1),transform .8s cubic-bezier(.22,.7,.2,1)}
+.rv.vu{opacity:1;transform:none}
+
+/* --- titre de la une : lignes décalées -------------------- */
+.tetepage h1{opacity:0;transform:translateY(22px);animation:monte 1s cubic-bezier(.22,.7,.2,1) .05s forwards}
+.une h1{opacity:1}
+.une h1 .m{display:inline-block;opacity:0;transform:translateY(.4em) rotate(1.2deg);animation:leve .85s cubic-bezier(.2,.75,.2,1) forwards}
+@keyframes leve{to{opacity:1;transform:none}}
+/* le trait ambre se trace une fois les mots en place */
+.une h1 em{background-size:0 100%;animation:trace .7s cubic-bezier(.3,.7,.3,1) .62s forwards}
+@keyframes trace{to{background-size:100% 100%}}
+.une-surtitre,.tetepage .etiq{opacity:0;animation:parait .9s ease .02s forwards}
+.une-intro,.tetepage .intro{opacity:0;transform:translateY(14px);animation:monte .9s cubic-bezier(.22,.7,.2,1) .22s forwards}
+.une-actions{opacity:0;transform:translateY(14px);animation:monte .9s cubic-bezier(.22,.7,.2,1) .34s forwards}
+@keyframes monte{to{opacity:1;transform:none}}
+@keyframes parait{to{opacity:1}}
+
+/* --- images : cadre et zoom lent -------------------------- */
+.cadre{display:block;overflow:hidden}
+.cadre img{transition:transform 1.1s cubic-bezier(.22,.7,.2,1),filter .6s}
+a:hover .cadre img,.membre:hover .cadre img{transform:scale(1.045)}
+
+/* --- en-tête compacte au défilement ----------------------- */
+.entete{transition:padding .3s ease,box-shadow .3s ease}
+.entete.compacte{padding-block:9px;box-shadow:0 1px 0 var(--filet-fort)}
+
+/* --- barres de répartition -------------------------------- */
+.piste span{width:0;transition:width 1.2s cubic-bezier(.22,.7,.2,1)}
+
+/* --- liens, boutons, lignes ------------------------------- */
+.lien{transition:background .25s ease,color .25s ease}
+.bouton{transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}
+.bouton:active{transform:translateY(1px)}
+.domaine,.revue a{transition:background .25s ease,padding-inline-start .25s ease}
+.domaine:hover,.revue a:hover{padding-inline-start:12px}
+.domaine .f{transition:transform .25s ease}
+.domaine:hover .f{transform:translateX(5px)}
+.faq summary{transition:color .2s ease}
+.faq .rep{animation:parait .5s ease forwards}
+
+/* --- bande vidéo ------------------------------------------ */
+.film{position:relative;border-bottom:1px solid var(--filet-fort);background:var(--encre)}
+.film .cadre img{width:100%;height:clamp(300px,52vw,660px);object-fit:cover;filter:saturate(.85) brightness(.66);animation:panoramique 26s ease-in-out infinite alternate}
+@keyframes panoramique{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.09) translate3d(-1.5%,-1%,0)}}
+.film.lecture{background:#000}
+.film .fond,.bandeau .fond{display:block}
+.film .fond-video{display:block;width:100%;height:clamp(300px,52vw,660px);object-fit:cover;filter:saturate(.85) brightness(.66)}
+.bandeau .fond-video{display:block;width:100%;height:clamp(240px,40vw,520px);object-fit:cover;filter:saturate(.92)}
+.film .note{max-width:44ch}
+.projet-photo .fond-video{display:block;width:100%;height:clamp(240px,32vw,420px);object-fit:cover;filter:saturate(.92)}
+.film .cadre-video{position:relative;width:100%;padding-top:52%}
+.film .cadre-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.une-photo .cadre img{animation:panoramique 34s ease-in-out infinite alternate}
+.film .sur{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:16px;padding:clamp(24px,4vw,58px) var(--marge);background:linear-gradient(to top,rgba(10,20,15,.88) 0%,rgba(10,20,15,.55) 42%,rgba(10,20,15,.12) 78%,rgba(10,20,15,.05) 100%);pointer-events:none}
+.film .sur>*{pointer-events:auto}
+.film .etiq{color:#e6c9a0}
+.film h2{color:var(--papier);font-size:clamp(1.7rem,3.6vw,3rem);max-width:24ch}
+.film p{font-family:var(--sans);font-size:.95rem;color:rgba(245,241,230,.82);max-width:50ch}
+.film .jouer{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;white-space:nowrap;font-family:var(--sans);font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--papier);background:rgba(10,20,15,.35);border:1px solid rgba(245,241,230,.65);padding:13px 24px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.film .jouer b{font-size:1.1em;line-height:1}
+.film .jouer:hover{background:var(--papier);color:var(--encre);border-color:var(--papier)}
+.film video{display:block;width:100%;height:clamp(300px,52vw,660px);object-fit:cover;background:#000}
+.film .note{font-family:var(--sans);font-size:.8rem;color:rgba(245,241,230,.7)}
+
+/* --- bande d'image pleine largeur ------------------------- */
+.bandeau{position:relative;overflow:hidden;border-bottom:1px solid var(--filet-fort)}
+.bandeau img{width:100%;height:clamp(240px,40vw,520px);object-fit:cover;filter:saturate(.9);will-change:transform}
+.bandeau figcaption{position:absolute;left:var(--marge);bottom:18px;font-family:var(--sans);font-size:.78rem;letter-spacing:.05em;color:var(--papier);background:rgba(21,40,30,.72);padding:8px 12px}
+
+@media(max-width:720px){
+  .film .cadre img,.film .fond-video{height:clamp(300px,86vw,440px);animation-duration:34s}
+  .bandeau .fond-video{height:clamp(220px,58vw,300px)}
+  .projet-photo .fond-video{height:clamp(220px,58vw,300px)}
+  .film .sur{gap:12px;padding:22px var(--marge) 26px}
+  .film h2{font-size:1.55rem;max-width:20ch}
+  .film p{font-size:.9rem}
+  .film .cadre-video{padding-top:62%}
+  .bandeau img{height:clamp(220px,58vw,300px)}
+  .bandeau figcaption{left:12px;right:12px;bottom:12px;font-size:.72rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .film .cadre img,.une-photo .cadre img{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .une h1,.tetepage h1,.une-surtitre,.tetepage .etiq,.une-intro,.tetepage .intro,.une-actions,.une h1 .m{opacity:1;transform:none;animation:none}
+  .une h1 em{background-size:100% 100%;animation:none}
+  .cadre img,.bouton,.domaine,.revue a,.entete{transition:none}
+  .piste span{transition:none}
+}
