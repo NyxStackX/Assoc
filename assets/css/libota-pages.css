@@ -1,0 +1,167 @@
+/* ============================================================
+   LIBOTA - styles des pages intérieures
+   Même vocabulaire que libota-editorial.css : papier ivoire,
+   filets 1px, pas d'arrondis, pas d'ombres portées.
+   ============================================================ */
+
+/* --- tête de page ----------------------------------------- */
+.tetepage{border-bottom:1px solid var(--filet-fort);padding:clamp(38px,6vw,84px) 0 clamp(30px,4vw,54px)}
+.tetepage h1{font-size:clamp(2.3rem,5.4vw,4.4rem);max-width:24ch;margin-top:20px}
+.tetepage .intro{margin-top:24px;max-width:52ch;font-size:1.1em;color:var(--encre-2)}
+.fil{font-family:var(--sans);font-size:.76rem;letter-spacing:.06em;color:var(--encre-doux);text-decoration:none;display:inline-block;margin-bottom:22px}
+.fil:hover{color:var(--ambre)}
+
+/* --- texte long -------------------------------------------- */
+.duo{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,72px);align-items:start}
+.duo h2{font-size:clamp(1.7rem,3.2vw,2.6rem);max-width:20ch;margin-top:16px}
+.prose p+p{margin-top:1.1em}
+.prose p{color:var(--encre-2);max-width:66ch}
+.docs{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* --- trois colonnes filetées (objectifs, engagements) ------ */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--filet-fort)}
+.trio>*{padding:26px 26px 0;border-inline-start:1px solid var(--filet)}
+.trio>*:first-child{border-inline-start:0;padding-inline-start:0}
+.trio .n{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.1em;color:var(--ambre)}
+.trio h3{font-size:1.3rem;margin-top:12px}
+.trio p{font-family:var(--sans);font-size:.92rem;color:var(--encre-doux);margin-top:10px}
+.trio .act{display:inline-block;margin-top:18px;font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ambre);background:none;border:0;border-bottom:1px solid var(--ambre);padding:0 0 3px;cursor:pointer}
+.trio .act:hover{color:var(--encre);border-color:var(--encre)}
+
+/* --- galerie ----------------------------------------------- */
+.galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--filet)}
+.galerie img{width:100%;height:clamp(180px,22vw,280px);object-fit:cover;filter:saturate(.9)}
+.galerie.duo-img{grid-template-columns:repeat(2,1fr)}
+
+/* --- pôles (page projets) ---------------------------------- */
+.poles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,34px)}
+.pole{text-decoration:none;display:block;border-bottom:1px solid var(--filet-fort);padding-bottom:20px}
+.pole img{width:100%;height:clamp(180px,20vw,230px);object-fit:cover;filter:saturate(.9)}
+.pole .n{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.1em;color:var(--ambre);margin-top:18px}
+.pole h3{font-size:1.4rem;margin-top:8px}
+.pole p{font-family:var(--sans);font-size:.9rem;color:var(--encre-doux);margin-top:10px}
+.pole .f{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ambre)}
+.pole:hover{color:var(--encre)}
+.pole:hover h3{color:var(--ambre)}
+
+/* --- page projet (détail) ---------------------------------- */
+.projet-photo img{width:100%;height:clamp(240px,32vw,420px);object-fit:cover;filter:saturate(.92)}
+.projet-photo{border-bottom:1px solid var(--filet-fort)}
+.corps{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,4vw,72px);align-items:start}
+.bloc+.bloc{margin-top:clamp(32px,4vw,54px)}
+.bloc h2{font-size:clamp(1.4rem,2.4vw,1.9rem);padding-bottom:12px;border-bottom:1px solid var(--filet-fort)}
+.bloc .prose{margin-top:18px}
+.puces{list-style:none;margin-top:18px}
+.puces li{font-family:var(--sans);font-size:.94rem;color:var(--encre-2);padding:12px 0 12px 26px;border-bottom:1px solid var(--filet);position:relative}
+.puces li::before{content:'-';position:absolute;left:0;color:var(--ambre)}
+.aside .encadre+.encadre{margin-top:18px}
+.aside h3{font-size:1.2rem}
+.aside p{font-family:var(--sans);font-size:.92rem;color:var(--encre-doux);margin-top:10px;line-height:1.6}
+.encadre.sombre{background:var(--encre);border-color:var(--encre)}
+.encadre.sombre h3{color:var(--papier)}
+.encadre.sombre p{color:rgba(245,241,230,.78)}
+.encadre.sombre .bouton{margin-top:18px;background:var(--ambre);border-color:var(--ambre);color:#fff}
+.encadre.sombre .bouton:hover{background:var(--papier);border-color:var(--papier);color:var(--encre)}
+.pied-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid var(--filet-fort);padding-top:26px}
+
+/* --- équipe ------------------------------------------------ */
+.membres{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.4vw,30px)}
+.membre img{width:100%;height:clamp(200px,18vw,250px);object-fit:cover;filter:saturate(.85)}
+.membre h3{font-size:1.2rem;margin-top:16px}
+.membre .role{font-family:var(--sans);font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ambre);margin-top:6px}
+.membre p{font-family:var(--sans);font-size:.88rem;color:var(--encre-doux);margin-top:10px}
+.benevoles{background:var(--papier-alt)}
+.rejoindre{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;border:1px solid var(--filet-fort);padding:clamp(24px,3.4vw,40px)}
+.rejoindre h2{font-size:clamp(1.6rem,2.8vw,2.3rem)}
+.rejoindre p{font-family:var(--sans);font-size:.95rem;color:var(--encre-doux);margin-top:12px;max-width:46ch}
+.rejoindre .actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* --- presse ------------------------------------------------ */
+.grande-actu{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,3.4vw,52px);align-items:center;border-top:1px solid var(--filet-fort);border-bottom:1px solid var(--filet-fort);padding:clamp(24px,3vw,40px) 0}
+.grande-actu img{width:100%;height:clamp(220px,26vw,340px);object-fit:cover;filter:saturate(.92)}
+.grande-actu h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin-top:14px;max-width:26ch}
+.grande-actu p{font-family:var(--sans);font-size:.98rem;color:var(--encre-doux);margin-top:14px;max-width:52ch}
+.meta-actu{font-family:var(--sans);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--encre-doux)}
+.meta-actu .cat{color:var(--ambre)}
+.actus{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,34px)}
+.carte-actu{border-bottom:1px solid var(--filet-fort);padding-bottom:20px;text-decoration:none;display:block}
+.carte-actu img{width:100%;height:clamp(160px,17vw,200px);object-fit:cover;filter:saturate(.9)}
+.carte-actu h3{font-size:1.25rem;margin-top:12px}
+.carte-actu p{font-family:var(--sans);font-size:.9rem;color:var(--encre-doux);margin-top:10px}
+.carte-actu .meta-actu{margin-top:16px}
+.revue{border-top:1px solid var(--filet-fort)}
+.revue a{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--filet);text-decoration:none}
+.revue a:hover{background:var(--papier-alt);color:var(--encre)}
+.revue .t{font-size:1.1rem}
+.revue .s{font-family:var(--sans);font-size:.78rem;letter-spacing:.05em;color:var(--encre-doux);margin-top:6px}
+.revue .fl{color:var(--ambre);font-family:var(--sans)}
+.kit{border:1px solid var(--filet-fort);padding:clamp(24px,3vw,34px)}
+.kit h3{font-size:1.5rem}
+.kit>p{font-family:var(--sans);font-size:.92rem;color:var(--encre-doux);margin-top:12px}
+.kit .liens{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.kit .liens a{display:flex;justify-content:space-between;gap:16px;font-family:var(--sans);font-size:.9rem;font-weight:600;text-decoration:none;border:1px solid var(--encre);padding:13px 16px}
+.kit .liens a:hover{background:var(--encre);color:var(--papier)}
+.kit .contact-presse{margin-top:26px;padding-top:20px;border-top:1px solid var(--filet)}
+.kit .contact-presse .label{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--encre-doux)}
+.kit .contact-presse p+p{margin-top:6px}
+.kit .contact-presse .v{font-size:1.15rem}
+
+/* --- formulaire de contact --------------------------------- */
+.form{display:flex;flex-direction:column;gap:12px;margin-top:28px;max-width:34rem}
+.form .ligne{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.champ{font-family:var(--sans);font-size:.95rem;padding:13px 14px;background:var(--papier-blanc);border:1px solid var(--filet-fort);outline:none;width:100%}
+.champ:focus{border-color:var(--encre)}
+textarea.champ{resize:vertical;min-height:120px}
+.form .bouton{align-self:flex-start;margin-top:6px}
+.form .msg{font-family:var(--sans);font-size:.88rem;color:var(--vert)}
+.reseaux{display:flex;gap:18px;margin-top:26px;padding-top:20px;border-top:1px solid var(--filet);font-family:var(--sans);font-size:.85rem}
+.reseaux a{text-decoration:none;border-bottom:1px solid var(--filet-fort);padding-bottom:2px}
+
+/* --- pages d'informations (légal) -------------------------- */
+.legal{max-width:72ch;margin-inline:0}
+.legal .bloc-legal{padding:26px 0;border-top:1px solid var(--filet)}
+.legal .bloc-legal:first-child{border-top:1px solid var(--filet-fort)}
+.legal .bloc-legal:last-child{border-bottom:1px solid var(--filet-fort)}
+.legal h2{font-size:1.3rem}
+.legal p{font-family:var(--sans);font-size:.95rem;line-height:1.7;color:var(--encre-doux);margin-top:10px}
+.sommaire{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;font-family:var(--sans);font-size:.85rem}
+.sommaire a{text-decoration:none;border-bottom:1px solid var(--filet-fort);padding-bottom:2px}
+.sommaire a[aria-current]{border-color:var(--ambre);color:var(--ambre)}
+
+/* --- responsive -------------------------------------------- */
+@media(max-width:1000px){
+  .duo,.corps,.grande-actu{grid-template-columns:1fr}
+  .trio{grid-template-columns:1fr}
+  .trio>*{border-inline-start:0;padding-inline:0;border-top:1px solid var(--filet);padding-block:22px 0}
+  .trio>*:first-child{border-top:0;padding-top:0}
+  .poles,.actus{grid-template-columns:repeat(2,1fr)}
+  .membres{grid-template-columns:repeat(2,1fr)}
+  .galerie{grid-template-columns:repeat(2,1fr)}
+  .aside{margin-top:34px}
+}
+@media(max-width:720px){
+  .poles,.actus,.membres,.galerie,.form .ligne{grid-template-columns:1fr}
+  .rejoindre{align-items:flex-start}
+}
+
+/* --- finitions mobile ------------------------------------- */
+@media(max-width:720px){
+  .tetepage{padding-block:30px 26px}
+  .tetepage h1{font-size:clamp(2rem,9vw,2.8rem)}
+  .tetepage .intro{font-size:1.02em}
+  .revue a{flex-direction:column;align-items:flex-start;gap:6px}
+  .revue .fl{display:none}
+  .kit .liens a{padding:14px}
+  .pied-nav{flex-direction:column;align-items:stretch;gap:12px}
+  .pied-nav .bouton,.pied-nav .lien{text-align:center}
+  .membre img{height:clamp(220px,62vw,300px)}
+  .pole img{height:clamp(200px,54vw,260px)}
+  .carte-actu img{height:clamp(180px,50vw,240px)}
+  .grande-actu img{height:clamp(210px,56vw,280px)}
+  .galerie img{height:clamp(190px,52vw,240px)}
+  .projet-photo img{height:clamp(220px,58vw,300px)}
+  .rejoindre .actions{display:grid;grid-template-columns:1fr;gap:10px;width:100%}
+  .rejoindre .actions .bouton{text-align:center}
+  .form .bouton{width:100%;text-align:center}
+  .sommaire{gap:8px 14px}
+}
