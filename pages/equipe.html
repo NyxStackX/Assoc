@@ -1,157 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Équipe - Libota</title>
-    <meta name="description" content="La direction et les bénévoles de l'association Libota." />
-
-    <link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="../assets/css/base.css" />
-    <link rel="stylesheet" href="../assets/css/components.css" />
-    <link rel="stylesheet" href="../assets/css/pages.css" />
-    <link rel="stylesheet" href="../assets/css/equipe.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Équipe - Libota</title>
+<meta name="description" content="La direction et les bénévoles de l'association Libota." />
+<link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
+<link rel="stylesheet" href="../styles.css" />
 </head>
+<body data-base="../" data-page="equipe.html">
 
-<body data-base="../" data-page="equipe">
+<section class="tetepage">
+<div class="enveloppe">
+<p class="etiq" data-t="equipe.etiquette">Les visages de Libota</p>
+<h1 data-t="equipe.titre">Notre équipe</h1>
+<p class="intro" data-t="equipe.intro">Des femmes et des hommes engagés, du siège jusqu'au terrain.</p>
+</div>
+</section>
 
-    <!-- HERO -->
-    <section class="page-hero">
-        <img class="page-hero-image" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1920&auto=format&fit=crop" alt="Équipe Libota" />
-        <div class="page-hero-voile"></div>
-        <div class="page-hero-contenu">
-            <div class="page-hero-pastille reveal"><span></span>Les visages de Libota</div>
-            <h1 class="reveal">Notre équipe</h1>
-            <p class="page-hero-intro reveal">
-                Des femmes et des hommes engagés, du siège jusqu'au terrain, au service
-                d'une seule mission : l'éducation pour tous.
-            </p>
-        </div>
-    </section>
+<section class="section">
+<div class="enveloppe">
+<div class="tete">
+<span class="no">01</span>
+<div>
+<p class="etiq" data-t="equipe.direction_label">La direction</p>
+<h2 style="margin-top:12px" data-t="equipe.direction_titre">Celles et ceux qui pilotent</h2>
+</div>
+</div>
+<div class="membres" id="direction"></div>
+</div>
+</section>
 
+<section class="section benevoles">
+<div class="enveloppe duo">
+<div>
+<p class="etiq" data-t="equipe.benevoles_label">Nos bénévoles</p>
+<h2 data-t="equipe.benevoles_titre">12 000 bénévoles, un même engagement</h2>
+<p class="prose" style="margin-top:22px" data-t="equipe.benevoles_texte"></p>
+<div class="chiffres" id="benevoles-chiffres" style="margin-top:30px"></div>
+<p style="margin-top:28px"><a class="lien" href="contact.html" data-t="equipe.benevoles_bouton">Devenir bénévole</a></p>
+</div>
+<div class="galerie duo-img" id="benevoles-photos"></div>
+</div>
+</section>
 
-    <!-- DIRECTION -->
-    <section class="section">
-        <div class="conteneur">
+<section class="section">
+<div class="enveloppe">
+<div class="rejoindre">
+<div>
+<h2 data-t="equipe.rejoindre_titre">Rejoignez l'équipe Libota</h2>
+<p data-t="equipe.rejoindre_texte">Bénévolat, mécénat de compétences ou poste salarié.</p>
+</div>
+<div class="actions">
+<a class="bouton" href="contact.html" data-t="equipe.rejoindre_bouton_1">Nous rejoindre</a>
+<a class="bouton vide" href="contact.html" data-t="equipe.rejoindre_bouton_2">Faire un don</a>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="bloc-titre reveal">
-                <div class="etiquette">
-                    <span class="trait"></span>La direction
-                </div>
-                <h2 class="titre-section">Celles et ceux qui pilotent</h2>
-            </div>
-
-            <div class="grille-4">
-                <article class="membre reveal">
-                    <div class="membre-photo"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop" alt="Claire Dubois" /></div>
-                    <h3>Claire Dubois</h3>
-                    <p class="membre-role">Directrice générale</p>
-                    <p>Vingt ans d'engagement dans l'éducation et la coopération internationale.</p>
-                </article>
-
-                <article class="membre reveal">
-                    <div class="membre-photo"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop" alt="Marc Lévêque" /></div>
-                    <h3>Marc Lévêque</h3>
-                    <p class="membre-role">Directeur des programmes</p>
-                    <p>Coordonne nos six pôles d'action dans 24 pays.</p>
-                </article>
-
-                <article class="membre reveal">
-                    <div class="membre-photo"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop" alt="Sophie Moreau" /></div>
-                    <h3>Sophie Moreau</h3>
-                    <p class="membre-role">Directrice des partenariats</p>
-                    <p>Tisse les liens avec institutions et entreprises engagées.</p>
-                </article>
-
-                <article class="membre reveal">
-                    <div class="membre-photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="David Nguyen" /></div>
-                    <h3>David Nguyen</h3>
-                    <p class="membre-role">Responsable terrain</p>
-                    <p>Présent au plus près des écoles et des communautés.</p>
-                </article>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- BÉNÉVOLES -->
-    <section class="section benevoles">
-        <div class="conteneur benevoles-grille">
-
-            <div class="reveal">
-                <div class="etiquette">
-                    <span class="trait"></span>Nos bénévoles
-                </div>
-                <h2>12 000 bénévoles, un même engagement</h2>
-                <p class="benevoles-texte">
-                    Sur le terrain ou à distance, nos bénévoles donnent de leur temps et
-                    de leur énergie. Ils animent les classes, forment les enseignants,
-                    organisent les collectes et portent notre voix partout dans le monde.
-                </p>
-
-                <div class="benevoles-stats">
-                    <div class="benevoles-stat">
-                        <div class="chiffre compteur" data-cible="12" data-suffixe="K">0</div>
-                        <div class="label">Bénévoles actifs</div>
-                    </div>
-                    <div class="benevoles-stat">
-                        <div class="chiffre compteur" data-cible="24" data-suffixe="">0</div>
-                        <div class="label">Pays</div>
-                    </div>
-                    <div class="benevoles-stat">
-                        <div class="chiffre compteur" data-cible="98" data-suffixe="%">0</div>
-                        <div class="label">Recommandent Libota</div>
-                    </div>
-                </div>
-
-                <a class="btn btn-ambre btn-sm" href="contact.html" style="margin-top:34px;padding:14px 28px">
-                    Devenir bénévole →
-                </a>
-            </div>
-
-            <div class="benevoles-photos reveal">
-                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=600&auto=format&fit=crop" alt="Bénévole" />
-                <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=600&auto=format&fit=crop" alt="Bénévole" />
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- REJOINDRE -->
-    <section class="section">
-        <div class="rejoindre reveal">
-            <div>
-                <h2>Rejoignez l'équipe Libota</h2>
-                <p>
-                    Bénévolat, mécénat de compétences ou poste salarié : il y a forcément
-                    une façon de contribuer qui vous ressemble.
-                </p>
-            </div>
-            <div class="rejoindre-actions">
-                <a class="btn btn-vert" href="contact.html">Nous rejoindre</a>
-                <button class="btn shine" data-don style="border:1.5px solid rgba(23,61,45,.25);color:var(--vert-profond);background:transparent">
-                    Faire un don
-                </button>
-            </div>
-        </div>
-    </section>
-
-
-    <script src="../assets/js/chrome.js"></script>
-    <script src="../assets/js/nav.js"></script>
-    <script src="../assets/js/reveal.js"></script>
-    <script src="../assets/js/cookies.js"></script>
-    <script src="../assets/js/don.js"></script>
-
+<script src="../contenu.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+(function(){
+var S=window.SITE,g=S.get,e=S.esc;
+S.set('direction',(g('equipe.direction')||[]).map(function(m){
+return '<article class="membre">'+(m.photo?'<img src="'+e(m.photo)+'" alt="'+e(m.nom)+'" />':'')+'<h3>'+e(m.nom)+'</h3><p class="role">'+e(m.role)+'</p><p>'+e(m.texte)+'</p></article>';
+}).join(''));
+S.set('benevoles-chiffres',(g('equipe.benevoles_chiffres')||[]).map(function(c){return '<div><div class="v">'+e(c.valeur)+'</div><div class="l">'+e(c.label)+'</div></div>'}).join(''));
+S.set('benevoles-photos',(g('equipe.benevoles_photos')||[]).map(function(src){return '<img src="'+e(src)+'" alt="" />'}).join(''));
+})();
+</script>
+<script src="../assets/js/animations.js"></script>
 </body>
-
 </html>
