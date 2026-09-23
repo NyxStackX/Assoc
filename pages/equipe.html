@@ -1,68 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Équipe - Libota</title>
-<meta name="description" content="La direction et les bénévoles de l'association Libota." />
-<link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body data-base="../" data-page="equipe.html">
-
-<section class="tetepage">
-<div class="enveloppe">
-<p class="etiq" data-t="equipe.etiquette">Les visages de Libota</p>
-<h1 data-t="equipe.titre">Notre équipe</h1>
-<p class="intro" data-t="equipe.intro">Des femmes et des hommes engagés, du siège jusqu'au terrain.</p>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe">
-<div class="tete">
-<span class="no">01</span>
-<div>
-<p class="etiq" data-t="equipe.direction_label">La direction</p>
-<h2 style="margin-top:12px" data-t="equipe.direction_titre">Celles et ceux qui pilotent</h2>
-</div>
-</div>
-<div class="membres" id="direction"></div>
-</div>
-</section>
-
-<section class="section benevoles">
-<div class="enveloppe duo">
-<div>
-<p class="etiq" data-t="equipe.benevoles_label">Nos bénévoles</p>
-<h2 data-t="equipe.benevoles_titre">12 000 bénévoles, un même engagement</h2>
-<p class="prose" style="margin-top:22px" data-t="equipe.benevoles_texte"></p>
-<div class="chiffres" id="benevoles-chiffres" style="margin-top:30px"></div>
-<p style="margin-top:28px"><a class="lien" href="contact.html" data-t="equipe.benevoles_bouton">Devenir bénévole</a></p>
-</div>
-<div class="galerie duo-img" id="benevoles-photos"></div>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe">
-<div class="rejoindre">
-<div>
-<h2 data-t="equipe.rejoindre_titre">Rejoignez l'équipe Libota</h2>
-<p data-t="equipe.rejoindre_texte">Bénévolat, mécénat de compétences ou poste salarié.</p>
-</div>
-<div class="actions">
-<a class="bouton" href="contact.html" data-t="equipe.rejoindre_bouton_1">Nous rejoindre</a>
-<a class="bouton vide" href="contact.html" data-t="equipe.rejoindre_bouton_2">Faire un don</a>
-</div>
-</div>
-</div>
-</section>
-
-<script src="../contenu.js"></script>
-<script src="../assets/js/site.js"></script>
-<script>
-(function(){
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Équipe - Libota
+  </title>
+  <meta content="La direction et les bénévoles de l'association Libota." name="description"/>
+  <link href="../assets/media/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../styles.css" rel="stylesheet"/>
+ </head>
+ <body data-base="../" data-page="equipe.html">
+  <section class="tetepage">
+   <div class="enveloppe">
+    <p class="etiq" data-t="equipe.etiquette">
+     Les visages de Libota
+    </p>
+    <h1 data-t="equipe.titre">
+     Notre équipe
+    </h1>
+    <p class="intro" data-t="equipe.intro">
+     Des femmes et des hommes engagés, du siège jusqu'au terrain.
+    </p>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe">
+    <div class="tete">
+     <span class="no">
+      01
+     </span>
+     <div>
+      <p class="etiq" data-t="equipe.direction_label">
+       La direction
+      </p>
+      <h2 data-t="equipe.direction_titre" style="margin-top:12px">
+       Celles et ceux qui pilotent
+      </h2>
+     </div>
+    </div>
+    <div class="membres" id="direction">
+    </div>
+   </div>
+  </section>
+  <section class="section benevoles">
+   <div class="enveloppe duo">
+    <div>
+     <p class="etiq" data-t="equipe.benevoles_label">
+      Nos bénévoles
+     </p>
+     <h2 data-t="equipe.benevoles_titre">
+      12 000 bénévoles, un même engagement
+     </h2>
+     <p class="prose" data-t="equipe.benevoles_texte" style="margin-top:22px">
+     </p>
+     <div class="chiffres" id="benevoles-chiffres" style="margin-top:30px">
+     </div>
+     <p style="margin-top:28px">
+      <a class="lien" data-t="equipe.benevoles_bouton" href="contact.html">
+       Devenir bénévole
+      </a>
+     </p>
+    </div>
+    <div class="galerie duo-img" id="benevoles-photos">
+    </div>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe">
+    <div class="rejoindre">
+     <div>
+      <h2 data-t="equipe.rejoindre_titre">
+       Rejoignez l'équipe Libota
+      </h2>
+      <p data-t="equipe.rejoindre_texte">
+       Bénévolat, mécénat de compétences ou poste salarié.
+      </p>
+     </div>
+     <div class="actions">
+      <a class="bouton" data-t="equipe.rejoindre_bouton_1" href="contact.html">
+       Nous rejoindre
+      </a>
+      <a class="bouton vide" data-t="equipe.rejoindre_bouton_2" href="contact.html">
+       Faire un don
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <script src="../contenu.js">
+  </script>
+  <script src="../assets/js/site.js">
+  </script>
+  <script>
+   (function(){
 var S=window.SITE,g=S.get,e=S.esc;
 S.set('direction',(g('equipe.direction')||[]).map(function(m){
 return '<article class="membre">'+(m.photo?'<img src="'+e(m.photo)+'" alt="'+e(m.nom)+'" />':'')+'<h3>'+e(m.nom)+'</h3><p class="role">'+e(m.role)+'</p><p>'+e(m.texte)+'</p></article>';
@@ -70,7 +101,8 @@ return '<article class="membre">'+(m.photo?'<img src="'+e(m.photo)+'" alt="'+e(m
 S.set('benevoles-chiffres',(g('equipe.benevoles_chiffres')||[]).map(function(c){return '<div><div class="v">'+e(c.valeur)+'</div><div class="l">'+e(c.label)+'</div></div>'}).join(''));
 S.set('benevoles-photos',(g('equipe.benevoles_photos')||[]).map(function(src){return '<img src="'+e(src)+'" alt="" />'}).join(''));
 })();
-</script>
-<script src="../assets/js/animations.js"></script>
-</body>
+  </script>
+  <script src="../assets/js/animations.js">
+  </script>
+ </body>
 </html>

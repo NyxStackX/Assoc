@@ -1,8 +1,8 @@
 /* ============================================================
-   LIBOTA - styles des pages intérieures
-   Même vocabulaire que libota-editorial.css : papier ivoire,
-   filets 1px, pas d'arrondis, pas d'ombres portées.
-   ============================================================ */
+LIBOTA - styles des pages intérieures
+Même vocabulaire que libota-editorial.css : papier ivoire,
+filets 1px, pas d'arrondis, pas d'ombres portées.
+============================================================ */
 
 /* --- tête de page ----------------------------------------- */
 .tetepage{border-bottom:1px solid var(--filet-fort);padding:clamp(38px,6vw,84px) 0 clamp(30px,4vw,54px)}

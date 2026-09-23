@@ -1,59 +1,82 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Presse - Libota</title>
-<meta name="description" content="Actualités, communiqués et revue de presse de l'association Libota." />
-<link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body data-base="../" data-page="presse.html">
-
-<section class="tetepage">
-<div class="enveloppe">
-<p class="etiq" data-t="presse.etiquette">Salle de presse</p>
-<h1 data-t="presse.titre">Actualités &amp; presse</h1>
-<p class="intro" data-t="presse.intro">Communiqués, temps forts et revue de presse.</p>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe">
-<article class="grande-actu" id="une"></article>
-</div>
-</section>
-
-<section class="section" style="padding-top:0;border-bottom:0">
-<div class="enveloppe">
-<div class="actus" id="actus"></div>
-</div>
-</section>
-
-<section class="section transparence">
-<div class="enveloppe duo">
-<div>
-<p class="etiq" data-t="presse.revue_label">Ils parlent de nous</p>
-<h2 data-t="presse.revue_titre">Revue de presse</h2>
-<div class="revue" id="revue" style="margin-top:26px"></div>
-</div>
-<div class="kit">
-<h3 data-t="presse.kit_titre">Espace presse</h3>
-<p data-t="presse.kit_texte">Journalistes : retrouvez nos communiqués, visuels HD et logos.</p>
-<div class="liens" id="kit-liens"></div>
-<div class="contact-presse">
-<p class="label" data-t="presse.kit_contact_label">Contact presse</p>
-<p class="v" data-t="presse.kit_contact_mail">presse@libota.org</p>
-<p class="v" data-t="presse.kit_contact_tel">+33 1 23 45 67 90</p>
-</div>
-</div>
-</div>
-</section>
-
-<script src="../contenu.js"></script>
-<script src="../assets/js/site.js"></script>
-<script>
-(function(){
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Presse - Libota
+  </title>
+  <meta content="Actualités, communiqués et revue de presse de l'association Libota." name="description"/>
+  <link href="../assets/media/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../styles.css" rel="stylesheet"/>
+ </head>
+ <body data-base="../" data-page="presse.html">
+  <section class="tetepage">
+   <div class="enveloppe">
+    <p class="etiq" data-t="presse.etiquette">
+     Salle de presse
+    </p>
+    <h1 data-t="presse.titre">
+     Actualités &amp; presse
+    </h1>
+    <p class="intro" data-t="presse.intro">
+     Communiqués, temps forts et revue de presse.
+    </p>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe">
+    <article class="grande-actu" id="une">
+    </article>
+   </div>
+  </section>
+  <section class="section" style="padding-top:0;border-bottom:0">
+   <div class="enveloppe">
+    <div class="actus" id="actus">
+    </div>
+   </div>
+  </section>
+  <section class="section transparence">
+   <div class="enveloppe duo">
+    <div>
+     <p class="etiq" data-t="presse.revue_label">
+      Ils parlent de nous
+     </p>
+     <h2 data-t="presse.revue_titre">
+      Revue de presse
+     </h2>
+     <div class="revue" id="revue" style="margin-top:26px">
+     </div>
+    </div>
+    <div class="kit">
+     <h3 data-t="presse.kit_titre">
+      Espace presse
+     </h3>
+     <p data-t="presse.kit_texte">
+      Journalistes : retrouvez nos communiqués, visuels HD et logos.
+     </p>
+     <div class="liens" id="kit-liens">
+     </div>
+     <div class="contact-presse">
+      <p class="label" data-t="presse.kit_contact_label">
+       Contact presse
+      </p>
+      <p class="v" data-t="presse.kit_contact_mail">
+       presse@libota.org
+      </p>
+      <p class="v" data-t="presse.kit_contact_tel">
+       +33 1 23 45 67 90
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <script src="../contenu.js">
+  </script>
+  <script src="../assets/js/site.js">
+  </script>
+  <script>
+   (function(){
 var S=window.SITE,g=S.get,e=S.esc,u=S.url;
 var a=g('presse.une')||{};
 S.set('une','<div>'+(a.image?'<img src="'+e(a.image)+'" alt="" />':'')+'</div>'+
@@ -74,7 +97,8 @@ S.set('kit-liens',(g('presse.kit_liens')||[]).map(function(l){
 return '<a href="'+u(l.url)+'">'+e(l.label)+'<span>↓</span></a>';
 }).join(''));
 })();
-</script>
-<script src="../assets/js/animations.js"></script>
-</body>
+  </script>
+  <script src="../assets/js/animations.js">
+  </script>
+ </body>
 </html>

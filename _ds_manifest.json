@@ -1,1 +1,119 @@
-{"namespace":"DesignSystem_47c161","components":[],"startingPoints":[],"cards":[],"templates":[],"hasThumbnailHtml":true,"globalCssPaths":["assets/css/fonts.css","assets/css/libota-editorial.css","assets/css/libota-pages.css","assets/css/libota-anim.css","styles.css"],"tokens":[{"name":"--papier","value":"#f5f1e6","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--papier-alt","value":"#ebe5d4","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--papier-blanc","value":"#fbf9f2","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--encre","value":"#15281e","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--encre-2","value":"#2b3d33","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--encre-doux","value":"#585f57","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--ambre","value":"#a2601c","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--vert","value":"#1d4632","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--filet","value":"rgba(21,40,30,.18)","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--filet-fort","value":"rgba(21,40,30,.42)","kind":"color","definedIn":"assets/css/libota-editorial.css"},{"name":"--serif","value":"'Newsreader',Georgia,serif","kind":"font","definedIn":"assets/css/libota-editorial.css","annotation":"font"},{"name":"--sans","value":"'Hanken Grotesk',system-ui,sans-serif","kind":"font","definedIn":"assets/css/libota-editorial.css","annotation":"font"},{"name":"--marge","value":"clamp(18px,5vw,64px)","kind":"spacing","definedIn":"assets/css/libota-editorial.css","annotation":"spacing"}],"themes":[],"fonts":[],"brandFonts":[{"family":"Newsreader","status":"ok","tokens":["--serif"],"path":"assets/css/libota-editorial.css"},{"family":"Hanken Grotesk","status":"ok","tokens":["--sans"],"path":"assets/css/libota-editorial.css"}],"source":"spa"}
+{
+  "namespace": "DesignSystem_47c161",
+  "components": [],
+  "startingPoints": [],
+  "cards": [],
+  "templates": [],
+  "hasThumbnailHtml": true,
+  "globalCssPaths": [
+    "assets/css/fonts.css",
+    "assets/css/libota-editorial.css",
+    "assets/css/libota-pages.css",
+    "assets/css/libota-anim.css",
+    "styles.css"
+  ],
+  "tokens": [
+    {
+      "name": "--papier",
+      "value": "#f5f1e6",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--papier-alt",
+      "value": "#ebe5d4",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--papier-blanc",
+      "value": "#fbf9f2",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--encre",
+      "value": "#15281e",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--encre-2",
+      "value": "#2b3d33",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--encre-doux",
+      "value": "#585f57",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--ambre",
+      "value": "#a2601c",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--vert",
+      "value": "#1d4632",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--filet",
+      "value": "rgba(21,40,30,.18)",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--filet-fort",
+      "value": "rgba(21,40,30,.42)",
+      "kind": "color",
+      "definedIn": "assets/css/libota-editorial.css"
+    },
+    {
+      "name": "--serif",
+      "value": "'Newsreader',Georgia,serif",
+      "kind": "font",
+      "definedIn": "assets/css/libota-editorial.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--sans",
+      "value": "'Hanken Grotesk',system-ui,sans-serif",
+      "kind": "font",
+      "definedIn": "assets/css/libota-editorial.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--marge",
+      "value": "clamp(18px,5vw,64px)",
+      "kind": "spacing",
+      "definedIn": "assets/css/libota-editorial.css",
+      "annotation": "spacing"
+    }
+  ],
+  "themes": [],
+  "fonts": [],
+  "brandFonts": [
+    {
+      "family": "Newsreader",
+      "status": "ok",
+      "tokens": [
+        "--serif"
+      ],
+      "path": "assets/css/libota-editorial.css"
+    },
+    {
+      "family": "Hanken Grotesk",
+      "status": "ok",
+      "tokens": [
+        "--sans"
+      ],
+      "path": "assets/css/libota-editorial.css"
+    }
+  ],
+  "source": "spa"
+}

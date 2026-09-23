@@ -1,81 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>À propos - Libota</title>
-<meta name="description" content="L'histoire, la mission et les objectifs de l'association Libota." />
-<link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body data-base="../" data-page="a-propos.html">
-
-<section class="tetepage">
-<div class="enveloppe">
-<p class="etiq" data-t="apropos.etiquette">L'association</p>
-<h1 data-t="apropos.titre">À propos de Libota</h1>
-<p class="intro" data-t="apropos.intro">Une organisation dédiée à faire de l'éducation un droit accessible à tous.</p>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe duo">
-<div>
-<p class="etiq" data-t="apropos.histoire_label">Notre histoire</p>
-<h2 data-t="apropos.histoire_titre">L'éducation, la clé pour transformer des vies.</h2>
-</div>
-<div>
-<div class="prose" id="histoire"></div>
-<div class="docs" id="docs"></div>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe">
-<div class="tete">
-<span class="no">01</span>
-<div>
-<p class="etiq" data-t="apropos.objectifs_label">Nos objectifs</p>
-<h2 style="margin-top:12px" data-t="apropos.objectifs_titre">Ce vers quoi nous tendons</h2>
-</div>
-</div>
-<div class="trio" id="objectifs"></div>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe">
-<div class="tete">
-<span class="no">02</span>
-<div>
-<p class="etiq" data-t="apropos.galerie_label">Sur le terrain</p>
-<h2 style="margin-top:12px" data-t="apropos.galerie_titre">L'éducation en images</h2>
-</div>
-</div>
-<div class="galerie" id="galerie"></div>
-</div>
-</section>
-
-<section class="appel">
-<div class="enveloppe">
-<h2 data-t="apropos.appel_titre">Soutenez notre mission.</h2>
-<p data-t="apropos.appel_texte">Chaque don nous rapproche d'un monde où chaque enfant a accès à l'éducation.</p>
-<a class="bouton" href="contact.html" data-t="apropos.appel_bouton">Faire un don</a>
-</div>
-</section>
-
-<script src="../contenu.js"></script>
-<script src="../assets/js/site.js"></script>
-<script>
-(function(){
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   À propos - Libota
+  </title>
+  <meta content="L'histoire, la mission et les objectifs de l'association Libota." name="description"/>
+  <link href="../assets/media/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../styles.css" rel="stylesheet"/>
+ </head>
+ <body data-base="../" data-page="a-propos.html">
+  <section class="tetepage">
+   <div class="enveloppe">
+    <p class="etiq" data-t="apropos.etiquette">
+     L'association
+    </p>
+    <h1 data-t="apropos.titre">
+     À propos de Libota
+    </h1>
+    <p class="intro" data-t="apropos.intro">
+     Une organisation dédiée à faire de l'éducation un droit accessible à tous.
+    </p>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe duo">
+    <div>
+     <p class="etiq" data-t="apropos.histoire_label">
+      Notre histoire
+     </p>
+     <h2 data-t="apropos.histoire_titre">
+      L'éducation, la clé pour transformer des vies.
+     </h2>
+    </div>
+    <div>
+     <div class="prose" id="histoire">
+     </div>
+     <div class="docs" id="docs">
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe">
+    <div class="tete">
+     <span class="no">
+      01
+     </span>
+     <div>
+      <p class="etiq" data-t="apropos.objectifs_label">
+       Nos objectifs
+      </p>
+      <h2 data-t="apropos.objectifs_titre" style="margin-top:12px">
+       Ce vers quoi nous tendons
+      </h2>
+     </div>
+    </div>
+    <div class="trio" id="objectifs">
+    </div>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe">
+    <div class="tete">
+     <span class="no">
+      02
+     </span>
+     <div>
+      <p class="etiq" data-t="apropos.galerie_label">
+       Sur le terrain
+      </p>
+      <h2 data-t="apropos.galerie_titre" style="margin-top:12px">
+       L'éducation en images
+      </h2>
+     </div>
+    </div>
+    <div class="galerie" id="galerie">
+    </div>
+   </div>
+  </section>
+  <section class="appel">
+   <div class="enveloppe">
+    <h2 data-t="apropos.appel_titre">
+     Soutenez notre mission.
+    </h2>
+    <p data-t="apropos.appel_texte">
+     Chaque don nous rapproche d'un monde où chaque enfant a accès à l'éducation.
+    </p>
+    <a class="bouton" data-t="apropos.appel_bouton" href="contact.html">
+     Faire un don
+    </a>
+   </div>
+  </section>
+  <script src="../contenu.js">
+  </script>
+  <script src="../assets/js/site.js">
+  </script>
+  <script>
+   (function(){
 var S=window.SITE,g=S.get,e=S.esc,u=S.url;
 S.set('histoire',(g('apropos.histoire_texte')||[]).map(function(p){return '<p>'+e(p)+'</p>'}).join(''));
 S.set('docs',(g('apropos.documents')||[]).map(function(d){return '<a class="bouton vide" href="'+u(d.url)+'">'+e(d.label)+'</a>'}).join(''));
 S.set('objectifs',(g('apropos.objectifs')||[]).map(function(o,i){return '<div><div class="n">'+String(i+1).padStart(2,'0')+'</div><h3>'+e(o.titre)+'</h3><p>'+e(o.texte)+'</p></div>'}).join(''));
 S.set('galerie',(g('apropos.galerie')||[]).map(function(src){return '<img src="'+e(src)+'" alt="" />'}).join(''));
 })();
-</script>
-<script src="../assets/js/animations.js"></script>
-</body>
+  </script>
+  <script src="../assets/js/animations.js">
+  </script>
+ </body>
 </html>

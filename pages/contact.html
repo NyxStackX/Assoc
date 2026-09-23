@@ -1,71 +1,195 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact - Libota</title>
-<meta name="description" content="Devenez bénévole, partenaire ou donateur : contactez l'association Libota." />
-<link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body data-base="../" data-page="contact.html">
-
-<section class="tetepage">
-<div class="enveloppe">
-<p class="etiq" data-t="page_contact.etiquette">Nous rejoindre</p>
-<h1 data-t="page_contact.titre">Engagez-vous à nos côtés</h1>
-<p class="intro" data-t="page_contact.intro">Bénévole, partenaire ou donateur : trois façons de faire grandir notre mission.</p>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe">
-<div class="trio" id="engagements"></div>
-</div>
-</section>
-
-<section class="section transparence">
-<div class="enveloppe duo">
-<div>
-<p class="etiq" data-t="page_contact.form_label">Écrivez-nous</p>
-<h2 data-t="page_contact.form_titre">Une question, un projet ?</h2>
-<p class="prose" style="margin-top:16px" data-t="page_contact.form_intro"></p>
-<form class="form" id="form">
-<div class="ligne">
-<input class="champ" type="text" id="c-prenom" required />
-<input class="champ" type="text" id="c-nom" required />
-</div>
-<input class="champ" type="email" id="c-mail" required />
-<select class="champ" id="c-sujet"></select>
-<textarea class="champ" id="c-message" rows="5" required></textarea>
-<button class="bouton" type="submit" data-t="page_contact.form_bouton">Envoyer le message</button>
-<p class="msg" id="c-msg"></p>
-</form>
-</div>
-<div>
-<div class="encadre">
-<h3 data-t="page_contact.coordonnees_titre">Nos coordonnées</h3>
-<div class="infos" id="coordonnees" style="margin-top:22px"></div>
-<div class="reseaux" id="reseaux"></div>
-</div>
-</div>
-</div>
-</section>
-
-<script src="../contenu.js"></script>
-<script src="../assets/js/site.js"></script>
-<script>
-(function(){
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Contact - Libota
+  </title>
+  <meta content="Devenez bénévole, partenaire ou donateur : contactez l'association Libota." name="description"/>
+  <link href="../assets/media/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../styles.css" rel="stylesheet"/>
+  <link href="../assets/css/libota-form.css" rel="stylesheet"/>
+ </head>
+ <body data-base="../" data-page="contact.html">
+  <section class="tetepage">
+   <div class="enveloppe">
+    <p class="etiq" data-t="page_contact.etiquette">
+     Nous rejoindre
+    </p>
+    <h1 data-t="page_contact.titre">
+     Engagez-vous à nos côtés
+    </h1>
+    <p class="intro" data-t="page_contact.intro">
+     Bénévole, partenaire ou donateur : trois façons de faire grandir notre mission.
+    </p>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe">
+    <div class="trio" id="engagements">
+    </div>
+   </div>
+  </section>
+  <section class="section transparence">
+   <div class="enveloppe duo">
+    <div>
+     <p class="etiq" data-t="page_contact.form_label">
+      Écrivez-nous
+     </p>
+     <h2 data-t="page_contact.form_titre">
+      Une question, un projet ?
+     </h2>
+     <p class="form-intro" data-t="page_contact.form_intro">
+     </p>
+     <form class="form form-riche" id="form" novalidate="">
+      <div class="ligne">
+       <p class="ch" data-ch="c-prenom">
+        <label for="c-prenom">
+         Prénom
+        </label>
+        <input autocomplete="given-name" class="champ" id="c-prenom" name="prenom" required="" type="text"/>
+        <span class="err">
+         Indiquez votre prénom.
+        </span>
+       </p>
+       <p class="ch" data-ch="c-nom">
+        <label for="c-nom">
+         Nom
+        </label>
+        <input autocomplete="family-name" class="champ" id="c-nom" name="nom" required="" type="text"/>
+        <span class="err">
+         Indiquez votre nom.
+        </span>
+       </p>
+      </div>
+      <p class="ch" data-ch="c-mail">
+       <label for="c-mail">
+        Adresse e-mail
+       </label>
+       <input autocomplete="email" class="champ" id="c-mail" name="email" required="" type="email"/>
+       <span class="err">
+        Cette adresse e-mail semble incomplète.
+       </span>
+      </p>
+      <div class="ch" data-ch="c-sujet">
+       <span class="lab">
+        Votre sujet
+       </span>
+       <div class="sujets" id="sujets">
+       </div>
+       <select aria-hidden="true" class="champ champ-cache" id="c-sujet" tabindex="-1">
+       </select>
+       <span class="err">
+        Choisissez un sujet.
+       </span>
+      </div>
+      <p class="ch" data-ch="c-message">
+       <label for="c-message">
+        Votre message
+       </label>
+       <span class="compte" id="c-compte">
+        0 / 800
+       </span>
+       <textarea class="champ" id="c-message" maxlength="800" name="message" required="" rows="6"></textarea>
+       <span class="err">
+        Écrivez au moins quelques mots (10 caractères).
+       </span>
+      </p>
+      <div class="envoi">
+       <button class="bouton" data-t="page_contact.form_bouton" type="submit">
+        Envoyer le message
+       </button>
+       <span class="rgpd">
+        Vos coordonnées servent uniquement à vous répondre. Aucune donnée n'est transmise à un tiers.
+       </span>
+      </div>
+      <p class="msg" id="c-msg">
+      </p>
+     </form>
+     <div class="form-ok" hidden="" id="form-ok">
+      <div class="rond">
+       ✓
+      </div>
+      <h3>
+       Message envoyé
+      </h3>
+      <p id="form-ok-texte">
+      </p>
+      <button id="form-encore" type="button">
+       Écrire un autre message
+      </button>
+     </div>
+    </div>
+    <div>
+     <div class="encadre">
+      <h3 data-t="page_contact.coordonnees_titre">
+       Nos coordonnées
+      </h3>
+      <div class="infos" id="coordonnees" style="margin-top:22px">
+      </div>
+      <div class="reseaux" id="reseaux">
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <script src="../contenu.js">
+  </script>
+  <script src="../assets/js/site.js">
+  </script>
+  <script>
+   (function(){
 var S=window.SITE,g=S.get,e=S.esc,u=S.url;
 var ch=g('page_contact.form_champs')||{};
-document.getElementById('c-prenom').placeholder=e(ch.prenom);
-document.getElementById('c-nom').placeholder=e(ch.nom);
-document.getElementById('c-mail').placeholder=e(ch.email);
-document.getElementById('c-message').placeholder=e(ch.message);
+/* les libellés portent le nom du champ ; on ne garde que deux repères utiles */
+document.getElementById('c-mail').placeholder='prenom@exemple.fr';
+document.getElementById('c-message').placeholder=e(ch.message||'');
 
 var sel=document.getElementById('c-sujet');
 sel.innerHTML='<option value="">'+e(g('page_contact.form_sujet_defaut'))+'</option>'+
 (g('page_contact.form_sujets')||[]).map(function(s){return '<option>'+e(s)+'</option>'}).join('');
+
+/* --- sujets en pastilles, reliées au menu déroulant --- */
+S.set('sujets',(g('page_contact.form_sujets')||[]).map(function(s){return '<button type="button" aria-pressed="false" data-val="'+e(s)+'">'+e(s)+'</button>'}).join(''));
+var pastilles=[].slice.call(document.querySelectorAll('#sujets button'));
+function majPastilles(){pastilles.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.val===sel.value?'true':'false')})}
+document.getElementById('sujets').addEventListener('click',function(ev){
+var b=ev.target.closest('button[data-val]');if(!b)return;
+sel.value=b.dataset.val===sel.value?'':b.dataset.val;majPastilles();verif('c-sujet');
+});
+
+/* --- validation champ par champ --- */
+function bloc(id){return document.querySelector('[data-ch="'+id+'"]')}
+function valeur(id){var el=document.getElementById(id);return (el.value||'').trim()}
+function valide(id){
+if(id==='c-mail')return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(valeur(id));
+if(id==='c-sujet')return !!sel.value;
+if(id==='c-message')return valeur(id).length>=10;
+return valeur(id).length>=2;
+}
+function verif(id,silencieux){
+var b=bloc(id);if(!b)return valide(id);
+var ok=valide(id);
+b.classList.toggle('ok',ok);
+b.classList.toggle('ko',!ok&&!silencieux&&!!b.dataset.vu);
+return ok;
+}
+['c-prenom','c-nom','c-mail','c-message'].forEach(function(id){
+var el=document.getElementById(id);
+el.addEventListener('input',function(){el.dataset.touche='1';verif(id,true)});
+el.addEventListener('blur',function(){
+if(!(el.value||'').trim()&&!el.dataset.touche)return;
+bloc(id).dataset.vu='1';verif(id);
+});
+});
+
+/* --- compteur du message --- */
+var msgEl=document.getElementById('c-message'),cpt=document.getElementById('c-compte');
+msgEl.addEventListener('input',function(){
+cpt.textContent=msgEl.value.length+' / 800';
+cpt.classList.toggle('pres',msgEl.value.length>720);
+});
 
 S.set('engagements',(g('page_contact.engagements')||[]).map(function(x,i){
 return '<div><div class="n">'+String(i+1).padStart(2,'0')+'</div><h3>'+e(x.titre)+'</h3><p>'+e(x.texte)+'</p>'+
@@ -84,16 +208,42 @@ document.getElementById('engagements').addEventListener('click',function(ev){
 var b=ev.target.closest('[data-sujet]');if(!b)return;
 var v=b.getAttribute('data-sujet');
 for(var i=0;i<sel.options.length;i++){if(sel.options[i].text.indexOf(v)>-1||v.indexOf(sel.options[i].text)>-1)sel.selectedIndex=i}
+majPastilles();verif('c-sujet');
 document.getElementById('c-prenom').focus();
 });
 
-document.getElementById('form').addEventListener('submit',function(ev){
+var form=document.getElementById('form'),ok=document.getElementById('form-ok'),bt=form.querySelector('button[type="submit"]'),libelle=bt.textContent;
+document.getElementById('form-ok-texte').textContent=e(g('page_contact.form_confirmation'));
+
+form.addEventListener('submit',function(ev){
 ev.preventDefault();
-document.getElementById('c-msg').textContent=e(g('page_contact.form_confirmation'));
-this.reset();sel.selectedIndex=0;
+var champs=['c-prenom','c-nom','c-mail','c-sujet','c-message'],premier=null;
+champs.forEach(function(id){bloc(id).dataset.vu='1';if(!verif(id)&&!premier)premier=id});
+if(premier){
+document.getElementById('c-msg').textContent='Quelques champs sont à compléter avant l\u2019envoi.';
+document.getElementById('c-msg').style.color='#a0342a';
+var c=document.getElementById(premier);if(c&&c.focus)c.focus();
+return;
+}
+document.getElementById('c-msg').textContent='';
+bt.dataset.etat='envoi';bt.textContent='Envoi en cours…';
+setTimeout(function(){
+bt.dataset.etat='';bt.textContent=libelle;
+form.hidden=true;ok.hidden=false;
+},700);
+});
+
+document.getElementById('form-encore').addEventListener('click',function(){
+form.reset();sel.selectedIndex=0;majPastilles();
+cpt.textContent='0 / 800';cpt.classList.remove('pres');
+[].slice.call(form.querySelectorAll('.ch')).forEach(function(b){b.classList.remove('ok','ko');delete b.dataset.vu});
+[].slice.call(form.querySelectorAll('.champ')).forEach(function(el){delete el.dataset.touche});
+ok.hidden=true;form.hidden=false;
+document.getElementById('c-prenom').focus();
 });
 })();
-</script>
-<script src="../assets/js/animations.js"></script>
-</body>
+  </script>
+  <script src="../assets/js/animations.js">
+  </script>
+ </body>
 </html>

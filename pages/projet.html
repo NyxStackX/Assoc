@@ -1,78 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Projet - Libota</title>
-<meta name="description" content="Détail d'un pôle d'action de l'association Libota." />
-<link rel="icon" type="image/svg+xml" href="../assets/media/favicon.svg" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body data-base="../" data-page="projets.html">
-
-<section class="tetepage">
-<div class="enveloppe">
-<a class="fil" href="projets.html" id="retour">← Retour aux projets</a>
-<p class="etiq" id="numero">PÔLE 01</p>
-<h1 id="titre">Projet</h1>
-<p class="intro" id="accroche"></p>
-</div>
-</section>
-
-<div class="projet-photo" id="projet-photo"></div>
-
-<div class="enveloppe">
-<div class="chiffres" id="stats"></div>
-</div>
-
-<section class="section">
-<div class="enveloppe corps">
-<div>
-<div class="bloc">
-<h2 id="t-projet">Le projet</h2>
-<div class="prose" id="texte"></div>
-</div>
-<div class="bloc">
-<h2 id="t-objectifs">Nos objectifs</h2>
-<ul class="puces" id="objectifs"></ul>
-</div>
-<div class="bloc">
-<h2 id="t-actions">Actions réalisées</h2>
-<ul class="puces" id="actions"></ul>
-</div>
-</div>
-<aside class="aside">
-<div class="encadre">
-<h3 id="t-benef">Bénéficiaires</h3>
-<p id="benef"></p>
-</div>
-<div class="encadre sombre">
-<h3 id="t-soutien">Soutenir ce projet</h3>
-<p id="soutien-texte"></p>
-<a class="bouton" href="contact.html" id="soutien-bouton">Faire un don</a>
-</div>
-</aside>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe">
-<p class="etiq" style="margin-bottom:22px" id="t-galerie">En images</p>
-<div class="galerie" id="galerie"></div>
-</div>
-</section>
-
-<section class="section">
-<div class="enveloppe pied-nav">
-<a class="bouton vide" href="projets.html" id="retour-bas">← Retour aux projets</a>
-<a class="lien" href="#" id="suivant"></a>
-</div>
-</section>
-
-<script src="../contenu.js"></script>
-<script src="../assets/js/site.js"></script>
-<script>
-(function(){
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Projet - Libota
+  </title>
+  <meta content="Détail d'un pôle d'action de l'association Libota." name="description"/>
+  <link href="../assets/media/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../styles.css" rel="stylesheet"/>
+ </head>
+ <body data-base="../" data-page="projets.html">
+  <section class="tetepage">
+   <div class="enveloppe">
+    <a class="fil" href="projets.html" id="retour">
+     ← Retour aux projets
+    </a>
+    <p class="etiq" id="numero">
+     PÔLE 01
+    </p>
+    <h1 id="titre">
+     Projet
+    </h1>
+    <p class="intro" id="accroche">
+    </p>
+   </div>
+  </section>
+  <div class="projet-photo" id="projet-photo">
+  </div>
+  <div class="enveloppe">
+   <div class="chiffres" id="stats">
+   </div>
+  </div>
+  <section class="section">
+   <div class="enveloppe corps">
+    <div>
+     <div class="bloc">
+      <h2 id="t-projet">
+       Le projet
+      </h2>
+      <div class="prose" id="texte">
+      </div>
+     </div>
+     <div class="bloc">
+      <h2 id="t-objectifs">
+       Nos objectifs
+      </h2>
+      <ul class="puces" id="objectifs">
+      </ul>
+     </div>
+     <div class="bloc">
+      <h2 id="t-actions">
+       Actions réalisées
+      </h2>
+      <ul class="puces" id="actions">
+      </ul>
+     </div>
+    </div>
+    <aside class="aside">
+     <div class="encadre">
+      <h3 id="t-benef">
+       Bénéficiaires
+      </h3>
+      <p id="benef">
+      </p>
+     </div>
+     <div class="encadre sombre">
+      <h3 id="t-soutien">
+       Soutenir ce projet
+      </h3>
+      <p id="soutien-texte">
+      </p>
+      <a class="bouton" href="contact.html" id="soutien-bouton">
+       Faire un don
+      </a>
+     </div>
+    </aside>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe">
+    <p class="etiq" id="t-galerie" style="margin-bottom:22px">
+     En images
+    </p>
+    <div class="galerie" id="galerie">
+    </div>
+   </div>
+  </section>
+  <section class="section">
+   <div class="enveloppe pied-nav">
+    <a class="bouton vide" href="projets.html" id="retour-bas">
+     ← Retour aux projets
+    </a>
+    <a class="lien" href="#" id="suivant">
+    </a>
+   </div>
+  </section>
+  <script src="../contenu.js">
+  </script>
+  <script src="../assets/js/site.js">
+  </script>
+  <script>
+   (function(){
 var S=window.SITE,g=S.get,e=S.esc;
 var poles=g('poles')||[],T=g('projet_page')||{};
 var cle=(new URLSearchParams(location.search)).get('p')||(poles[0]||{}).cle;
@@ -105,7 +134,8 @@ var n=poles[(i+1)%poles.length];
 var sv=document.getElementById('suivant');
 if(n){sv.href='projet.html?p='+e(n.cle);sv.textContent=(T.suivant||'Projet suivant')+' : '+n.titre+' →'}
 })();
-</script>
-<script src="../assets/js/animations.js"></script>
-</body>
+  </script>
+  <script src="../assets/js/animations.js">
+  </script>
+ </body>
 </html>

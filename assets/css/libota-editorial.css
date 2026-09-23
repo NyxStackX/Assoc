@@ -1,8 +1,8 @@
 /* ============================================================
-   LIBOTA - feuille de style « éditoriale »
-   Papier ivoire, encre verte, filets 1px, pas d'arrondis,
-   pas d'ombres portées. Tout le texte vient de contenu.js.
-   ============================================================ */
+LIBOTA - feuille de style « éditoriale »
+Papier ivoire, encre verte, filets 1px, pas d'arrondis,
+pas d'ombres portées. Tout le texte vient de contenu.js.
+============================================================ */
 :root{
   --papier:#f5f1e6;--papier-alt:#ebe5d4;--papier-blanc:#fbf9f2;
   --encre:#15281e;--encre-2:#2b3d33;--encre-doux:#585f57;
@@ -212,13 +212,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;line-he
   .chiffres div:nth-child(odd){border-inline-start:0;padding-inline-start:0}
   .tete{grid-template-columns:1fr;gap:10px}
   .tete .no{padding-top:0}
-  .barre-mobile{display:flex}
   body{padding-bottom:62px}
 }
 /* barre d'action fixe, mobile seulement */
 .barre-mobile{display:none;position:fixed;bottom:0;left:0;right:0;z-index:50;border-top:1px solid var(--filet-fort);background:var(--papier)}
 .barre-mobile a{flex:1;text-align:center;font-family:var(--sans);font-size:.85rem;font-weight:600;letter-spacing:.04em;padding:16px 8px;text-decoration:none}
 .barre-mobile a+a{background:var(--encre);color:var(--papier);border-inline-start:1px solid var(--encre)}
+@media(max-width:720px){.barre-mobile{display:flex}}
 
 /* --- finitions mobile ------------------------------------- */
 @media(max-width:720px){

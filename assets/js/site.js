@@ -1,8 +1,8 @@
 /* ============================================================
-   LIBOTA - script commun à toutes les pages
-   Construit l'en-tête, le pied de page et remplace les textes
-   marqués data-t par leur valeur dans contenu.js.
-   ============================================================ */
+LIBOTA - script commun à toutes les pages
+Construit l'en-tête, le pied de page et remplace les textes
+marqués data-t par leur valeur dans contenu.js.
+============================================================ */
 (function () {
   var C = window.CONTENU || {};
   var body = document.body;
@@ -22,11 +22,11 @@
   var html = '';
   if (g('annonce')) html += '<div class="annonce">' + e(g('annonce')) + '</div>';
   html += '<header class="entete">' +
-    '<a class="marque" href="' + u('index.html') + '">Libota<sup>est. 2000</sup></a>' +
-    '<nav class="nav" id="nav">' + menu + '</nav>' +
-    '<button class="burger" id="burger" aria-expanded="false">Menu</button>' +
-    '<a class="bouton" href="' + u(btn.url) + '">' + e(btn.label) + '</a>' +
-    '</header>';
+  '<a class="marque" href="' + u('index.html') + '">Libota<sup>est. 2000</sup></a>' +
+  '<nav class="nav" id="nav">' + menu + '</nav>' +
+  '<button class="burger" id="burger" aria-expanded="false">Menu</button>' +
+  '<a class="bouton" href="' + u(btn.url) + '">' + e(btn.label) + '</a>' +
+  '</header>';
   body.insertAdjacentHTML('afterbegin', html);
 
   /* --- pied de page ------------------------------------- */
@@ -35,11 +35,11 @@
   }
   var p = g('pied') || {};
   var pied = '<footer class="pied"><div class="enveloppe pied-grille">' +
-    '<div><a class="marque" href="' + u('index.html') + '">Libota<sup>est. 2000</sup></a>' +
-    '<p class="intro">' + e(p.intro) + '</p></div>' +
-    '<div><h4>' + e(p.colonne_1_titre) + '</h4><nav>' + liens(p.colonne_1) + '</nav></div>' +
-    '<div><h4>' + e(p.colonne_2_titre) + '</h4><nav>' + liens(p.colonne_2) + '</nav></div>' +
-    '</div><p class="enveloppe bas">' + e(p.copyright) + '</p></footer>';
+  '<div><a class="marque" href="' + u('index.html') + '">Libota<sup>est. 2000</sup></a>' +
+  '<p class="intro">' + e(p.intro) + '</p></div>' +
+  '<div><h4>' + e(p.colonne_1_titre) + '</h4><nav>' + liens(p.colonne_1) + '</nav></div>' +
+  '<div><h4>' + e(p.colonne_2_titre) + '</h4><nav>' + liens(p.colonne_2) + '</nav></div>' +
+  '</div><p class="enveloppe bas">' + e(p.copyright) + '</p></footer>';
   var barre = (g('barre_mobile') || []).map(function (b) {
     return '<a href="' + u(b.url) + '">' + e(b.label) + '</a>';
   }).join('');

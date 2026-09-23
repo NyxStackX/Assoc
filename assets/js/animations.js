@@ -1,7 +1,7 @@
 /* ============================================================
-   LIBOTA - animations au défilement
-   À charger après site.js et après le script de la page.
-   ============================================================ */
+LIBOTA - animations au défilement
+À charger après site.js et après le script de la page.
+============================================================ */
 (function () {
   var doux = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
@@ -48,12 +48,12 @@
   }
 
   /* --- éléments à faire apparaître ------------------------ */
-  var cibles = '.chiffres>div,.tete,.mission>*,.impact>div,.domaine,.ligne-rep,.etape,.actu,.temoin,.partenaires,.faq details,.appel .enveloppe>*,.contact>*,.duo>*,.trio>*,.galerie .cadre,.pole,.membre,.carte-actu,.grande-actu>*,.bloc,.aside .encadre,.revue a,.bloc-legal,.rejoindre,.film .sur>*,.bandeau figcaption';
+  var cibles = '.tuile,.gal-accueil figure,.gal-note,.chiffres>div,.tete,.mission>*,.impact>div,.domaine,.ligne-rep,.etape,.actu,.temoin,.partenaires,.faq details,.appel .enveloppe>*,.contact>*,.duo>*,.trio>*,.galerie .cadre,.pole,.membre,.carte-actu,.grande-actu>*,.bloc,.aside .encadre,.revue a,.bloc-legal,.rejoindre,.film .sur>*,.bandeau figcaption';
   var aVoir = [].slice.call(document.querySelectorAll(cibles));
   aVoir.forEach(function (el) { el.classList.add('rv') });
 
   /* --- compteurs ------------------------------------------ */
-  var compteurs = [].slice.call(document.querySelectorAll('.chiffres .v,.impact .c,.transp .gros,.encadre .annee'));
+  var compteurs = [].slice.call(document.querySelectorAll('.chiffres .v,.impact .c,.transp .gros,.encadre .annee,.gal-note .n'));
   compteurs.forEach(function (el) { el.dataset.fin = el.textContent.trim() });
 
   function compte(el) {
@@ -78,7 +78,7 @@
   barres.forEach(function (s) { s.dataset.w = s.style.width; s.style.width = '0' });
 
   /* --- déclenchement au défilement (sans IntersectionObserver,
-         qui reste inactif dans certains aperçus) ----------- */
+  qui reste inactif dans certains aperçus) ----------- */
   function visible(el, marge) {
     var r = el.getBoundingClientRect();
     if (r.height === 0 && r.width === 0) return false;
@@ -147,8 +147,8 @@
   setTimeout(verifie, 400);
 
   /* --- filets de sécurité ---------------------------------
-     1. un passage régulier, au cas où un événement manque ;
-     2. au bout de 8 s, on affiche tout ce qui reste caché. */
+  1. un passage régulier, au cas où un événement manque ;
+  2. au bout de 8 s, on affiche tout ce qui reste caché. */
   var minuterie = setInterval(function () {
     verifie();
     if (!aVoir.length && !compteurs.length && !barres.length) clearInterval(minuterie);
@@ -156,7 +156,7 @@
   document.addEventListener('visibilitychange', verifie);
   window.addEventListener('pageshow', verifie);
   /* si des éléments visibles à l'écran sont encore cachés au bout de
-     4 s, c'est que le défilement n'est pas détecté : on affiche tout. */
+  4 s, c'est que le défilement n'est pas détecté : on affiche tout. */
   setTimeout(function () {
     if (aVoir.some(function (el) { return visible(el, 0) })) tout();
   }, 4000);

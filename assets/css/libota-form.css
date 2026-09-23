@@ -1,0 +1,58 @@
+/* ============================================================
+Libota - formulaire de contact (page contact.html)
+Présentation en registre : libellé à gauche, champ à droite,
+filets fins, pas d'ombre, pas d'angle arrondi.
+============================================================ */
+.form-intro{font-family:var(--serif);font-size:clamp(1.08rem,1.5vw,1.3rem);line-height:1.45;color:var(--encre-2);max-width:34ch;margin-top:20px;padding-top:18px;border-top:2px solid var(--ambre);display:inline-block}
+.form-riche{display:block;max-width:40rem;margin-top:26px;border-top:1px solid var(--filet-fort)}
+.form-riche .ligne{display:block}
+.form-riche .ch{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:4px 20px;align-items:start;padding:15px 2px;margin:0;border-bottom:1px solid var(--filet);transition:background .3s ease}
+.form-riche .ch:focus-within{background:rgba(29,70,50,.035)}
+.form-riche label,.form-riche .lab{font-family:var(--sans);font-size:.76rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--encre-doux);padding-top:7px;transition:color .3s ease}
+.form-riche .ch:focus-within label,.form-riche .ch:focus-within .lab{color:var(--vert)}
+.form-riche .champ{grid-column:2;font-family:var(--sans);font-size:1rem;color:var(--encre);background:none;border:0;border-bottom:1px solid var(--filet);border-radius:0;padding:6px 0;width:100%;outline:none;box-shadow:none;transition:border-color .25s ease}
+.form-riche .champ:hover{border-bottom-color:var(--filet-fort)}
+.form-riche .ch:focus-within .champ{border-bottom-color:var(--vert)}
+.form-riche .champ::placeholder{color:rgba(88,95,87,.55)}
+.form-riche textarea.champ{min-height:96px;resize:vertical;line-height:1.55}
+.form-riche .err{grid-column:2;font-family:var(--sans);font-size:.8rem;color:#9c3225;display:none}
+.form-riche .ch.ko{background:rgba(156,50,37,.045)}
+.form-riche .ch.ko .err{display:block}
+.form-riche .ch.ko label{color:#9c3225}
+.form-riche .ch.ok>label::after{content:"✓";float:right;color:var(--vert);letter-spacing:0;font-size:.85rem}
+.form-riche .compte{grid-column:2;justify-self:end;font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--encre-doux);order:9}
+.form-riche .compte.pres{color:#9c3225}
+
+/* sujets : étiquettes carrées */
+.sujets{grid-column:2;display:flex;flex-wrap:wrap;gap:8px;padding-top:3px}
+.sujets button{font-family:var(--sans);font-size:.85rem;line-height:1.15;white-space:nowrap;padding:9px 13px;background:none;color:var(--encre-2);border:1px solid var(--filet-fort);border-radius:0;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.sujets button:hover{border-color:var(--encre);color:var(--encre)}
+.sujets button[aria-pressed="true"]{background:var(--vert);border-color:var(--vert);color:#fff}
+.form-riche .champ.champ-cache{position:absolute;width:1px;height:1px;padding:0;border:0;opacity:0;overflow:hidden;pointer-events:none}
+
+/* pied du formulaire */
+.form-riche .envoi{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;padding:22px 2px 0;border:0}
+.form-riche .envoi .bouton{margin-top:0}
+.form-riche .rgpd{font-family:var(--sans);font-size:.78rem;line-height:1.45;color:var(--encre-doux);max-width:24ch}
+.form-riche .bouton[data-etat="envoi"]{opacity:.65;pointer-events:none}
+.form-riche .msg{padding:0 2px;font-family:var(--sans);font-size:.85rem}
+
+/* confirmation */
+.form-ok{margin-top:26px;max-width:40rem;border-top:2px solid var(--vert);border-bottom:1px solid var(--filet);background:var(--papier-blanc);padding:clamp(24px,3vw,34px);animation:formParait .5s cubic-bezier(.16,.8,.24,1) both}
+@keyframes formParait{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.form-ok .rond{width:34px;height:34px;border:1px solid var(--vert);color:var(--vert);display:grid;place-items:center;font-size:.95rem}
+.form-ok h3{font-family:var(--serif);font-weight:400;font-size:1.6rem;margin-top:16px}
+.form-ok p{font-family:var(--sans);font-size:.95rem;color:var(--encre-doux);margin-top:10px;max-width:42ch}
+.form-ok button{margin-top:20px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ambre);background:none;border:0;border-bottom:1px solid currentColor;padding-bottom:3px;cursor:pointer}
+.form-ok button:hover{color:var(--encre)}
+
+@media(max-width:760px){
+  .form-riche .ch{grid-template-columns:1fr;gap:2px;padding:13px 2px}
+  .form-riche label,.form-riche .lab{padding-top:0}
+  .form-riche .champ,.form-riche .err,.form-riche .sujets,.form-riche .compte{grid-column:1}
+  .form-riche .ch.ok>label::after{float:none;margin-inline-start:8px}
+  .form-riche .envoi{display:grid;grid-template-columns:1fr}
+  .form-riche .envoi .bouton{width:100%;text-align:center}
+  .form-riche .rgpd{max-width:none}
+  .sujets button{white-space:normal}
+}

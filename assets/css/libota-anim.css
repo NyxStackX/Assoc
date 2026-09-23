@@ -1,9 +1,9 @@
 /* ============================================================
-   LIBOTA - animations
-   Apparitions au défilement, compteurs, zoom des images.
-   Tout est désactivé si le visiteur a demandé « moins
-   d'animations » dans les réglages de son système.
-   ============================================================ */
+LIBOTA - animations
+Apparitions au défilement, compteurs, zoom des images.
+Tout est désactivé si le visiteur a demandé « moins
+d'animations » dans les réglages de son système.
+============================================================ */
 
 /* --- apparition au défilement ----------------------------- */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.22,.7,.2,1),transform .8s cubic-bezier(.22,.7,.2,1)}
