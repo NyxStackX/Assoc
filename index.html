@@ -1,428 +1,841 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Libota - L'éducation, un droit pour chaque enfant
-  </title>
-  <meta content="Depuis 2000, l'association Libota œuvre pour offrir une éducation de qualité aux enfants défavorisés à travers le monde." name="description"/>
-  <link href="assets/media/favicon.svg" rel="icon" type="image/svg+xml"/>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="styles.css" rel="stylesheet"/>
-  <link href="assets/css/libota-accueil.css" rel="stylesheet"/>
- </head>
- <body data-base="" data-page="index.html">
-  <section class="une">
-   <div class="enveloppe une-grille">
-    <div>
-     <p class="etiq une-surtitre" data-t="hero.surtitre">
-      Association à but non lucratif · depuis 2000
-     </p>
-     <h1 data-t="hero.titre">
-      L'éducation,
-      <em>
-       un droit
-      </em>
-      pour chaque enfant.
-     </h1>
-     <p class="une-intro" data-t="hero.intro">
-      Depuis 2000, Libota œuvre pour offrir une éducation de qualité aux enfants défavorisés à travers le monde. Rejoignez notre mission.
-     </p>
-     <div class="une-actions">
-      <a class="bouton" data-t="hero.bouton_don" href="pages/contact.html">
-       Faire un don
-      </a>
-      <a class="bouton vide" data-t="hero.bouton_actions" href="#domaines">
-       Découvrir nos actions
-      </a>
-     </div>
-    </div>
-    <figure class="une-photo">
-     <img alt="Enfants accompagnés par Libota" id="hero-photo" src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"/>
-     <figcaption data-t="hero.photo_legende">
-      Programme d'équipement scolaire, 2025.
-     </figcaption>
-    </figure>
-   </div>
-   <div class="enveloppe">
-    <div class="chiffres" id="chiffres">
-    </div>
-   </div>
-  </section>
-  <div class="ruban" id="ruban">
-  </div>
-  <section class="section" id="mission">
-   <div class="enveloppe mission">
-    <div>
-     <p class="etiq" data-t="mission.label">
-      Notre mission
-     </p>
-     <p class="grand" data-t="mission.texte" style="margin-top:20px">
-      Libota œuvre pour un monde où chaque enfant, quelle que soit son origine, a accès à une éducation de qualité.
-     </p>
-     <p style="margin-top:30px">
-      <a class="lien" data-t="mission.lien" href="pages/a-propos.html" id="mission-lien">
-       En savoir plus sur l'association
-      </a>
-     </p>
-    </div>
-    <div class="encadre">
-     <div class="annee" data-t="mission.encadre_annee">
-      2030
-     </div>
-     <p data-t="mission.encadre_texte">
-      L'année où nous visons 100 000 enfants scolarisés.
-     </p>
-    </div>
-   </div>
-  </section>
-  <section class="section bleu-profond" id="impact">
-   <div class="enveloppe">
-    <div class="tete">
-     <span class="no">
-      01
-     </span>
-     <div>
-      <p class="etiq" data-t="impact.label">
-       Notre impact
-      </p>
-      <h2 data-t="impact.titre" style="margin-top:12px">
-       Des résultats concrets depuis 2000.
-      </h2>
-      <p class="chapeau" data-t="impact.chapeau">
-       Chaque chiffre représente une vie transformée, un avenir bâti grâce à l'éducation.
-      </p>
-     </div>
-    </div>
-    <div class="impact" id="impact-blocs">
-    </div>
-   </div>
-  </section>
-  <section class="section" id="terrain">
-   <div class="enveloppe">
-    <div class="tete">
-     <span class="no">
-      02
-     </span>
-     <div>
-      <p class="etiq" data-t="terrain.label">
-       Sur le terrain
-      </p>
-      <h2 data-t="terrain.titre" style="margin-top:12px">
-       Ce que l'on voit quand on y est.
-      </h2>
-      <p class="chapeau" data-t="terrain.texte">
-       Trois séquences filmées dans les écoles que nous accompagnons.
-      </p>
-     </div>
-    </div>
-    <div class="terrains" id="mosaique">
-    </div>
-   </div>
-  </section>
-  <section class="film" id="film">
-   <div class="fond" id="film-fond">
-   </div>
-   <div class="sur">
-    <p class="etiq" data-t="film.label">
-     En vidéo
-    </p>
-    <h2 data-t="film.titre">
-     Une année sur le terrain.
-    </h2>
-    <p data-t="film.texte">
-    </p>
-    <button class="jouer" id="film-jouer">
-     <b>
-      ▶
-     </b>
-     <span data-t="film.bouton">
-      Lire la vidéo
-     </span>
-    </button>
-    <p class="note" id="film-note">
-    </p>
-   </div>
-  </section>
-  <section class="section" id="domaines">
-   <div class="enveloppe">
-    <div class="tete">
-     <span class="no">
-      03
-     </span>
-     <div>
-      <p class="etiq" data-t="domaines.label">
-       Nos domaines d'action
-      </p>
-      <h2 data-t="domaines.titre" style="margin-top:12px">
-       Six leviers pour une éducation complète
-      </h2>
-     </div>
-    </div>
-    <div class="domaines" id="domaines-liste">
-    </div>
-   </div>
-  </section>
-  <section class="section transparence" id="transparence">
-   <div class="enveloppe">
-    <div class="tete">
-     <span class="no">
-      04
-     </span>
-     <div>
-      <p class="etiq" data-t="transparence.label">
-       Transparence
-      </p>
-      <h2 data-t="transparence.titre" style="margin-top:12px">
-       Où va votre don ?
-      </h2>
-     </div>
-    </div>
-    <div class="transp">
-     <div>
-      <p data-t="transparence.texte" style="max-width:40ch;color:var(--encre-2)">
-       Nous publions chaque année la répartition de nos dépenses.
-      </p>
-      <div class="gros" data-t="transparence.chiffre">
-       85 %
-      </div>
-      <p class="leg" data-t="transparence.chiffre_legende">
-       des fonds sont consacrés directement à nos programmes.
-      </p>
-     </div>
-     <div id="repartition">
-     </div>
-    </div>
-   </div>
-  </section>
-  <section class="section" id="parcours">
-   <div class="enveloppe">
-    <div class="tete">
-     <span class="no">
-      05
-     </span>
-     <div>
-      <p class="etiq" data-t="parcours.label">
-       Notre parcours
-      </p>
-      <h2 data-t="parcours.titre" style="margin-top:12px">
-       Vingt-cinq ans d'engagement
-      </h2>
-     </div>
-    </div>
-    <div id="parcours-liste">
-    </div>
-   </div>
-  </section>
-  <figure class="bandeau">
-   <div class="fond" id="bandeau-fond">
-   </div>
-   <figcaption data-t="bandeau.legende">
-   </figcaption>
-  </figure>
-  <section class="section" id="galerie">
-   <div class="enveloppe">
-    <div class="tete">
-     <span class="no">
-      06
-     </span>
-     <div>
-      <p class="etiq" data-t="galerie_accueil.label">
-       En images
-      </p>
-      <h2 data-t="galerie_accueil.titre" style="margin-top:12px">
-       L'éducation, jour après jour
-      </h2>
-     </div>
-    </div>
-    <div class="gal-accueil" id="gal-accueil">
-    </div>
-   </div>
-  </section>
-  <section class="section" id="actualites">
-   <div class="enveloppe">
-    <div class="tete">
-     <span class="no">
-      07
-     </span>
-     <div>
-      <p class="etiq" data-t="actualites.label">
-       À la une
-      </p>
-      <h2 data-t="actualites.titre" style="margin-top:12px">
-       Nos dernières actualités
-      </h2>
-     </div>
-    </div>
-    <div id="actus-liste">
-    </div>
-    <p style="margin-top:26px">
-     <a class="lien" data-t="actualites.lien" href="pages/presse.html" id="actus-lien">
-      Toutes les actualités
-     </a>
-    </p>
-   </div>
-  </section>
-  <section class="section" id="temoignages">
-   <div class="enveloppe">
-    <p class="etiq" data-t="temoignages.label" style="margin-bottom:26px">
-     Ils en parlent
-    </p>
-    <div class="temoins" id="temoins">
-    </div>
-   </div>
-  </section>
-  <div class="enveloppe">
-   <div class="partenaires" id="partenaires">
-   </div>
-  </div>
-  <section class="section" id="faq">
-   <div class="enveloppe">
-    <div class="tete">
-     <span class="no">
-      08
-     </span>
-     <div>
-      <p class="etiq" data-t="faq.label">
-       Bon à savoir
-      </p>
-      <h2 data-t="faq.titre" style="margin-top:12px">
-       Questions fréquentes
-      </h2>
-     </div>
-    </div>
-    <div class="faq" id="faq-liste">
-    </div>
-   </div>
-  </section>
-  <section class="appel">
-   <div class="enveloppe">
-    <h2 data-t="appel_don.titre">
-     Votre don change une vie.
-    </h2>
-    <p data-t="appel_don.texte">
-     25 € financent le matériel scolaire d'un enfant pour une année entière.
-    </p>
-    <a class="bouton" data-t="appel_don.bouton" href="pages/contact.html">
-     Faire un don sécurisé
-    </a>
-   </div>
-  </section>
-  <section class="section" id="contact">
-   <div class="enveloppe contact">
-    <div>
-     <p class="etiq" data-t="contact.label">
-      Contact
-     </p>
-     <h2 data-t="contact.titre" style="margin-top:12px">
-      Une question, un projet ?
-     </h2>
-     <p class="intro" data-t="contact.intro">
-      Notre équipe vous répond sous 24 h.
-     </p>
-     <div class="infos" id="contact-infos">
-     </div>
-    </div>
-    <div class="lettre">
-     <h3 data-t="contact.newsletter_titre">
-      Restez informé
-     </h3>
-     <p data-t="contact.newsletter_texte">
-      Recevez nos actualités et rapports d'impact directement dans votre boîte mail.
-     </p>
-     <form id="lettre-form">
-      <input id="lettre-mail" placeholder="Votre adresse e-mail" required="" type="email"/>
-      <button class="bouton" data-t="contact.newsletter_bouton" type="submit">
-       S'abonner
-      </button>
-      <p class="msg" id="lettre-msg">
-      </p>
-     </form>
-    </div>
-   </div>
-  </section>
-  <script src="contenu.js">
-  </script>
-  <script src="assets/js/site.js">
-  </script>
-  <script>
-   (function(){
-var S=window.SITE,g=S.get,e=S.esc,u=S.url;
-var h=g('hero.photo');if(h)document.getElementById('hero-photo').src=h;
-S.lien('mission-lien',g('mission.lien_url'));
-S.lien('actus-lien',g('actualites.lien_url'));
+	<!-- # Métadonnées et feuilles de style -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Libota - L'éducation, un droit pour chaque enfant</title>
+		<meta
+			name="description"
+			content="Depuis 2000, l'association Libota œuvre pour offrir une éducation de qualité aux enfants défavorisés à travers le monde."
+		/>
+		<link rel="icon" type="image/svg+xml" href="assets/media/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="assets/css/libota-accueil.css" />
+	</head>
 
-S.set('chiffres',(g('chiffres')||[]).map(function(c){return '<div><div class="v">'+e(c.valeur)+'</div><div class="l">'+e(c.label)+'</div></div>'}).join(''));
+	<!-- # Corps de la page -->
+	<body data-base="" data-page="index.html">
+		<!-- # Haut de page -->
+		<section class="une">
+			<div class="enveloppe une-grille">
+				<div>
+					<p class="etiq une-surtitre" data-t="hero.surtitre">
+						Association à but non lucratif · depuis 2000
+					</p>
+					<h1 data-t="hero.titre">
+						L'éducation, <em>un droit</em> pour chaque enfant.
+					</h1>
+					<p class="une-intro" data-t="hero.intro">
+						Depuis 2000, Libota œuvre pour offrir une éducation de
+						qualité aux enfants défavorisés à travers le monde.
+						Rejoignez notre mission.
+					</p>
+					<div class="une-actions">
+						<a
+							class="bouton"
+							href="pages/contact.html"
+							data-t="hero.bouton_don"
+							>Faire un don</a
+						>
+						<a
+							class="bouton vide"
+							href="#domaines"
+							data-t="hero.bouton_actions"
+							>Découvrir nos actions</a
+						>
+					</div>
+				</div>
+				<figure class="une-photo">
+					<img
+						id="hero-photo"
+						src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=1200&auto=format&fit=crop"
+						alt="Enfants accompagnés par Libota"
+					/>
+					<figcaption data-t="hero.photo_legende">
+						Programme d'équipement scolaire, 2025.
+					</figcaption>
+				</figure>
+			</div>
+			<div class="enveloppe">
+				<div class="chiffres" id="chiffres"></div>
+			</div>
+		</section>
 
-S.set('impact-blocs',(g('impact.blocs')||[]).map(function(b){return '<div><div class="c">'+e(b.chiffre)+'</div><h3>'+e(b.titre)+'</h3><p>'+e(b.texte)+'</p></div>'}).join(''));
+		<!-- # Ruban défilant -->
+		<div class="ruban" id="ruban"></div>
 
-S.set('domaines-liste',(g('domaines.liste')||[]).map(function(d,i){return '<a class="domaine" href="'+u(d.url||'pages/projets.html')+'"><span class="n">'+String(i+1).padStart(2,'0')+'</span><h3>'+e(d.titre)+'</h3><p>'+e(d.texte)+'</p><span class="f">Découvrir</span></a>'}).join(''));
+		<!-- # Mission -->
+		<section class="section" id="mission">
+			<div class="enveloppe mission">
+				<div>
+					<p class="etiq" data-t="mission.label">Notre mission</p>
+					<p
+						class="grand"
+						style="margin-top: 20px"
+						data-t="mission.texte"
+					>
+						Libota œuvre pour un monde où chaque enfant, quelle que
+						soit son origine, a accès à une éducation de qualité.
+					</p>
+					<p style="margin-top: 30px">
+						<a
+							class="lien"
+							id="mission-lien"
+							href="pages/a-propos.html"
+							data-t="mission.lien"
+							>En savoir plus sur l'association</a
+						>
+					</p>
+				</div>
+				<div class="encadre">
+					<div class="annee" data-t="mission.encadre_annee">2030</div>
+					<p data-t="mission.encadre_texte">
+						L'année où nous visons 100 000 enfants scolarisés.
+					</p>
+				</div>
+			</div>
+		</section>
 
-S.set('repartition',(g('transparence.repartition')||[]).map(function(r){return '<div class="ligne-rep"><div class="haut"><span class="nom">'+e(r.nom)+'</span><span class="pct">'+e(r.pct)+'%</span></div><div class="piste"><span style="width:'+e(r.pct)+'%"></span></div><p class="desc">'+e(r.desc)+'</p></div>'}).join(''));
+		<!-- # Impact -->
+		<section class="section bleu-profond" id="impact">
+			<div class="enveloppe">
+				<div class="tete">
+					<span class="no">01</span>
+					<div>
+						<p class="etiq" data-t="impact.label">Notre impact</p>
+						<h2 style="margin-top: 12px" data-t="impact.titre">
+							Des résultats concrets depuis 2000.
+						</h2>
+						<p class="chapeau" data-t="impact.chapeau">
+							Chaque chiffre représente une vie transformée, un
+							avenir bâti grâce à l'éducation.
+						</p>
+					</div>
+				</div>
+				<div class="impact" id="impact-blocs"></div>
+			</div>
+		</section>
 
-S.set('parcours-liste',(g('parcours.etapes')||[]).map(function(x){return '<div class="etape"><div class="an">'+e(x.annee)+'</div><div><h3>'+e(x.titre)+'</h3><p>'+e(x.texte)+'</p></div></div>'}).join(''));
+		<!-- # Sur le terrain (vidéos) -->
+		<section class="section" id="terrain">
+			<div class="enveloppe">
+				<div class="tete">
+					<span class="no">02</span>
+					<div>
+						<p class="etiq" data-t="terrain.label">
+							Sur le terrain
+						</p>
+						<h2 style="margin-top: 12px" data-t="terrain.titre">
+							Ce que l'on voit quand on y est.
+						</h2>
+						<p class="chapeau" data-t="terrain.texte">
+							Trois séquences filmées dans les écoles que nous
+							accompagnons.
+						</p>
+					</div>
+				</div>
+				<div class="terrains" id="mosaique"></div>
+			</div>
+		</section>
 
-S.set('actus-liste',(g('actualites.liste')||[]).map(function(a){return '<a class="actu" href="'+u(a.url||'pages/presse.html')+'"><div class="meta">'+e(a.date)+'<span class="cat">'+e(a.categorie)+'</span></div><div><h3>'+e(a.titre)+'</h3><p>'+e(a.texte)+'</p></div>'+(a.image?'<img src="'+e(a.image)+'" alt="" />':'<span></span>')+'</a>'}).join(''));
+		<!-- # Film -->
+		<section class="film" id="film">
+			<!-- # Fond vidéo du film -->
+			<div class="fond" id="film-fond"></div>
+			<div class="sur">
+				<p class="etiq" data-t="film.label">En vidéo</p>
+				<h2 data-t="film.titre">Une année sur le terrain.</h2>
+				<p data-t="film.texte"></p>
+				<button class="jouer" id="film-jouer">
+					<b>&#9654;</b
+					><span data-t="film.bouton">Lire la vidéo</span>
+				</button>
+				<p class="note" id="film-note"></p>
+			</div>
+		</section>
 
-S.set('temoins',(g('temoignages.liste')||[]).map(function(t){return '<figure class="temoin"><blockquote>'+e(t.citation)+'</blockquote><figcaption class="qui"><b>'+e(t.auteur)+'</b><span>'+e(t.role)+'</span></figcaption></figure>'}).join(''));
+		<!-- # Domaines -->
+		<section class="section" id="domaines">
+			<div class="enveloppe">
+				<div class="tete">
+					<span class="no">03</span>
+					<div>
+						<p class="etiq" data-t="domaines.label">
+							Nos domaines d'action
+						</p>
+						<h2 style="margin-top: 12px" data-t="domaines.titre">
+							Six leviers pour une éducation complète
+						</h2>
+					</div>
+				</div>
+				<div class="domaines" id="domaines-liste"></div>
+			</div>
+		</section>
 
-S.set('partenaires','<p class="t">'+e(g('partenaires.titre'))+'</p>'+(g('partenaires.liste')||[]).map(function(p){return '<span class="p">'+e(p)+'</span>'}).join(''));
+		<!-- # Transparence -->
+		<section class="section transparence" id="transparence">
+			<div class="enveloppe">
+				<div class="tete">
+					<span class="no">04</span>
+					<div>
+						<p class="etiq" data-t="transparence.label">
+							Transparence
+						</p>
+						<h2
+							style="margin-top: 12px"
+							data-t="transparence.titre"
+						>
+							Où va votre don ?
+						</h2>
+					</div>
+				</div>
+				<div class="transp">
+					<div>
+						<p
+							data-t="transparence.texte"
+							style="max-width: 40ch; color: var(--encre-2)"
+						>
+							Nous publions chaque année la répartition de nos
+							dépenses.
+						</p>
+						<div class="gros" data-t="transparence.chiffre">
+							85 %
+						</div>
+						<p class="leg" data-t="transparence.chiffre_legende">
+							des fonds sont consacrés directement à nos
+							programmes.
+						</p>
+					</div>
+					<div id="repartition"></div>
+				</div>
+			</div>
+		</section>
 
-S.set('contact-infos',(g('contact.lignes')||[]).map(function(l){return '<div class="l"><span class="cle">'+e(l.cle)+'</span><span class="val">'+e(l.valeur)+'</span></div>'}).join(''));
+		<!-- # Parcours -->
+		<section class="section" id="parcours">
+			<div class="enveloppe">
+				<div class="tete">
+					<span class="no">05</span>
+					<div>
+						<p class="etiq" data-t="parcours.label">
+							Notre parcours
+						</p>
+						<h2 style="margin-top: 12px" data-t="parcours.titre">
+							Vingt-cinq ans d'engagement
+						</h2>
+					</div>
+				</div>
+				<div id="parcours-liste"></div>
+			</div>
+		</section>
 
-S.set('faq-liste',(g('faq.liste')||[]).map(function(f){return '<details><summary>'+e(f.question)+'</summary><div class="rep">'+e(f.reponse)+'</div></details>'}).join(''));
+		<figure class="bandeau">
+			<!-- # Fond vidéo du bandeau -->
+			<div class="fond" id="bandeau-fond"></div>
+			<figcaption data-t="bandeau.legende"></figcaption>
+		</figure>
 
-S.set('ruban','<div class="ruban-piste">'+[0,1].map(function(){return (g('ruban')||[]).map(function(t){return '<span>'+e(t)+'</span>'}).join('')}).join('')+'</div>');
+		<!-- # Galerie -->
+		<section class="section" id="galerie">
+			<div class="enveloppe">
+				<div class="tete">
+					<span class="no">06</span>
+					<div>
+						<p class="etiq" data-t="galerie_accueil.label">
+							En images
+						</p>
+						<h2
+							style="margin-top: 12px"
+							data-t="galerie_accueil.titre"
+						>
+							L'éducation, jour après jour
+						</h2>
+					</div>
+				</div>
+				<div class="gal-accueil" id="gal-accueil"></div>
+			</div>
+		</section>
 
-S.set('mosaique',(g('terrain.blocs')||[]).map(function(b,i){
-var media=b.video?'<video autoplay muted loop playsinline preload="metadata" poster="'+e(b.poster||b.image||'')+'"><source src="'+e(u(b.video))+'" type="video/mp4" /></video>':'<img src="'+e(b.image||b.poster||'')+'" alt="" />';
-return '<div class="terrain-l"><figure class="tuile" data-repli="'+e(b.image||b.poster||'')+'">'+media+(b.video?'<span class="pastille"><i></i>vid\u00e9o</span>':'')+(b.lieu?'<figcaption>'+e(b.lieu)+'</figcaption>':'')+'</figure><div class="terrain-t"><span class="num">'+String(i+1).padStart(2,'0')+' / '+String((g('terrain.blocs')||[]).length).padStart(2,'0')+'</span><span class="et">'+e(b.legende||'')+'</span><h3>'+e(b.titre)+'</h3><p>'+e(b.texte||'')+'</p></div></div>'}).join(''));
+		<!-- # Actualités -->
+		<section class="section" id="actualites">
+			<div class="enveloppe">
+				<div class="tete">
+					<span class="no">07</span>
+					<div>
+						<p class="etiq" data-t="actualites.label">À la une</p>
+						<h2 style="margin-top: 12px" data-t="actualites.titre">
+							Nos dernières actualités
+						</h2>
+					</div>
+				</div>
+				<div id="actus-liste"></div>
+				<p style="margin-top: 26px">
+					<a
+						class="lien"
+						id="actus-lien"
+						href="pages/presse.html"
+						data-t="actualites.lien"
+						>Toutes les actualités</a
+					>
+				</p>
+			</div>
+		</section>
 
-[].slice.call(document.querySelectorAll('.tuile video')).forEach(function(v){
-function lance(){var j=v.play();if(j&&j.catch)j.catch(function(){})}
-v.addEventListener('error',function(){var f=v.closest('.tuile');f.querySelector('.pastille')&&f.querySelector('.pastille').remove();var i=document.createElement('img');i.src=f.dataset.repli||'';i.alt='';v.replaceWith(i)});
-v.addEventListener('canplay',lance);lance();setTimeout(lance,900);
-document.addEventListener('visibilitychange',function(){if(!document.hidden)lance()});
-});
+		<!-- # Témoignages -->
+		<section class="section" id="temoignages">
+			<div class="enveloppe">
+				<p
+					class="etiq"
+					style="margin-bottom: 26px"
+					data-t="temoignages.label"
+				>
+					Ils en parlent
+				</p>
+				<div class="temoins" id="temoins"></div>
+			</div>
+		</section>
 
-S.set('gal-accueil',(g('galerie_accueil.images')||[]).map(function(im,i){return '<figure><span class="idx">'+String(i+1).padStart(2,'0')+'</span><img src="'+e(im.src)+'" alt="" loading="lazy" />'+(im.legende?'<figcaption>'+e(im.legende)+'</figcaption>':'')+'</figure>'}).join('')
-+'<div class="gal-note"><span class="t">'+e(g('galerie_accueil.note_label'))+'</span><span class="n">'+e(g('galerie_accueil.note_chiffre'))+'</span><p>'+e(g('galerie_accueil.note_texte'))+'</p><a href="'+u(g('galerie_accueil.note_url')||'pages/projets.html')+'">'+e(g('galerie_accueil.note_lien'))+'</a></div>');
+		<div class="enveloppe">
+			<!-- # Partenaires -->
+			<div class="partenaires" id="partenaires"></div>
+		</div>
 
-var ph=g('contact.newsletter_champ');if(ph)document.getElementById('lettre-mail').placeholder=ph;
-function fond(id,src,poster,image,classe){
-var el=document.getElementById(id);if(!el)return null;
-if(src){el.innerHTML='<video class="'+classe+'" autoplay muted loop playsinline preload="metadata" poster="'+e(poster||image||'')+'"><source src="'+e(u(src))+'" type="video/mp4" /></video>';
-var v=el.querySelector('video');
-v.addEventListener('error',function(){el.innerHTML='<span class="cadre"><img src="'+e(image||poster||'')+'" alt="" /></span>'});
-function lance(){var j=v.play();if(j&&j.catch)j.catch(function(){})}
-lance();
-v.addEventListener('canplay',lance);
-document.addEventListener('visibilitychange',function(){if(!document.hidden)lance()});
-window.addEventListener('pageshow',lance);
-setTimeout(lance,900);
-return v}
-el.innerHTML='<span class="cadre"><img src="'+e(image||poster||'')+'" alt="" /></span>';
-return null}
+		<!-- # Questions fréquentes -->
+		<section class="section" id="faq">
+			<div class="enveloppe">
+				<div class="tete">
+					<span class="no">08</span>
+					<div>
+						<p class="etiq" data-t="faq.label">Bon à savoir</p>
+						<h2 style="margin-top: 12px" data-t="faq.titre">
+							Questions fréquentes
+						</h2>
+					</div>
+				</div>
+				<div class="faq" id="faq-liste"></div>
+			</div>
+		</section>
 
-var filmVideo=fond('film-fond',g('film.video'),g('film.poster'),g('film.poster'),'fond-video');
-fond('bandeau-fond',g('bandeau.video'),g('bandeau.poster'),g('bandeau.image'),'fond-video');
-document.getElementById('film-note').textContent=e(g('film.credit')||'');
-document.getElementById('film-jouer').addEventListener('click',function(){
-var src=g('film.video'),yt=g('film.youtube'),sec=document.getElementById('film');
-if(yt){sec.classList.add('lecture');sec.innerHTML='<div class="cadre-video"><iframe src="https://www.youtube.com/embed/'+e(yt)+'?autoplay=1&rel=0" title="'+e(g('film.titre'))+'" allow="accelerometer;autoplay;clipboard-write;encrypted-media;picture-in-picture" allowfullscreen></iframe></div>';return}
-if(filmVideo){filmVideo.muted=!filmVideo.muted;filmVideo.controls=!filmVideo.muted;
-this.querySelector('span').textContent=filmVideo.muted?e(g('film.bouton')):'Couper le son';
-var j=filmVideo.play();if(j&&j.catch)j.catch(function(){});return}
-if(src){sec.classList.add('lecture');sec.innerHTML='<video controls autoplay playsinline src="'+e(u(src))+'" poster="'+e(g('film.poster'))+'"></video>';return}
-document.getElementById('film-note').textContent=e(g('film.note'));
-});
+		<!-- # Appel à l'action -->
+		<section class="appel">
+			<div class="enveloppe">
+				<h2 data-t="appel_don.titre">Votre don change une vie.</h2>
+				<p data-t="appel_don.texte">
+					25 € financent le matériel scolaire d'un enfant pour une
+					année entière.
+				</p>
+				<a
+					class="bouton"
+					href="pages/contact.html"
+					data-t="appel_don.bouton"
+					>Faire un don sécurisé</a
+				>
+			</div>
+		</section>
 
-document.getElementById('lettre-form').addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('lettre-msg').textContent='Merci, votre inscription est enregistrée.';this.reset()});
-})();
-  </script>
-  <script src="assets/js/animations.js">
-  </script>
- </body>
+		<!-- # Contact -->
+		<section class="section" id="contact">
+			<div class="enveloppe contact">
+				<div>
+					<p class="etiq" data-t="contact.label">Contact</p>
+					<h2 style="margin-top: 12px" data-t="contact.titre">
+						Une question, un projet ?
+					</h2>
+					<p class="intro" data-t="contact.intro">
+						Notre équipe vous répond sous 24 h.
+					</p>
+					<div class="infos" id="contact-infos"></div>
+				</div>
+				<div class="lettre">
+					<h3 data-t="contact.newsletter_titre">Restez informé</h3>
+					<p data-t="contact.newsletter_texte">
+						Recevez nos actualités et rapports d'impact directement
+						dans votre boîte mail.
+					</p>
+					<form id="lettre-form">
+						<input
+							type="email"
+							id="lettre-mail"
+							required
+							placeholder="Votre adresse e-mail"
+						/>
+						<button
+							class="bouton"
+							type="submit"
+							data-t="contact.newsletter_bouton"
+						>
+							S'abonner
+						</button>
+						<p class="msg" id="lettre-msg"></p>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- # Script : contenu.js -->
+		<script src="contenu.js"></script>
+
+		<!-- # Script : site.js -->
+		<script src="assets/js/site.js"></script>
+
+		<!-- # Script de la page -->
+		<script>
+			(function () {
+				// # Outils de la page
+				var S = window.SITE,
+					g = S.get,
+					e = S.esc,
+					u = S.url;
+				var h = g('hero.photo');
+				if (h) document.getElementById('hero-photo').src = h;
+				S.lien('mission-lien', g('mission.lien_url'));
+				S.lien('actus-lien', g('actualites.lien_url'));
+
+				// # Chiffres clés
+				S.set(
+					'chiffres',
+					(g('chiffres') || [])
+						.map(function (c) {
+							return (
+								'<div><div class="v">' +
+								e(c.valeur) +
+								'</div><div class="l">' +
+								e(c.label) +
+								'</div></div>'
+							);
+						})
+						.join('')
+				);
+
+				// # Blocs impact
+				S.set(
+					'impact-blocs',
+					(g('impact.blocs') || [])
+						.map(function (b) {
+							return (
+								'<div><div class="c">' +
+								e(b.chiffre) +
+								'</div><h3>' +
+								e(b.titre) +
+								'</h3><p>' +
+								e(b.texte) +
+								'</p></div>'
+							);
+						})
+						.join('')
+				);
+
+				// # Liste des domaines
+				S.set(
+					'domaines-liste',
+					(g('domaines.liste') || [])
+						.map(function (d, i) {
+							return (
+								'<a class="domaine" href="' +
+								u(d.url || 'pages/projets.html') +
+								'"><span class="n">' +
+								String(i + 1).padStart(2, '0') +
+								'</span><h3>' +
+								e(d.titre) +
+								'</h3><p>' +
+								e(d.texte) +
+								'</p><span class="f">Découvrir</span></a>'
+							);
+						})
+						.join('')
+				);
+
+				// # Répartition du budget
+				S.set(
+					'repartition',
+					(g('transparence.repartition') || [])
+						.map(function (r) {
+							return (
+								'<div class="ligne-rep"><div class="haut"><span class="nom">' +
+								e(r.nom) +
+								'</span><span class="pct">' +
+								e(r.pct) +
+								'%</span></div><div class="piste"><span style="width:' +
+								e(r.pct) +
+								'%"></span></div><p class="desc">' +
+								e(r.desc) +
+								'</p></div>'
+							);
+						})
+						.join('')
+				);
+
+				// # Étapes du parcours
+				S.set(
+					'parcours-liste',
+					(g('parcours.etapes') || [])
+						.map(function (x) {
+							return (
+								'<div class="etape"><div class="an">' +
+								e(x.annee) +
+								'</div><div><h3>' +
+								e(x.titre) +
+								'</h3><p>' +
+								e(x.texte) +
+								'</p></div></div>'
+							);
+						})
+						.join('')
+				);
+
+				// # Actualités
+				S.set(
+					'actus-liste',
+					(g('actualites.liste') || [])
+						.map(function (a) {
+							return (
+								'<a class="actu" href="' +
+								u(a.url || 'pages/presse.html') +
+								'"><div class="meta">' +
+								e(a.date) +
+								'<span class="cat">' +
+								e(a.categorie) +
+								'</span></div><div><h3>' +
+								e(a.titre) +
+								'</h3><p>' +
+								e(a.texte) +
+								'</p></div>' +
+								(a.image
+									? '<img src="' + e(a.image) + '" alt="" />'
+									: '<span></span>') +
+								'</a>'
+							);
+						})
+						.join('')
+				);
+
+				// # Témoignages
+				S.set(
+					'temoins',
+					(g('temoignages.liste') || [])
+						.map(function (t) {
+							return (
+								'<figure class="temoin"><blockquote>' +
+								e(t.citation) +
+								'</blockquote><figcaption class="qui"><b>' +
+								e(t.auteur) +
+								'</b><span>' +
+								e(t.role) +
+								'</span></figcaption></figure>'
+							);
+						})
+						.join('')
+				);
+
+				// # Partenaires
+				S.set(
+					'partenaires',
+					'<p class="t">' +
+						e(g('partenaires.titre')) +
+						'</p>' +
+						(g('partenaires.liste') || [])
+							.map(function (p) {
+								return '<span class="p">' + e(p) + '</span>';
+							})
+							.join('')
+				);
+
+				// # Coordonnées
+				S.set(
+					'contact-infos',
+					(g('contact.lignes') || [])
+						.map(function (l) {
+							return (
+								'<div class="l"><span class="cle">' +
+								e(l.cle) +
+								'</span><span class="val">' +
+								e(l.valeur) +
+								'</span></div>'
+							);
+						})
+						.join('')
+				);
+
+				// # Questions fréquentes
+				S.set(
+					'faq-liste',
+					(g('faq.liste') || [])
+						.map(function (f) {
+							return (
+								'<details><summary>' +
+								e(f.question) +
+								'</summary><div class="rep">' +
+								e(f.reponse) +
+								'</div></details>'
+							);
+						})
+						.join('')
+				);
+
+				// # Ruban défilant
+				S.set(
+					'ruban',
+					'<div class="ruban-piste">' +
+						[0, 1]
+							.map(function () {
+								return (g('ruban') || [])
+									.map(function (t) {
+										return '<span>' + e(t) + '</span>';
+									})
+									.join('');
+							})
+							.join('') +
+						'</div>'
+				);
+
+				// # Mosaïque vidéo
+				S.set(
+					'mosaique',
+					(g('terrain.blocs') || [])
+						.map(function (b, i) {
+							var media = b.video
+								? '<video autoplay muted loop playsinline preload="metadata" poster="' +
+									e(b.poster || b.image || '') +
+									'"><source src="' +
+									e(u(b.video)) +
+									'" type="video/mp4" /></video>'
+								: '<img src="' +
+									e(b.image || b.poster || '') +
+									'" alt="" />';
+							return (
+								'<div class="terrain-l"><figure class="tuile" data-repli="' +
+								e(b.image || b.poster || '') +
+								'">' +
+								media +
+								(b.video
+									? '<span class="pastille"><i></i>vid\u00e9o</span>'
+									: '') +
+								(b.lieu
+									? '<figcaption>' +
+										e(b.lieu) +
+										'</figcaption>'
+									: '') +
+								'</figure><div class="terrain-t"><span class="num">' +
+								String(i + 1).padStart(2, '0') +
+								' / ' +
+								String(
+									(g('terrain.blocs') || []).length
+								).padStart(2, '0') +
+								'</span><span class="et">' +
+								e(b.legende || '') +
+								'</span><h3>' +
+								e(b.titre) +
+								'</h3><p>' +
+								e(b.texte || '') +
+								'</p></div></div>'
+							);
+						})
+						.join('')
+				);
+
+				[].slice
+					.call(document.querySelectorAll('.tuile video'))
+					.forEach(function (v) {
+						// # Lance
+						function lance() {
+							var j = v.play();
+							if (j && j.catch) j.catch(function () {});
+						}
+
+						// # Au error
+						v.addEventListener('error', function () {
+							var f = v.closest('.tuile');
+							f.querySelector('.pastille') &&
+								f.querySelector('.pastille').remove();
+							var i = document.createElement('img');
+							i.src = f.dataset.repli || '';
+							i.alt = '';
+							v.replaceWith(i);
+						});
+
+						// # Au canplay
+						v.addEventListener('canplay', lance);
+						lance();
+						setTimeout(lance, 900);
+
+						// # Au retour sur l'onglet
+						document.addEventListener(
+							'visibilitychange',
+							function () {
+								if (!document.hidden) lance();
+							}
+						);
+					});
+
+				// # Galerie
+				S.set(
+					'gal-accueil',
+					(g('galerie_accueil.images') || [])
+						.map(function (im, i) {
+							return (
+								'<figure><span class="idx">' +
+								String(i + 1).padStart(2, '0') +
+								'</span><img src="' +
+								e(im.src) +
+								'" alt="" loading="lazy" />' +
+								(im.legende
+									? '<figcaption>' +
+										e(im.legende) +
+										'</figcaption>'
+									: '') +
+								'</figure>'
+							);
+						})
+						.join('') +
+						'<div class="gal-note"><span class="t">' +
+						e(g('galerie_accueil.note_label')) +
+						'</span><span class="n">' +
+						e(g('galerie_accueil.note_chiffre')) +
+						'</span><p>' +
+						e(g('galerie_accueil.note_texte')) +
+						'</p><a href="' +
+						u(
+							g('galerie_accueil.note_url') ||
+								'pages/projets.html'
+						) +
+						'">' +
+						e(g('galerie_accueil.note_lien')) +
+						'</a></div>'
+				);
+
+				var ph = g('contact.newsletter_champ');
+				if (ph) document.getElementById('lettre-mail').placeholder = ph;
+
+				// # Fond
+				function fond(id, src, poster, image, classe) {
+					var el = document.getElementById(id);
+					if (!el) return null;
+					if (src) {
+						el.innerHTML =
+							'<video class="' +
+							classe +
+							'" autoplay muted loop playsinline preload="metadata" poster="' +
+							e(poster || image || '') +
+							'"><source src="' +
+							e(u(src)) +
+							'" type="video/mp4" /></video>';
+						var v = el.querySelector('video');
+
+						// # Au error
+						v.addEventListener('error', function () {
+							el.innerHTML =
+								'<span class="cadre"><img src="' +
+								e(image || poster || '') +
+								'" alt="" /></span>';
+						});
+
+						// # Lance
+						function lance() {
+							var j = v.play();
+							if (j && j.catch) j.catch(function () {});
+						}
+						lance();
+
+						// # Au canplay
+						v.addEventListener('canplay', lance);
+
+						// # Au retour sur l'onglet
+						document.addEventListener(
+							'visibilitychange',
+							function () {
+								if (!document.hidden) lance();
+							}
+						);
+
+						// # Au retour sur la page
+						window.addEventListener('pageshow', lance);
+						setTimeout(lance, 900);
+						return v;
+					}
+					el.innerHTML =
+						'<span class="cadre"><img src="' +
+						e(image || poster || '') +
+						'" alt="" /></span>';
+					return null;
+				}
+
+				var filmVideo = fond(
+					'film-fond',
+					g('film.video'),
+					g('film.poster'),
+					g('film.poster'),
+					'fond-video'
+				);
+				fond(
+					'bandeau-fond',
+					g('bandeau.video'),
+					g('bandeau.poster'),
+					g('bandeau.image'),
+					'fond-video'
+				);
+				document.getElementById('film-note').textContent = e(
+					g('film.credit') || ''
+				);
+
+				// # Film jouer : clic
+				document
+					.getElementById('film-jouer')
+					.addEventListener('click', function () {
+						var src = g('film.video'),
+							yt = g('film.youtube'),
+							sec = document.getElementById('film');
+						if (yt) {
+							sec.classList.add('lecture');
+							sec.innerHTML =
+								'<div class="cadre-video"><iframe src="https://www.youtube.com/embed/' +
+								e(yt) +
+								'?autoplay=1&rel=0" title="' +
+								e(g('film.titre')) +
+								'" allow="accelerometer;autoplay;clipboard-write;encrypted-media;picture-in-picture" allowfullscreen></iframe></div>';
+							return;
+						}
+						if (filmVideo) {
+							filmVideo.muted = !filmVideo.muted;
+							filmVideo.controls = !filmVideo.muted;
+							this.querySelector('span').textContent =
+								filmVideo.muted
+									? e(g('film.bouton'))
+									: 'Couper le son';
+							var j = filmVideo.play();
+							if (j && j.catch) j.catch(function () {});
+							return;
+						}
+						if (src) {
+							sec.classList.add('lecture');
+							sec.innerHTML =
+								'<video controls autoplay playsinline src="' +
+								e(u(src)) +
+								'" poster="' +
+								e(g('film.poster')) +
+								'"></video>';
+							return;
+						}
+						document.getElementById('film-note').textContent = e(
+							g('film.note')
+						);
+					});
+
+				// # Lettre form : envoi
+				document
+					.getElementById('lettre-form')
+					.addEventListener('submit', function (ev) {
+						ev.preventDefault();
+						document.getElementById('lettre-msg').textContent =
+							'Merci, votre inscription est enregistrée.';
+						this.reset();
+					});
+			})();
+		</script>
+
+		<!-- # Script : animations.js -->
+		<script src="assets/js/animations.js"></script>
+	</body>
 </html>

@@ -1,63 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Projets - Libota
-  </title>
-  <meta content="Les six pôles d'action de Libota : éducation, santé, numérique, formation, bourses et infrastructures." name="description"/>
-  <link href="../assets/media/favicon.svg" rel="icon" type="image/svg+xml"/>
-  <link href="../styles.css" rel="stylesheet"/>
- </head>
- <body data-base="../" data-page="projets.html">
-  <section class="tetepage">
-   <div class="enveloppe">
-    <p class="etiq" data-t="projets.etiquette">
-     Nos pôles d'action
-    </p>
-    <h1 data-t="projets.titre">
-     Nos projets sur le terrain
-    </h1>
-    <p class="intro" data-t="projets.intro">
-     Six pôles d'action complémentaires pour accompagner chaque enfant, de la salle de classe jusqu'au diplôme.
-    </p>
-   </div>
-  </section>
-  <section class="section">
-   <div class="enveloppe">
-    <div class="poles" id="poles">
-    </div>
-   </div>
-  </section>
-  <section class="appel">
-   <div class="enveloppe">
-    <h2 data-t="projets.appel_titre">
-     Financez un projet.
-    </h2>
-    <p data-t="projets.appel_texte">
-     Votre don soutient directement l'un de nos six pôles d'action sur le terrain.
-    </p>
-    <a class="bouton" data-t="projets.appel_bouton" href="contact.html">
-     Faire un don
-    </a>
-   </div>
-  </section>
-  <script src="../contenu.js">
-  </script>
-  <script src="../assets/js/site.js">
-  </script>
-  <script>
-   (function(){
-var S=window.SITE,g=S.get,e=S.esc;
-S.set('poles',(g('poles')||[]).map(function(p){
-return '<a class="pole" href="projet.html?p='+e(p.cle)+'">'+
-(p.image?'<img src="'+e(p.image)+'" alt="" />':'')+
-'<div class="n">PÔLE '+e(p.numero)+'</div><h3>'+e(p.titre)+'</h3><p>'+e(p.resume)+'</p><span class="f">En savoir plus</span></a>';
-}).join(''));
-})();
-  </script>
-  <script src="../assets/js/animations.js">
-  </script>
- </body>
+	<!-- # Métadonnées et feuilles de style -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Projets - Libota</title>
+		<meta
+			name="description"
+			content="Les six pôles d'action de Libota : éducation, santé, numérique, formation, bourses et infrastructures."
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="../assets/media/favicon.svg"
+		/>
+		<link rel="stylesheet" href="../styles.css" />
+	</head>
+
+	<!-- # Corps de la page -->
+	<body data-base="../" data-page="projets.html">
+		<!-- # Haut de page -->
+		<section class="tetepage">
+			<div class="enveloppe">
+				<p class="etiq" data-t="projets.etiquette">
+					Nos pôles d'action
+				</p>
+				<h1 data-t="projets.titre">Nos projets sur le terrain</h1>
+				<p class="intro" data-t="projets.intro">
+					Six pôles d'action complémentaires pour accompagner chaque
+					enfant, de la salle de classe jusqu'au diplôme.
+				</p>
+			</div>
+		</section>
+
+		<!-- # Les pôles -->
+		<section class="section">
+			<div class="enveloppe">
+				<div class="poles" id="poles"></div>
+			</div>
+		</section>
+
+		<!-- # Appel à l'action -->
+		<section class="appel">
+			<div class="enveloppe">
+				<h2 data-t="projets.appel_titre">Financez un projet.</h2>
+				<p data-t="projets.appel_texte">
+					Votre don soutient directement l'un de nos six pôles
+					d'action sur le terrain.
+				</p>
+				<a
+					class="bouton"
+					href="contact.html"
+					data-t="projets.appel_bouton"
+					>Faire un don</a
+				>
+			</div>
+		</section>
+
+		<!-- # Script : contenu.js -->
+		<script src="../contenu.js"></script>
+
+		<!-- # Script : site.js -->
+		<script src="../assets/js/site.js"></script>
+
+		<!-- # Script de la page -->
+		<script>
+			(function () {
+				// # Outils de la page
+				var S = window.SITE,
+					g = S.get,
+					e = S.esc;
+
+				// # Pôles
+				S.set(
+					'poles',
+					(g('poles') || [])
+						.map(function (p) {
+							return (
+								'<a class="pole" href="projet.html?p=' +
+								e(p.cle) +
+								'">' +
+								(p.image
+									? '<img src="' + e(p.image) + '" alt="" />'
+									: '') +
+								'<div class="n">PÔLE ' +
+								e(p.numero) +
+								'</div><h3>' +
+								e(p.titre) +
+								'</h3><p>' +
+								e(p.resume) +
+								'</p><span class="f">En savoir plus</span></a>'
+							);
+						})
+						.join('')
+				);
+			})();
+		</script>
+
+		<!-- # Script : animations.js -->
+		<script src="../assets/js/animations.js"></script>
+	</body>
 </html>

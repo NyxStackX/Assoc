@@ -1,141 +1,251 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Projet - Libota
-  </title>
-  <meta content="Détail d'un pôle d'action de l'association Libota." name="description"/>
-  <link href="../assets/media/favicon.svg" rel="icon" type="image/svg+xml"/>
-  <link href="../styles.css" rel="stylesheet"/>
- </head>
- <body data-base="../" data-page="projets.html">
-  <section class="tetepage">
-   <div class="enveloppe">
-    <a class="fil" href="projets.html" id="retour">
-     ← Retour aux projets
-    </a>
-    <p class="etiq" id="numero">
-     PÔLE 01
-    </p>
-    <h1 id="titre">
-     Projet
-    </h1>
-    <p class="intro" id="accroche">
-    </p>
-   </div>
-  </section>
-  <div class="projet-photo" id="projet-photo">
-  </div>
-  <div class="enveloppe">
-   <div class="chiffres" id="stats">
-   </div>
-  </div>
-  <section class="section">
-   <div class="enveloppe corps">
-    <div>
-     <div class="bloc">
-      <h2 id="t-projet">
-       Le projet
-      </h2>
-      <div class="prose" id="texte">
-      </div>
-     </div>
-     <div class="bloc">
-      <h2 id="t-objectifs">
-       Nos objectifs
-      </h2>
-      <ul class="puces" id="objectifs">
-      </ul>
-     </div>
-     <div class="bloc">
-      <h2 id="t-actions">
-       Actions réalisées
-      </h2>
-      <ul class="puces" id="actions">
-      </ul>
-     </div>
-    </div>
-    <aside class="aside">
-     <div class="encadre">
-      <h3 id="t-benef">
-       Bénéficiaires
-      </h3>
-      <p id="benef">
-      </p>
-     </div>
-     <div class="encadre sombre">
-      <h3 id="t-soutien">
-       Soutenir ce projet
-      </h3>
-      <p id="soutien-texte">
-      </p>
-      <a class="bouton" href="contact.html" id="soutien-bouton">
-       Faire un don
-      </a>
-     </div>
-    </aside>
-   </div>
-  </section>
-  <section class="section">
-   <div class="enveloppe">
-    <p class="etiq" id="t-galerie" style="margin-bottom:22px">
-     En images
-    </p>
-    <div class="galerie" id="galerie">
-    </div>
-   </div>
-  </section>
-  <section class="section">
-   <div class="enveloppe pied-nav">
-    <a class="bouton vide" href="projets.html" id="retour-bas">
-     ← Retour aux projets
-    </a>
-    <a class="lien" href="#" id="suivant">
-    </a>
-   </div>
-  </section>
-  <script src="../contenu.js">
-  </script>
-  <script src="../assets/js/site.js">
-  </script>
-  <script>
-   (function(){
-var S=window.SITE,g=S.get,e=S.esc;
-var poles=g('poles')||[],T=g('projet_page')||{};
-var cle=(new URLSearchParams(location.search)).get('p')||(poles[0]||{}).cle;
-var i=poles.findIndex(function(p){return p.cle===cle});if(i<0)i=0;
-var p=poles[i]||{};
-function txt(id,v){var el=document.getElementById(id);if(el)el.textContent=v==null?'':v}
-document.title=p.titre+' - Libota';
-txt('retour','← '+(T.retour||'Retour aux projets'));
-txt('retour-bas','← '+(T.retour||'Retour aux projets'));
-txt('numero','PÔLE '+e(p.numero));
-txt('titre',p.titre);
-txt('accroche',p.accroche);
-txt('t-projet',T.titre_projet);txt('t-objectifs',T.titre_objectifs);txt('t-actions',T.titre_actions);
-txt('t-benef',T.titre_beneficiaires);txt('t-galerie',T.titre_galerie);
-txt('t-soutien',T.soutien_titre);txt('soutien-texte',T.soutien_texte);txt('soutien-bouton',T.soutien_bouton);
-txt('benef',p.beneficiaires);
-var ph=document.getElementById('projet-photo');
-if(p.video){ph.innerHTML='<video class="fond-video" autoplay muted loop playsinline preload="metadata" poster="'+e(p.image||'')+'"><source src="'+e(p.video)+'" type="video/mp4" /></video>';
-var vv=ph.querySelector('video');
-vv.addEventListener('error',function(){ph.innerHTML='<img src="'+e(p.image||'')+'" alt="'+e(p.titre)+'" />'});
-var jj=vv.play();if(jj&&jj.catch)jj.catch(function(){});}
-else if(p.image){ph.innerHTML='<img src="'+e(p.image)+'" alt="'+e(p.titre)+'" />'}
-else{ph.style.display='none'}
-S.set('stats',(p.stats||[]).map(function(s){return '<div><div class="v">'+e(s.valeur)+'</div><div class="l">'+e(s.label)+'</div></div>'}).join(''));
-S.set('texte',(p.projet||[]).map(function(t){return '<p>'+e(t)+'</p>'}).join(''));
-S.set('objectifs',(p.objectifs||[]).map(function(t){return '<li>'+e(t)+'</li>'}).join(''));
-S.set('actions',(p.actions||[]).map(function(t){return '<li>'+e(t)+'</li>'}).join(''));
-S.set('galerie',(p.galerie||[]).map(function(src){return '<img src="'+e(src)+'" alt="" />'}).join(''));
-var n=poles[(i+1)%poles.length];
-var sv=document.getElementById('suivant');
-if(n){sv.href='projet.html?p='+e(n.cle);sv.textContent=(T.suivant||'Projet suivant')+' : '+n.titre+' →'}
-})();
-  </script>
-  <script src="../assets/js/animations.js">
-  </script>
- </body>
+	<!-- # Métadonnées et feuilles de style -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Projet - Libota</title>
+		<meta
+			name="description"
+			content="Détail d'un pôle d'action de l'association Libota."
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="../assets/media/favicon.svg"
+		/>
+		<link rel="stylesheet" href="../styles.css" />
+	</head>
+
+	<!-- # Corps de la page -->
+	<body data-base="../" data-page="projets.html">
+		<!-- # Haut de page -->
+		<section class="tetepage">
+			<div class="enveloppe">
+				<a class="fil" href="projets.html" id="retour"
+					>← Retour aux projets</a
+				>
+				<p class="etiq" id="numero">PÔLE 01</p>
+				<h1 id="titre">Projet</h1>
+				<p class="intro" id="accroche"></p>
+			</div>
+		</section>
+
+		<!-- # Projet photo -->
+		<div class="projet-photo" id="projet-photo"></div>
+
+		<div class="enveloppe">
+			<!-- # Chiffres du pôle -->
+			<div class="chiffres" id="stats"></div>
+		</div>
+
+		<!-- # Le projet -->
+		<section class="section">
+			<div class="enveloppe corps">
+				<div>
+					<div class="bloc">
+						<h2 id="t-projet">Le projet</h2>
+						<div class="prose" id="texte"></div>
+					</div>
+					<div class="bloc">
+						<h2 id="t-objectifs">Nos objectifs</h2>
+						<ul class="puces" id="objectifs"></ul>
+					</div>
+					<div class="bloc">
+						<h2 id="t-actions">Actions réalisées</h2>
+						<ul class="puces" id="actions"></ul>
+					</div>
+				</div>
+				<aside class="aside">
+					<div class="encadre">
+						<h3 id="t-benef">Bénéficiaires</h3>
+						<p id="benef"></p>
+					</div>
+					<div class="encadre sombre">
+						<h3 id="t-soutien">Soutenir ce projet</h3>
+						<p id="soutien-texte"></p>
+						<a
+							class="bouton"
+							href="contact.html"
+							id="soutien-bouton"
+							>Faire un don</a
+						>
+					</div>
+				</aside>
+			</div>
+		</section>
+
+		<!-- # Galerie -->
+		<section class="section">
+			<div class="enveloppe">
+				<p class="etiq" style="margin-bottom: 22px" id="t-galerie">
+					En images
+				</p>
+				<div class="galerie" id="galerie"></div>
+			</div>
+		</section>
+
+		<!-- # Pôle suivant -->
+		<section class="section">
+			<div class="enveloppe pied-nav">
+				<a class="bouton vide" href="projets.html" id="retour-bas"
+					>← Retour aux projets</a
+				>
+				<a class="lien" href="#" id="suivant"></a>
+			</div>
+		</section>
+
+		<!-- # Script : contenu.js -->
+		<script src="../contenu.js"></script>
+
+		<!-- # Script : site.js -->
+		<script src="../assets/js/site.js"></script>
+
+		<!-- # Script de la page -->
+		<script>
+			(function () {
+				// # Outils de la page
+				var S = window.SITE,
+					g = S.get,
+					e = S.esc;
+
+				// # Pôle affiché
+				var poles = g('poles') || [],
+					T = g('projet_page') || {};
+				var cle =
+					new URLSearchParams(location.search).get('p') ||
+					(poles[0] || {}).cle;
+				var i = poles.findIndex(function (p) {
+					return p.cle === cle;
+				});
+				if (i < 0) i = 0;
+				var p = poles[i] || {};
+
+				// # Remplissage des textes
+				function txt(id, v) {
+					var el = document.getElementById(id);
+					if (el) el.textContent = v == null ? '' : v;
+				}
+				document.title = p.titre + ' - Libota';
+				txt('retour', '← ' + (T.retour || 'Retour aux projets'));
+				txt('retour-bas', '← ' + (T.retour || 'Retour aux projets'));
+				txt('numero', 'PÔLE ' + e(p.numero));
+				txt('titre', p.titre);
+				txt('accroche', p.accroche);
+				txt('t-projet', T.titre_projet);
+				txt('t-objectifs', T.titre_objectifs);
+				txt('t-actions', T.titre_actions);
+				txt('t-benef', T.titre_beneficiaires);
+				txt('t-galerie', T.titre_galerie);
+				txt('t-soutien', T.soutien_titre);
+				txt('soutien-texte', T.soutien_texte);
+				txt('soutien-bouton', T.soutien_bouton);
+				txt('benef', p.beneficiaires);
+
+				// # Photo ou vidéo du pôle
+				var ph = document.getElementById('projet-photo');
+				if (p.video) {
+					ph.innerHTML =
+						'<video class="fond-video" autoplay muted loop playsinline preload="metadata" poster="' +
+						e(p.image || '') +
+						'"><source src="' +
+						e(p.video) +
+						'" type="video/mp4" /></video>';
+					var vv = ph.querySelector('video');
+
+					// # Au error
+					vv.addEventListener('error', function () {
+						ph.innerHTML =
+							'<img src="' +
+							e(p.image || '') +
+							'" alt="' +
+							e(p.titre) +
+							'" />';
+					});
+					var jj = vv.play();
+					if (jj && jj.catch) jj.catch(function () {});
+				} else if (p.image) {
+					ph.innerHTML =
+						'<img src="' +
+						e(p.image) +
+						'" alt="' +
+						e(p.titre) +
+						'" />';
+				} else {
+					ph.style.display = 'none';
+				}
+
+				// # Chiffres du pôle
+				S.set(
+					'stats',
+					(p.stats || [])
+						.map(function (s) {
+							return (
+								'<div><div class="v">' +
+								e(s.valeur) +
+								'</div><div class="l">' +
+								e(s.label) +
+								'</div></div>'
+							);
+						})
+						.join('')
+				);
+
+				// # Texte du projet
+				S.set(
+					'texte',
+					(p.projet || [])
+						.map(function (t) {
+							return '<p>' + e(t) + '</p>';
+						})
+						.join('')
+				);
+
+				// # Objectifs
+				S.set(
+					'objectifs',
+					(p.objectifs || [])
+						.map(function (t) {
+							return '<li>' + e(t) + '</li>';
+						})
+						.join('')
+				);
+
+				// # Actions
+				S.set(
+					'actions',
+					(p.actions || [])
+						.map(function (t) {
+							return '<li>' + e(t) + '</li>';
+						})
+						.join('')
+				);
+
+				// # Galerie
+				S.set(
+					'galerie',
+					(p.galerie || [])
+						.map(function (src) {
+							return '<img src="' + e(src) + '" alt="" />';
+						})
+						.join('')
+				);
+
+				// # Lien vers le pôle suivant
+				var n = poles[(i + 1) % poles.length];
+				var sv = document.getElementById('suivant');
+				if (n) {
+					sv.href = 'projet.html?p=' + e(n.cle);
+					sv.textContent =
+						(T.suivant || 'Projet suivant') +
+						' : ' +
+						n.titre +
+						' →';
+				}
+			})();
+		</script>
+
+		<!-- # Script : animations.js -->
+		<script src="../assets/js/animations.js"></script>
+	</body>
 </html>
