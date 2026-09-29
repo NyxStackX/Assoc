@@ -1,4 +1,5 @@
-# Libota — site web
+
+# Libota - site web
 
 ## Ouvrir le projet
 
@@ -32,3 +33,4 @@ libota-site/
 
 - Indentation : tabulations (`.editorconfig`).
 - Formatage automatique à l'enregistrement (Prettier).
+
